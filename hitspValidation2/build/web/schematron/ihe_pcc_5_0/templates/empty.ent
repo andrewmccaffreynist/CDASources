@@ -1,0 +1,38 @@
+<!--  IHE PCC Label: OID -->
+
+<!-- errors -->
+
+  <pattern id="p-OID-errors">
+    <title>IHE PCC Label - errors validation phase</title>
+    <rule context='*[cda:templateId/@root="OID"]'>
+
+
+    </rule>
+
+  </pattern>
+
+  <!-- warning -->
+
+  <pattern id="p-OID-warnings">
+    <title>IHE PCC Label - warning validation phase</title>
+
+<!--
+    <rule context='*[cda:templateId/@root="OID"]'>
+      <report test="."/>
+    </rule>
+-->
+
+  </pattern>
+
+  <!-- manual -->
+
+  <pattern id="p-OID-manual">
+    <title>IHE PCC Label - manual validation phase</title>
+
+<!--
+    <rule context='*[cda:templateId/@root="OID"]'>
+      <report test="."/>
+    </rule>
+-->
+  </pattern>
+

@@ -1,0 +1,66 @@
+
+2.16.840.1.113883.3.88.11.83.X
+
+
+1.3.6.1.4.1.19376.1.5.3.1.X
+
+
+
+C83:
+
+pg 76 OID for Comments Module in C83-219 contradicts table 4.2-1 on page 112
+
+Allergies sample text is lacking the IHE OID.  This is inconsistent through the text.  Some examples have IHE template IDs; others do not.
+
+
+Note: Allergies section has no OID of its own, so one can only enforce the IHE contrainst by searching for an Allergy/Drug Sensitivity module and searching up to tree to find the IHE template ID.
+
+(Alternative: in C32 high level schematron, search for the IHE modules instead... )
+
+Is C32 supposed to be more strict than IHE?  In Encounters, IHE states <code> is required.  In C32, it is only R2...
+
+Page 87, the encounter example uses an observation element instead of an encounter element (which is what IHE uses).
+
+
+
+C83-[119] All Insurance Provider modules SHALL declare conformance to the IHE Coverage Entry by including a
+          <templateID> element with the root attribute set to the value 1.3.6.1.4.1.19376.1.5.3.1.1.5.3.7
+This is incorrect.  The template ID for IHE Coverage Entry is 1.3.6.1.4.1.19376.1.5.3.1.4.17.  The above template ID is for Payers Section, which is a section, not an entry.  Not running this check for now.
+Additionally, I believe there is a leveling problem.  The C83 Insurance Provider module appears to be adding rules to Payment Provider Event Entry (CCD Policy Activity: 2.16.840.1.113883.10.20.1.26).  However, the IHE Coverage Entry adds rules to (CCD Coverage Activity: 2.16.840.1.113883.10.20.1.20).  The CCD Policy Activity is contained within the CCD Coverage Activity via an Entry Relationship.  I think that C83-119 meant to say that "All Insurance Provider modules SHALL declare conformance to the IHE Payer Entry (1.3.6.1.4.1.19376.1.5.3.1.4.18)" or that "All Insurance Provider modules SHALL appear via an Entry Relationship within an IHE Coverage Entry" (or perhaps both).
+
+
+          
+
+C83-[170] A CDA Document SHALL declare conformance to the Medication Information data element by including a
+          <templateID> element with the root attribute set to the value
+          2.16.840.1.113883.3.88.11.83.93.88.11.83
+
+OID should be: 2.16.840.1.113883.3.88.11.83.8.2 ???
+
+
+
+Page 88, Table 2.2.2.17-2.  Data Element 17.03: Procedure Free Text Type.  The Data Source (cda:originalText/cda:reference/@value) should be indented so that it is under cda:code.  See below (page 86).
+
+
+Page 57, Table 2.2.2.8-2.  Date Element 8.09.  Data Element "Site".  Table lists the data source as cda:approachSiteCode and lists additional specification as 2.2.2.8.7.  However, 2.2.2.8.7 (page 63) lists the element as cda:administrationSiteCode.  The table is probably correct in this instance, as administrationSiteCode isn't valid CDA R2 under substanceAdministration.
+
+Page 86, Table 2.2.2.16-2.  Data Element 16.03, "Encounter Free Text Type".  Data Source is not valid CDA R2.  If the information is meant to be "cda:originalText", then the line should be indented to indicate that it is under cda:code.  If the location is correct, then the element should be "cda:text".
+
+
+
+
+
+
+2.16.840.1.113883.3.88.11.32.13.ent 2.16.840.1.113883.3.88.11.83.12.ent
+
+%s/2.16.840.1.113883.3.88.11.32.15/2.16.840.1.113883.3.88.11.83.14/g
+
+%s/2.16.840.1.113883.3.88.11.83.3/2.16.840.1.113883.3.88.11.83.17/g
+
+
+C83-[61] This section SHALL conform to the HL7 History and Physical Note and HL7 Consultation Note requirements for this section, and
+         SHALL contain a templateId element whose root attribute is 2.16.840.1.113883.10.20.2.7
+
+
+
+

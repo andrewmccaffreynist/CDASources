@@ -1,0 +1,51 @@
+<!--  IHE PCC Product Entry: 1.3.6.1.4.1.19376.1.5.3.1.4.7.2 -->
+
+<!-- errors -->
+
+  <pattern id="p-1.3.6.1.4.1.19376.1.5.3.1.4.7.2-errors">
+    <title>IHE PCC Product Entry - errors validation phase</title>
+    <rule context="*[cda:templateId/@root=&quot;1.3.6.1.4.1.19376.1.5.3.1.4.7.2&quot;]">
+    <assert test='cda:templateId[@root="2.16.840.1.113883.10.20.1.53"]'>
+       Error: In IHE PCC Product Entry (1.3.6.1.4.1.19376.1.5.3.1.4.7.2), the template ID for CCD parent
+       (2.16.840.1.113883.10.20.1.53) is required.
+    </assert>
+
+    <assert test="cda:manufacturedMaterial">
+       Error: In IHE PCC Product Entry (1.3.6.1.4.1.19376.1.5.3.1.4.7.2), a manufactured material SHALL exist.
+    </assert>
+
+    <assert test='not(cda:manufacturedMaterial/cda:code/cda:originalText) or
+                  starts-with(cda:manufacturedMaterial/cda:code/cda:originalText/cda:reference/@value,"#")'>
+       Error: In IHE PCC Product Entry (1.3.6.1.4.1.19376.1.5.3.1.4.7.2), if the originalText in the code of a 
+       manufacturedMaterial is present, it SHALL contain a reference value starting with '#'.
+    </assert>
+
+
+    <assert test='cda:manufacturedMaterial/cda:name'>
+       Error: In IHE PCC Product Entry (1.3.6.1.4.1.19376.1.5.3.1.4.7.2), the &lt;name&gt; element SHALL exist.
+    </assert>
+
+
+    </rule>
+  </pattern>
+
+  <!-- warning -->
+
+  <pattern id="p-1.3.6.1.4.1.19376.1.5.3.1.4.7.2-warnings">
+    <title>IHE PCC Product Entry - warning validation phase</title>
+    <rule context="*[cda:templateId/@root=&quot;1.3.6.1.4.1.19376.1.5.3.1.4.7.2&quot;]">
+
+
+    <assert test='cda:manufacturedMaterial/cda:code'>
+       Warning: In IHE PCC Product Entry (1.3.6.1.4.1.19376.1.5.3.1.4.7.2), the manufacturedMaterial/code element SHOULD exist. 
+    </assert>
+
+    <assert test='cda:manufacturedMaterial/cda:code/cda:originalText'>
+       Warning: In IHE PCC Product Entry (1.3.6.1.4.1.19376.1.5.3.1.4.7.2), the manufacturedMaterial/code/originalText element SHOULD exist. 
+    </assert>
+
+
+    </rule>
+
+
+  </pattern>

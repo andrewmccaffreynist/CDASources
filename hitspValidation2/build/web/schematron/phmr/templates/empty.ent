@@ -1,0 +1,39 @@
+<!--  HL7 PHMR Label: OID -->
+
+<!-- errors -->
+
+  <pattern id="p-OID-errors">
+    <title>HL7 PHMR Label - errors validation phase</title>
+    <rule context='*[cda:templateId/@root="OID"]'>
+
+
+    </rule>
+
+  </pattern>
+
+  <!-- warning -->
+
+  <pattern id="p-OID-warnings">
+    <title>HL7 PHMR Label - warning validation phase</title>
+
+<!--
+    <rule context='*[cda:templateId/@root="OID"]'>
+      <report test="."/>
+    </rule>
+-->
+
+  </pattern>
+
+  <!-- notes -->
+
+  <pattern id="p-OID-notes">
+
+    <title>HL7 PHMR Label - notes validation phase</title>
+
+<!--
+    <rule context='*[cda:templateId/@root="OID"]'>
+      <report test="."/>
+    </rule>
+-->
+  </pattern>
+

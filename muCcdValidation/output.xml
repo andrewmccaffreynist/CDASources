@@ -1,0 +1,948 @@
+<?xml version="1.0" encoding="UTF-8"?><Report><ReportHeader><ValidationStatus>Complete</ValidationStatus><ServiceName>CCD Validation</ServiceName><ServiceProvider>NIST</ServiceProvider><StandardType>CDA R2</StandardType><StandardVersion>N/A</StandardVersion><DateOfTest>20100324</DateOfTest><TimeOfTest>111340.0951 -0400</TimeOfTest><ReportPositiveIndicator>True</ReportPositiveIndicator><ResultOfTest>Failed</ResultOfTest><ErrorCount>6</ErrorCount><WarningCount>17</WarningCount></ReportHeader><Results severity="schemaViolation"><issue><message>src-resolve: Cannot resolve the name 'StrucDoc.Text' to a(n) 'type definition' component.</message></issue></Results><Results severity="errors"><issue><message>A Meaningful Use CCD document SHALL contain the template ID for CCD (2.16.840.1.113883.10.20.1).</message><context>/ClinicalDocument[1]</context><test>//cda:templateId[@root='2.16.840.1.113883.10.20.1']</test></issue><issue><message>A Meaningful Use CCD document SHALL contain a (Lab) Results Section.</message><context>/ClinicalDocument[1]</context><test>//cda:templateId[@root='2.16.840.1.113883.10.20.1.14']</test></issue><issue><message>A Meaningful Use CCD document SHALL contain a Medications Section.</message><context>/ClinicalDocument[1]</context><test>//cda:templateId[@root='2.16.840.1.113883.10.20.1.8']</test></issue><issue><message>A Meaningful Use CCD document SHALL contain an Immunizations Section.</message><context>/ClinicalDocument[1]</context><test>//cda:templateId[@root='2.16.840.1.113883.10.20.1.6']</test></issue><issue><message>A Meaningful Use CCD document SHALL contain a Procedures Section.</message><context>/ClinicalDocument[1]</context><test>//cda:templateId[@root='2.16.840.1.113883.10.20.1.12']</test></issue></Results><Results severity="warning"><issue><message>CONF-279: The value for "participant / participantRole / playingEntity / code" in an agent participation SHOULD be selected from the RxNorm (2.16.840.1.113883.6.88) code system for medications, and from the CDC Vaccine Code (2.16.840.1.113883.6.59) code system for immunizations.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[1]/act[1]/entryRelationship[1]/observation[1]</context><test>cda:participant/cda:participantRole/cda:playingEntity/cda:code[@codeSystem='2.16.840.1.113883.6.88' or @codeSystem='2.16.840.1.113883.6.59' ]</test></issue><issue><message>CONF-279: The value for "participant / participantRole / playingEntity / code" in an agent participation SHOULD be selected from the RxNorm (2.16.840.1.113883.6.88) code system for medications, and from the CDC Vaccine Code (2.16.840.1.113883.6.59) code system for immunizations.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[2]/act[1]/entryRelationship[1]/observation[1]</context><test>cda:participant/cda:participantRole/cda:playingEntity/cda:code[@codeSystem='2.16.840.1.113883.6.88' or @codeSystem='2.16.840.1.113883.6.59' ]</test></issue><issue><message>CONF-279: The value for "participant / participantRole / playingEntity / code" in an agent participation SHOULD be selected from the RxNorm (2.16.840.1.113883.6.88) code system for medications, and from the CDC Vaccine Code (2.16.840.1.113883.6.59) code system for immunizations.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[3]/act[1]/entryRelationship[1]/observation[1]</context><test>cda:participant/cda:participantRole/cda:playingEntity/cda:code[@codeSystem='2.16.840.1.113883.6.88' or @codeSystem='2.16.840.1.113883.6.59' ]</test></issue><issue><message>CONF-309: A medication activity SHOULD contain exactly one SubstanceAdministration / routeCode.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[8]/section[1]/entry[1]/substanceAdministration[1]</context><test>count(cda:routeCode)=1</test></issue><issue><message>CONF-309: A medication activity SHOULD contain exactly one SubstanceAdministration / routeCode.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[9]/section[1]/entry[1]/substanceAdministration[1]</context><test>count(cda:routeCode)=1</test></issue><issue><message>CONF-311: A medication activity SHOULD contain exactly one SubstanceAdministration / doseQuantity.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[9]/section[1]/entry[1]/substanceAdministration[1]</context><test>count(cda:doseQuantity)=1</test></issue><issue><message>CONF-309: A medication activity SHOULD contain exactly one SubstanceAdministration / routeCode.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[1]/substanceAdministration[1]</context><test>count(cda:routeCode)=1</test></issue><issue><message>CONF-311: A medication activity SHOULD contain exactly one SubstanceAdministration / doseQuantity.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[1]/substanceAdministration[1]</context><test>count(cda:doseQuantity)=1</test></issue><issue><message>CONF-309: A medication activity SHOULD contain exactly one SubstanceAdministration / routeCode.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[2]/substanceAdministration[1]</context><test>count(cda:routeCode)=1</test></issue><issue><message>CONF-311: A medication activity SHOULD contain exactly one SubstanceAdministration / doseQuantity.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[2]/substanceAdministration[1]</context><test>count(cda:doseQuantity)=1</test></issue><issue><message>CONF-309: A medication activity SHOULD contain exactly one SubstanceAdministration / routeCode.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[3]/substanceAdministration[1]</context><test>count(cda:routeCode)=1</test></issue><issue><message>CONF-311: A medication activity SHOULD contain exactly one SubstanceAdministration / doseQuantity.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[3]/substanceAdministration[1]</context><test>count(cda:doseQuantity)=1</test></issue><issue><message>CONF-359: The value for manufacturedMaterial / code in a product template SHOULD be selected from the RxNorm (2.16.840.1.113883.6.88) code system for medications, and from the CDC Vaccine Code (2.16.840.1.113883.6.59) code system for immunizations, or MAY be selected from ValueSet 2.16.840.1.113883.1.11.20.8 MedicationTypeCode STATIC 20061017.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[8]/section[1]/entry[1]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</context><test>   cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.88'    or cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.59'   or cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.96'</test></issue><issue><message>CONF-359: The value for manufacturedMaterial / code in a product template SHOULD be selected from the RxNorm (2.16.840.1.113883.6.88) code system for medications, and from the CDC Vaccine Code (2.16.840.1.113883.6.59) code system for immunizations, or MAY be selected from ValueSet 2.16.840.1.113883.1.11.20.8 MedicationTypeCode STATIC 20061017.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[9]/section[1]/entry[1]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</context><test>   cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.88'    or cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.59'   or cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.96'</test></issue><issue><message>CONF-359: The value for manufacturedMaterial / code in a product template SHOULD be selected from the RxNorm (2.16.840.1.113883.6.88) code system for medications, and from the CDC Vaccine Code (2.16.840.1.113883.6.59) code system for immunizations, or MAY be selected from ValueSet 2.16.840.1.113883.1.11.20.8 MedicationTypeCode STATIC 20061017.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[1]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</context><test>   cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.88'    or cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.59'   or cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.96'</test></issue><issue><message>CONF-359: The value for manufacturedMaterial / code in a product template SHOULD be selected from the RxNorm (2.16.840.1.113883.6.88) code system for medications, and from the CDC Vaccine Code (2.16.840.1.113883.6.59) code system for immunizations, or MAY be selected from ValueSet 2.16.840.1.113883.1.11.20.8 MedicationTypeCode STATIC 20061017.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[2]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</context><test>   cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.88'    or cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.59'   or cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.96'</test></issue><issue><message>CONF-359: The value for manufacturedMaterial / code in a product template SHOULD be selected from the RxNorm (2.16.840.1.113883.6.88) code system for medications, and from the CDC Vaccine Code (2.16.840.1.113883.6.59) code system for immunizations, or MAY be selected from ValueSet 2.16.840.1.113883.1.11.20.8 MedicationTypeCode STATIC 20061017.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[3]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</context><test>   cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.88'    or cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.59'   or cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.96'</test></issue></Results><Results severity="checks"><issue><message>This Meaningful Use CCD document DOES contain a Problems Section.</message><context>/ClinicalDocument[1]</context><test>//cda:templateId[@root='2.16.840.1.113883.10.20.1.11']</test></issue><issue><message>This Meaningful Use CCD document DOES contain an (Allergies) Alerts Section.</message><context>/ClinicalDocument[1]</context><test>//cda:templateId[@root='2.16.840.1.113883.10.20.1.2']</test></issue><issue><message>CCD Section 3.8: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]</context><test>self::cda:section</test></issue><issue><message>CONF-256: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]</context><test>cda:text</test></issue><issue><message>CONF-258: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]</context><test>cda:code</test></issue><issue><message>CONF-260: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]</context><test>cda:title</test></issue><issue><message>CONF-256: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]</context><test>descendant::*[cda:templateId/@root='2.16.840.1.113883.10.20.1.27']</test></issue><issue><message>CONF-261: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]</context><test>contains(translate(cda:title,'QWERTYUIOPASDFGHJKLZXCVBNM','qwertyuiopasdfghjklzxcvbnm'),'alert') or contains(translate(cda:title,'QWERTYUIOPASDFGHJKLZXCVBNM','qwertyuiopasdfghjklzxcvbnm'),'allergies and adverse reactions')</test></issue><issue><message>CONF-256: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[1]/act[1]</context><test>descendant::*[cda:templateId/@root='2.16.840.1.113883.10.20.1.18']</test></issue><issue><message>CONF-256: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[2]/act[1]</context><test>descendant::*[cda:templateId/@root='2.16.840.1.113883.10.20.1.18']</test></issue><issue><message>CONF-256: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[3]/act[1]</context><test>descendant::*[cda:templateId/@root='2.16.840.1.113883.10.20.1.18']</test></issue><issue><message>CONF-140: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[3]/section[1]</context><test>cda:text</test></issue><issue><message>CONF-142: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[3]/section[1]</context><test>cda:code[@code='11450-4'][@codeSystem='2.16.840.1.113883.6.1']</test></issue><issue><message>CONF-143: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[3]/section[1]</context><test>cda:title</test></issue><issue><message>CONF-140: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[3]/section[1]</context><test>.//cda:templateId[@root='2.16.840.1.113883.10.20.1.27']</test></issue><issue><message>CONF-144: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[3]/section[1]</context><test>contains(translate(cda:title,'QWERTYUIOPASDFGHJKLZXCVBNM','qwertyuiopasdfghjklzxcvbnm'),'problem')</test></issue><issue><message>CONF-262: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[1]/act[1]/entryRelationship[1]/observation[1]</context><test>self::cda:observation</test></issue><issue><message>CONF-263: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[1]/act[1]/entryRelationship[1]/observation[1]</context><test>@moodCode='EVN'</test></issue><issue><message>CONF-264: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[1]/act[1]/entryRelationship[1]/observation[1]</context><test>count(cda:statusCode)=1</test></issue><issue><message>CONF-265: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[1]/act[1]/entryRelationship[1]/observation[1]</context><test>cda:statusCode[@code='completed']</test></issue><issue><message>CONF-273: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[1]/act[1]/entryRelationship[1]/observation[1]</context><test>cda:participant</test></issue><issue><message>CONF-274: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[1]/act[1]/entryRelationship[1]/observation[1]/participant[1]</context><test>count(cda:participantRole/cda:playingEntity)=1</test></issue><issue><message>Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[1]/act[1]/entryRelationship[1]/observation[1]/participant[1]</context><test>@typeCode='CSM'</test></issue><issue><message>CONF-276: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[1]/act[1]/entryRelationship[1]/observation[1]/participant[1]</context><test>cda:participantRole[@classCode='MANU']</test></issue><issue><message>CONF-277: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[1]/act[1]/entryRelationship[1]/observation[1]/participant[1]</context><test>cda:participantRole/cda:playingEntity[@classCode='MMAT']</test></issue><issue><message>CONF-278: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[1]/act[1]/entryRelationship[1]/observation[1]/participant[1]</context><test>cda:participantRole/cda:playingEntity/cda:code</test></issue><issue><message>CONF-262: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[2]/act[1]/entryRelationship[1]/observation[1]</context><test>self::cda:observation</test></issue><issue><message>CONF-263: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[2]/act[1]/entryRelationship[1]/observation[1]</context><test>@moodCode='EVN'</test></issue><issue><message>CONF-264: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[2]/act[1]/entryRelationship[1]/observation[1]</context><test>count(cda:statusCode)=1</test></issue><issue><message>CONF-265: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[2]/act[1]/entryRelationship[1]/observation[1]</context><test>cda:statusCode[@code='completed']</test></issue><issue><message>CONF-273: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[2]/act[1]/entryRelationship[1]/observation[1]</context><test>cda:participant</test></issue><issue><message>CONF-274: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[2]/act[1]/entryRelationship[1]/observation[1]/participant[1]</context><test>count(cda:participantRole/cda:playingEntity)=1</test></issue><issue><message>Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[2]/act[1]/entryRelationship[1]/observation[1]/participant[1]</context><test>@typeCode='CSM'</test></issue><issue><message>CONF-276: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[2]/act[1]/entryRelationship[1]/observation[1]/participant[1]</context><test>cda:participantRole[@classCode='MANU']</test></issue><issue><message>CONF-277: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[2]/act[1]/entryRelationship[1]/observation[1]/participant[1]</context><test>cda:participantRole/cda:playingEntity[@classCode='MMAT']</test></issue><issue><message>CONF-278: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[2]/act[1]/entryRelationship[1]/observation[1]/participant[1]</context><test>cda:participantRole/cda:playingEntity/cda:code</test></issue><issue><message>CONF-262: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[3]/act[1]/entryRelationship[1]/observation[1]</context><test>self::cda:observation</test></issue><issue><message>CONF-263: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[3]/act[1]/entryRelationship[1]/observation[1]</context><test>@moodCode='EVN'</test></issue><issue><message>CONF-264: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[3]/act[1]/entryRelationship[1]/observation[1]</context><test>count(cda:statusCode)=1</test></issue><issue><message>CONF-265: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[3]/act[1]/entryRelationship[1]/observation[1]</context><test>cda:statusCode[@code='completed']</test></issue><issue><message>CONF-273: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[3]/act[1]/entryRelationship[1]/observation[1]</context><test>cda:participant</test></issue><issue><message>CONF-274: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[3]/act[1]/entryRelationship[1]/observation[1]/participant[1]</context><test>count(cda:participantRole/cda:playingEntity)=1</test></issue><issue><message>Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[3]/act[1]/entryRelationship[1]/observation[1]/participant[1]</context><test>@typeCode='CSM'</test></issue><issue><message>CONF-276: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[3]/act[1]/entryRelationship[1]/observation[1]/participant[1]</context><test>cda:participantRole[@classCode='MANU']</test></issue><issue><message>CONF-277: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[3]/act[1]/entryRelationship[1]/observation[1]/participant[1]</context><test>cda:participantRole/cda:playingEntity[@classCode='MMAT']</test></issue><issue><message>CONF-278: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[3]/act[1]/entryRelationship[1]/observation[1]/participant[1]</context><test>cda:participantRole/cda:playingEntity/cda:code</test></issue><issue><message>CONF-356: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[8]/section[1]/entry[1]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</context><test>self::cda:manufacturedProduct</test></issue><issue><message>CONF-358: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[8]/section[1]/entry[1]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</context><test>count(cda:manufacturedMaterial/cda:code) = 1</test></issue><issue><message>CONF-363: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[8]/section[1]/entry[1]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</context><test>count(cda:manufacturedMaterial/cda:code/cda:originalText) = 1</test></issue><issue><message>CONF-356: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[9]/section[1]/entry[1]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</context><test>self::cda:manufacturedProduct</test></issue><issue><message>CONF-358: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[9]/section[1]/entry[1]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</context><test>count(cda:manufacturedMaterial/cda:code) = 1</test></issue><issue><message>CONF-363: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[9]/section[1]/entry[1]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</context><test>count(cda:manufacturedMaterial/cda:code/cda:originalText) = 1</test></issue><issue><message>CONF-356: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[1]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</context><test>self::cda:manufacturedProduct</test></issue><issue><message>CONF-358: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[1]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</context><test>count(cda:manufacturedMaterial/cda:code) = 1</test></issue><issue><message>CONF-363: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[1]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</context><test>count(cda:manufacturedMaterial/cda:code/cda:originalText) = 1</test></issue><issue><message>CONF-356: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[2]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</context><test>self::cda:manufacturedProduct</test></issue><issue><message>CONF-358: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[2]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</context><test>count(cda:manufacturedMaterial/cda:code) = 1</test></issue><issue><message>CONF-363: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[2]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</context><test>count(cda:manufacturedMaterial/cda:code/cda:originalText) = 1</test></issue><issue><message>CONF-356: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[3]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</context><test>self::cda:manufacturedProduct</test></issue><issue><message>CONF-358: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[3]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</context><test>count(cda:manufacturedMaterial/cda:code) = 1</test></issue><issue><message>CONF-363: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[3]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</context><test>count(cda:manufacturedMaterial/cda:code/cda:originalText) = 1</test></issue><issue><message>CONF-282: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[2]/act[1]/entryRelationship[1]/observation[1]/entryRelationship[1]/observation[1]</context><test>self::cda:observation</test></issue><issue><message>CONF-283: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[2]/act[1]/entryRelationship[1]/observation[1]/entryRelationship[1]/observation[1]</context><test>@classCode='OBS'</test></issue><issue><message>CONF-284: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[2]/act[1]/entryRelationship[1]/observation[1]/entryRelationship[1]/observation[1]</context><test>@moodCode='EVN'</test></issue><issue><message>CONF-285: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[2]/act[1]/entryRelationship[1]/observation[1]/entryRelationship[1]/observation[1]</context><test>count(cda:statusCode)=1</test></issue><issue><message>CONF-286: Success.</message><context>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[2]/act[1]/entryRelationship[1]/observation[1]/entryRelationship[1]/observation[1]</context><test>cda:statusCode[@code='completed']</test></issue></Results><TestObject><ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.4"/>
+    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.2"/>
+    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.1"/>
+    <templateId extension="IMPL_CDAR2_LEVEL1" root="2.16.840.1.113883.10"/>
+    <id root="1.3.6.1.4.1.21367.2008.1.2.148.1.9844"/>
+    <code code="18842-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Discharge Summary"/>
+    <title>IHE Discharge Summary: CE, GEHC</title>
+    <effectiveTime value="200901141410-0800"/>
+    <confidentialityCode code="0" codeSystem="2.16.840.1.113883.5.25" codeSystemName="Confidentiality"/>
+    <languageCode code="en-US"/>
+    <recordTarget>
+        <patientRole>
+            <id extension="00040003" root="1.3.6.1.4.1.21367.2008.1.2.148.2"/>
+            <addr>
+                <streetAddressLine nullFlavor="UNK"/>
+                <city>SEATTLE</city>
+                <state>WA</state>
+                <postalCode>98104</postalCode>
+            </addr>
+            <telecom nullFlavor="UNK"/>
+            <patient>
+                <name>
+                    <given>Frederick</given>
+                    <family>RANDOLPH</family>
+                </name>
+                <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender"/>
+                <birthTime value="19590203"/>
+                <languageCommunication>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.2.1"/>
+                    <languageCode code="Unknown"/>
+                    <preferenceInd value="true"/>
+                </languageCommunication>
+            </patient>
+            <providerOrganization>
+                <id extension="LWGH" root="1.3.6.1.4.1.21367.2008.1.2.148.4"/>
+                <name>LWGH</name>
+                <telecom value="tel:+12066229558"/>
+                <addr nullFlavor="UNK"/>
+            </providerOrganization>
+        </patientRole>
+    </recordTarget>
+    <author>
+        <time value="200901141404-0800"/>
+        <assignedAuthor>
+            <id extension="U444" root="1.3.6.1.4.1.21367.2008.1.2.148.3"/>
+            <addr nullFlavor="UNK"/>
+            <telecom value="tel:+12066229558"/>
+            <assignedPerson>
+                <name>
+                    <given>Francine</given>
+                    <family>Kitchen</family>
+                </name>
+            </assignedPerson>
+            <representedOrganization>
+                <id extension="LWGH" root="1.3.6.1.4.1.21367.2008.1.2.148.4"/>
+                <name>LWGH</name>
+                <telecom value="tel:+12066229558"/>
+                <addr nullFlavor="UNK"/>
+            </representedOrganization>
+        </assignedAuthor>
+    </author>
+    <custodian>
+        <assignedCustodian>
+            <representedCustodianOrganization>
+                <id extension="LWGH" root="1.3.6.1.4.1.21367.2008.1.2.148.4"/>
+                <name>LWGH</name>
+                <telecom value="tel:+12066229558"/>
+                <addr nullFlavor="UNK"/>
+            </representedCustodianOrganization>
+        </assignedCustodian>
+    </custodian>
+    <documentationOf>
+        <serviceEvent classCode="PCPR">
+            <effectiveTime xsi:type="IVL_TS">
+                <low value="20090114"/>
+                <high value="20090114"/>
+            </effectiveTime>
+            <performer typeCode="PRF">
+                <templateId root="1.3.6.1.4.1.19376.1.5.3.1.2.3"/>
+                <functionCode code="AT" codeSystem="2.16.840.1.113883.12.443" codeSystemName="Provider Role" displayName="Attending"/>
+                <time>
+                    <low value="20090114"/>
+                    <high value="20090114"/>
+                </time>
+                <assignedEntity classCode="ASSIGNED">
+                    <id extension="U444" root="1.3.6.1.4.1.21367.2008.1.2.148.3"/>
+                    <addr>
+                        <streetAddressLine>123 yew street</streetAddressLine>
+                        <streetAddressLine>Bellingham</streetAddressLine>
+                        <streetAddressLine>WA</streetAddressLine>
+                        <city>99999</city>
+                    </addr>
+                    <telecom value="tel:+13605928888"/>
+                    <assignedPerson>
+                        <name>Kitchen, Francine</name>
+                    </assignedPerson>
+                </assignedEntity>
+            </performer>
+            <performer typeCode="PRF">
+                <templateId root="1.3.6.1.4.1.19376.1.5.3.1.2.3"/>
+                <functionCode code="AD" codeSystem="2.16.840.1.113883.12.443" codeSystemName="Provider Role" displayName="Admitting"/>
+                <time>
+                    <low value="20090114"/>
+                    <high value="20090114"/>
+                </time>
+                <assignedEntity classCode="ASSIGNED">
+                    <id extension="U444" root="1.3.6.1.4.1.21367.2008.1.2.148.3"/>
+                    <addr>
+                        <streetAddressLine>123 yew street</streetAddressLine>
+                        <streetAddressLine>Bellingham</streetAddressLine>
+                        <streetAddressLine>WA</streetAddressLine>
+                        <city>99999</city>
+                    </addr>
+                    <telecom value="tel:+13605928888"/>
+                    <assignedPerson>
+                        <name>Kitchen, Francine</name>
+                    </assignedPerson>
+                </assignedEntity>
+            </performer>
+        </serviceEvent>
+    </documentationOf>
+    <componentOf>
+        <encompassingEncounter>
+            <id extension="9727" root="1.3.6.1.4.1.21367.2008.1.2.148.5"/>
+            <effectiveTime xsi:type="IVL_TS">
+                <low value="200901141344-0800"/>
+                <high value="200901141402-0800"/>
+            </effectiveTime>
+            <dischargeDispositionCode code="06" codeSystem="2.16.840.1.113883.6.21" codeSystemName="UB92" displayName="Unknown"/>
+        </encompassingEncounter>
+    </componentOf>
+    <component>
+        <structuredBody>
+            <component>
+                <section>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.13.2.1.1"/>
+                    <id extension="section-N10045" root="1.3.6.1.4.1.21367.2008.1.2.148.1.9844"/>
+                    <code code="29299-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="REASON FOR VISIT"/>
+                    <title>Reason For Visit Section</title>
+                    <text>Unknown</text>
+                </section>
+            </component>
+            <component>
+                <section>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.13.2.1"/>
+                    <id extension="section-N10048" root="1.3.6.1.4.1.21367.2008.1.2.148.1.9844"/>
+                    <code code="10154-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="CHIEF COMPLAINT"/>
+                    <title>Chief Complaint Section</title>
+                    <text>Not present</text>
+                </section>
+            </component>
+            <component>
+                <section>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.6"/>
+                    <templateId root="2.16.840.1.113883.10.20.1.11"/>
+                    <id extension="section-N10001" root="1.3.6.1.4.1.21367.2008.1.2.148.1.9844"/>
+                    <code code="11450-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="PROBLEM LIST"/>
+                    <title>Active Problems Section</title>
+                    <text>
+                        <table border="1" cellpadding="2" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th> UPDATED </th>
+                                    <th>ICD9</th>
+                                    <th> PROBLEM </th>
+                                    <th> STATUS</th>
+                                    <th>UPDATED BY</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>14Jan09 13:48 </td>
+                                    <td>799.9</td>
+                                    <td ID="N101FE">Head congestion</td>
+                                    <td>Active</td>
+                                    <td>U444 Kitchen, Francine</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </text>
+                    <entry>
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                            <id extension="problemConcern-1" root="1.3.6.1.4.1.21367.2008.1.2.148.1.9844"/>
+                            <code nullFlavor="NA"/>
+                            <statusCode code="active"/>
+                            <effectiveTime xsi:type="IVL_TS">
+                                <low value="200901140000-0800"/>
+                            </effectiveTime>
+                            <author>
+                                <time value="200901141348-0800"/>
+                                <assignedAuthor>
+                                    <id extension="U444" root="1.3.6.1.4.1.21367.2008.1.2.148.3"/>
+                                    <addr nullFlavor="UNK"/>
+                                    <telecom value="tel:+12066229558"/>
+                                    <assignedPerson>
+                                        <name>
+                                            <given>Francine</given>
+                                            <family>Kitchen</family>
+                                        </name>
+                                    </assignedPerson>
+                                </assignedAuthor>
+                            </author>
+                            <entryRelationship inversionInd="false" typeCode="SUBJ">
+                                <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                                    <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                    <id extension="condition-1" root="1.3.6.1.4.1.21367.2008.1.2.148.1.9844"/>
+                                  <code code="DALG" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ObservationIntoleranceType" displayName="drug allergy"/>
+                                  <statusCode code="completed"/>
+                                    <effectiveTime xsi:type="IVL_TS">
+                                        <low value="200901140000-0800"/>
+                                        <high nullFlavor="UNK"/>
+                                  </effectiveTime>
+                                  <value code="799.9" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD-9-CM" displayName="Head congestion" xsi:type="CD">
+                                        <originalText>
+                                            <reference value="#N101FE"/>
+                                        </originalText>
+                                    </value>
+                                </observation>
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                </section>
+            </component>
+            <component>
+                <section>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.8"/>
+                    <id extension="section-N10001" root="1.3.6.1.4.1.21367.2008.1.2.148.1.9844"/>
+                    <code code="11348-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HISTORY OF PAST ILLNESS"/>
+                    <title>Resolved Problems Section</title>
+                    <text>
+                        <table border="1" cellpadding="2" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th> UPDATED </th>
+                                    <th>ICD9</th>
+                                    <th> PROBLEM </th>
+                                    <th> STATUS</th>
+                                    <th>UPDATED BY</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>14Jan09 13:48 </td>
+                                    <td>346.90</td>
+                                    <td ID="N1025B">Migraine headache</td>
+                                    <td>Resolved</td>
+                                    <td>U444 Kitchen, Francine</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </text>
+                    <entry>
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                            <id extension="problemConcern-2" root="1.3.6.1.4.1.21367.2008.1.2.148.1.9844"/>
+                            <code nullFlavor="NA"/>
+                            <statusCode code="completed"/>
+                            <effectiveTime xsi:type="IVL_TS">
+                                <low value="200901140000-0800"/>
+                                <high value="200901141348-0800"/>
+                            </effectiveTime>
+                            <author>
+                                <time value="200901141348-0800"/>
+                                <assignedAuthor>
+                                    <id extension="U444" root="1.3.6.1.4.1.21367.2008.1.2.148.3"/>
+                                    <addr nullFlavor="UNK"/>
+                                    <telecom value="tel:+12066229558"/>
+                                    <assignedPerson>
+                                        <name>
+                                            <given>Francine</given>
+                                            <family>Kitchen</family>
+                                        </name>
+                                    </assignedPerson>
+                                </assignedAuthor>
+                            </author>
+                            <entryRelationship inversionInd="false" typeCode="SUBJ">
+                                <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                                    <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                    <id extension="condition-2" root="1.3.6.1.4.1.21367.2008.1.2.148.1.9844"/>
+                                  <code code="DALG" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ObservationIntoleranceType" displayName="drug allergy"/>
+                                  <statusCode code="completed"/>
+                                    <effectiveTime xsi:type="IVL_TS">
+                                        <low value="200901140000-0800"/>
+                                        <high value="200901141348-0800"/>
+                                    </effectiveTime>
+                                    <value code="346.90" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD-9-CM" displayName="Migraine headache" xsi:type="CD">
+                                        <originalText>
+                                            <reference value="#N1025B"/>
+                                        </originalText>
+                                    </value>
+                                </observation>
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                </section>
+            </component>
+            <component>
+                <section>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.13"/>
+                    <templateId root="2.16.840.1.113883.10.20.1.2"/>
+                    <id extension="section-N10001" root="1.3.6.1.4.1.21367.2008.1.2.148.1.9844"/>
+                    <code code="48765-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Allergies, adverse reactions, alerts"/>
+                    <title>Allergies and Adverse Reactions Section</title>
+                    <text>
+                        <table border="1" cellpadding="2" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th> UPDATED </th>
+                                    <th> FDB CODE </th>
+                                    <th> ALLERGEN </th>
+                                    <th> REACTION </th>
+                                    <th>UPDATED BY</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>14Jan09 13:50 </td>
+                                    <td>7207 </td>
+                                    <td ID="N105EE">GLUTEN </td>
+                                    <td> </td>
+                                    <td>U444 Kitchen, Francine</td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>14Jan09 13:50 </td>
+                                    <td>900028 </td>
+                                    <td ID="N10592">PENICILLAMINE </td>
+                                    <td>Increased Heart Rate, Palpitations </td>
+                                    <td>U444 Kitchen, Francine</td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>14Jan09 13:51 </td>
+                                    <td>0 </td>
+                                    <td ID="N10536">(Uncoded) peanuts </td>
+                                    <td> </td>
+                                    <td>U444 Kitchen, Francine</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </text>
+                    <entry>
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
+                            <id extension="allergyConcern-7" root="1.3.6.1.4.1.21367.2008.1.2.148.1.9844"/>
+                            <code nullFlavor="NA"/>
+                            <statusCode code="active"/>
+                            <effectiveTime xsi:type="IVL_TS">
+                                <low value="20090114"/>
+                            </effectiveTime>
+                            <author>
+                                <time value="200901141350-0800"/>
+                                <assignedAuthor>
+                                    <id extension="U444" root="1.3.6.1.4.1.21367.2008.1.2.148.3"/>
+                                    <addr nullFlavor="UNK"/>
+                                    <telecom value="tel:+12066229558"/>
+                                    <assignedPerson>
+                                        <name>
+                                            <given>Francine</given>
+                                            <family>Kitchen</family>
+                                        </name>
+                                    </assignedPerson>
+                                </assignedAuthor>
+                            </author>
+                            <entryRelationship inversionInd="false" typeCode="SUBJ">
+                                <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                                    <templateId root="2.16.840.1.113883.10.20.1.18"/>
+                                    <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                    <id extension="allergy-7" root="1.3.6.1.4.1.21367.2008.1.2.148.1.9844"/>
+                                    <code code="DALG" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ObservationIntoleranceType" displayName="drug allergy"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime xsi:type="IVL_TS">
+                                        <low value="20090114"/>
+                                        <high nullFlavor="UNK"/>
+                                    </effectiveTime>
+                                    <value code="7207" codeSystem="2.16.840.1.113883.6.64" codeSystemName="FDDC" displayName="GLUTEN" xsi:type="CD">
+                                        <originalText>
+                                            <reference value="#N105EE"/>
+                                        </originalText>
+                                    </value>
+                                    <participant typeCode="CSM">
+                                        <participantRole classCode="MANU">
+                                            <playingEntity classCode="MMAT">
+                                                <code code="7207" codeSystem="2.16.840.1.113883.6.64">
+                                                  <originalText>
+                                                  <reference value="#N105EE"/>
+                                                  </originalText>
+                                                </code>
+                                                <name>GLUTEN</name>
+                                            </playingEntity>
+                                        </participantRole>
+                                    </participant>
+                                </observation>
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                    <entry>
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
+                            <id extension="allergyConcern-6" root="1.3.6.1.4.1.21367.2008.1.2.148.1.9844"/>
+                            <code nullFlavor="NA"/>
+                            <statusCode code="active"/>
+                            <effectiveTime xsi:type="IVL_TS">
+                                <low value="20090114"/>
+                            </effectiveTime>
+                            <author>
+                                <time value="200901141350-0800"/>
+                                <assignedAuthor>
+                                    <id extension="U444" root="1.3.6.1.4.1.21367.2008.1.2.148.3"/>
+                                    <addr nullFlavor="UNK"/>
+                                    <telecom value="tel:+12066229558"/>
+                                    <assignedPerson>
+                                        <name>
+                                            <given>Francine</given>
+                                            <family>Kitchen</family>
+                                        </name>
+                                    </assignedPerson>
+                                </assignedAuthor>
+                            </author>
+                            <entryRelationship inversionInd="false" typeCode="SUBJ">
+                                <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                                    <templateId root="2.16.840.1.113883.10.20.1.18"/>
+                                    <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                    <id extension="allergy-6" root="1.3.6.1.4.1.21367.2008.1.2.148.1.9844"/>
+                                    <code code="DALG" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ObservationIntoleranceType" displayName="drug allergy"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime xsi:type="IVL_TS">
+                                        <low value="20090114"/>
+                                        <high nullFlavor="UNK"/>
+                                    </effectiveTime>
+                                    <value code="900028" codeSystem="2.16.840.1.113883.6.64" codeSystemName="FDDC" displayName="PENICILLAMINE, Increased Heart Rate, Palpitations" xsi:type="CD">
+                                        <originalText>
+                                            <reference value="#N10592"/>
+                                        </originalText>
+                                    </value>
+                                    <participant typeCode="CSM">
+                                        <participantRole classCode="MANU">
+                                            <playingEntity classCode="MMAT">
+                                                <code code="900028" codeSystem="2.16.840.1.113883.6.64">
+                                                  <originalText>
+                                                  <reference value="#N10592"/>
+                                                  </originalText>
+                                                </code>
+                                                <name>PENICILLAMINE</name>
+                                            </playingEntity>
+                                        </participantRole>
+                                    </participant>
+                                    <entryRelationship inversionInd="false" typeCode="MFST">
+                                        <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                                            <templateId root="2.16.840.1.113883.10.20.1.54"/>
+                                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                          <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                            <id extension="reaction-6" root="1.3.6.1.4.1.21367.2008.1.2.148.1.9844"/>
+                                            <code code="418799008" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ObservationIntoleranceType" displayName="Symptom"/>
+                                            <statusCode code="completed"/>
+                                            <effectiveTime xsi:type="IVL_TS">
+                                                <low nullFlavor="UNK"/>
+                                                <high nullFlavor="UNK"/>
+                                            </effectiveTime>
+                                            <value xsi:type="CD">
+                                                <originalText>
+                                                  <reference value="#N10592-react"/>
+                                                </originalText>
+                                            </value>
+                                        </observation>
+                                    </entryRelationship>
+                                </observation>
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                    <entry>
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
+                            <id extension="allergyConcern-5" root="1.3.6.1.4.1.21367.2008.1.2.148.1.9844"/>
+                            <code nullFlavor="NA"/>
+                            <statusCode code="active"/>
+                            <effectiveTime xsi:type="IVL_TS">
+                                <low value="20090114"/>
+                            </effectiveTime>
+                            <author>
+                                <time value="200901141351-0800"/>
+                                <assignedAuthor>
+                                    <id extension="U444" root="1.3.6.1.4.1.21367.2008.1.2.148.3"/>
+                                    <addr nullFlavor="UNK"/>
+                                    <telecom value="tel:+12066229558"/>
+                                    <assignedPerson>
+                                        <name>
+                                            <given>Francine</given>
+                                            <family>Kitchen</family>
+                                        </name>
+                                    </assignedPerson>
+                                </assignedAuthor>
+                            </author>
+                            <entryRelationship inversionInd="false" typeCode="SUBJ">
+                                <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                                    <templateId root="2.16.840.1.113883.10.20.1.18"/>
+                                    <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                    <id extension="allergy-5" root="1.3.6.1.4.1.21367.2008.1.2.148.1.9844"/>
+                                    <code code="FALG" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ObservationIntoleranceType" displayName="food allergy"/>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime xsi:type="IVL_TS">
+                                        <low value="20090114"/>
+                                        <high nullFlavor="UNK"/>
+                                    </effectiveTime>
+                                    <value xsi:type="CD">
+                                        <originalText>
+                                            <reference value="#N10536"/>
+                                        </originalText>
+                                    </value>
+                                    <participant typeCode="CSM">
+                                        <participantRole classCode="MANU">
+                                            <playingEntity classCode="MMAT">
+                                                <code>
+                                                  <originalText>
+                                                  <reference value="#N10536"/>
+                                                  </originalText>
+                                                </code>
+                                                <name>(Uncoded) peanuts</name>
+                                            </playingEntity>
+                                        </participantRole>
+                                    </participant>
+                                </observation>
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                </section>
+            </component>
+            <component>
+                <section>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.3"/>
+                    <id extension="section-N10302" root="1.3.6.1.4.1.21367.2008.1.2.148.1.9844"/>
+                    <code code="46241-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HOSPITAL ADMISSION DX"/>
+                    <title>Hospital Admission Diagnosis Section</title>
+                    <text>
+                        <table border="1" cellpadding="2" cellspacing="0" width="60%">
+                            <thead>
+                                <tr>
+                                    <th> ENTERED </th>
+                                    <th>ICD9</th>
+                                    <th> DIAGNOSIS </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>14Jan09 13:49 </td>
+                                    <td>002.1 </td>
+                                    <td ID="N10304">PARATYPHOID FEVER A</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </text>
+                    <entry>
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                            <id extension="problemConcern-3" root="1.3.6.1.4.1.21367.2008.1.2.148.1.9844"/>
+                            <code nullFlavor="NA"/>
+                            <statusCode code="active"/>
+                            <effectiveTime xsi:type="IVL_TS">
+                                <low value="200901141349-0800"/>
+                            </effectiveTime>
+                            <entryRelationship inversionInd="false" typeCode="SUBJ">
+                                <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                                    <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                    <id extension="condition-3" root="1.3.6.1.4.1.21367.2008.1.2.148.1.9844"/>
+                                  <code code="DALG" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ObservationIntoleranceType" displayName="drug allergy"/>
+                                  <statusCode code="completed"/>
+                                    <effectiveTime xsi:type="IVL_TS">
+                                        <low value="200901141349-0800"/>
+                                        <high nullFlavor="UNK"/>
+                                    </effectiveTime>
+                                    <value code="002.1" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD-9-CM" displayName="PARATYPHOID FEVER A" xsi:type="CD">
+                                        <originalText>
+                                            <reference value="#N10304"/>
+                                        </originalText>
+                                    </value>
+                                </observation>
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                </section>
+            </component>
+            <component>
+                <section>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.7"/>
+                    <id extension="section-N10302" root="1.3.6.1.4.1.21367.2008.1.2.148.1.9844"/>
+                    <code code="11535-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HOSPITAL DISCHARGE DX"/>
+                    <title>Discharge Diagnosis Section</title>
+                    <text>
+                        <table border="1" cellpadding="2" cellspacing="0" width="60%">
+                            <thead>
+                                <tr>
+                                    <th> ENTERED </th>
+                                    <th>ICD9</th>
+                                    <th> DIAGNOSIS </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>14Jan09 13:49 </td>
+                                    <td>002.2 </td>
+                                    <td ID="N1032E">PARATYPHOID FEVER B</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </text>
+                    <entry>
+                        <act classCode="ACT" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                            <id extension="problemConcern-4" root="1.3.6.1.4.1.21367.2008.1.2.148.1.9844"/>
+                            <code nullFlavor="NA"/>
+                            <statusCode code="active"/>
+                            <effectiveTime xsi:type="IVL_TS">
+                                <low value="200901141349-0800"/>
+                            </effectiveTime>
+                            <entryRelationship inversionInd="false" typeCode="SUBJ">
+                                <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                                    <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                    <id extension="condition-4" root="1.3.6.1.4.1.21367.2008.1.2.148.1.9844"/>
+                                  <code code="DALG" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ObservationIntoleranceType" displayName="drug allergy"/>
+                                  <statusCode code="completed"/>
+                                    <effectiveTime xsi:type="IVL_TS">
+                                        <low value="200901141349-0800"/>
+                                        <high nullFlavor="UNK"/>
+                                    </effectiveTime>
+                                    <value code="002.2" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD-9-CM" displayName="PARATYPHOID FEVER B" xsi:type="CD">
+                                        <originalText>
+                                            <reference value="#N1032E"/>
+                                        </originalText>
+                                    </value>
+                                </observation>
+                            </entryRelationship>
+                        </act>
+                    </entry>
+                </section>
+            </component>
+            <component>
+                <section>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.21"/>
+                    <id extension="section-N10001" root="1.3.6.1.4.1.21367.2008.1.2.148.1.9844"/>
+                    <code code="18610-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="MEDICATION ADMINISTERED"/>
+                    <title>Medications Administered Section</title>
+                    <text>
+                        <table border="1" cellpadding="2" cellspacing="0" width="90%">
+                            <thead>
+                                <tr>
+                                    <th> MEDICATION </th>
+                                    <th> ADMINISTERED </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td ID="N1045A">Calcitriol Cap </td>
+                                    <td>14Jan09 14:00 </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </text>
+                    <entry>
+                        <substanceAdministration classCode="SBADM" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.24"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+                            <id extension="medication-1" root="1.3.6.1.4.1.21367.2008.1.2.148.1.9844"/>
+                            <text>
+                                <reference value="#N1045A"/>
+                            </text>
+                            <statusCode code="completed"/>
+                            <effectiveTime xsi:type="IVL_TS">
+                                <low value="200901141400-0800"/>
+                                <high value="200901141400-0800"/>
+                            </effectiveTime>
+                            <doseQuantity unit="mL" value="0"/>
+                            <consumable>
+                                <manufacturedProduct>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+                                    <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                                    <manufacturedMaterial>
+                                        <code>
+                                            <originalText>
+                                                <reference value="#N1045A"/>
+                                            </originalText>
+                                        </code>
+                                        <name>Calcitriol Cap</name>
+                                    </manufacturedMaterial>
+                                </manufacturedProduct>
+                            </consumable>
+                        </substanceAdministration>
+                    </entry>
+                </section>
+            </component>
+            <component>
+                <section>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.20"/>
+                    <id extension="section-N10001" root="1.3.6.1.4.1.21367.2008.1.2.148.1.9844"/>
+                    <code code="42346-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="MEDICATIONS ON ADMISSION"/>
+                    <title>Admission Medication History Section</title>
+                    <text>None Reported</text>
+                    <entry>
+                        <substanceAdministration classCode="SBADM" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.24"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+                            <id extension="medication-88888" root="1.3.6.1.4.1.21367.2008.1.2.148.1.43008"/>
+                            <statusCode code="completed"/>
+                            <effectiveTime xsi:type="IVL_TS">
+                                <low value="200901141410-0800"/>
+                                <high value="200901141410-0800"/>
+                            </effectiveTime>
+                            <consumable typeCode="CSM">
+                                <manufacturedProduct classCode="MANU">
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+                                    <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                                  <manufacturedMaterial>
+                                    <code>
+                                      <originalText>
+                                        <reference value="#N104A6"/>
+                                      </originalText>
+                                    </code>
+                                    <name/>
+                                  </manufacturedMaterial>
+                                </manufacturedProduct>
+                            </consumable>
+                        </substanceAdministration>
+                    </entry>
+                </section>
+            </component>
+            <component>
+                <section>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.22"/>
+                    <id extension="section-N10001" root="1.3.6.1.4.1.21367.2008.1.2.148.1.9844"/>
+                    <code code="10183-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HOSPITAL DISCHARGE MEDICATIONS"/>
+                    <title>Hospital Discharge Medications Section</title>
+                    <text>
+                        <table border="1" cellpadding="2" cellspacing="0" width="95%">
+                            <thead>
+                                <tr>
+                                    <th>BEGIN DTTM </th>
+                                    <th>END DTTM </th>
+                                    <th>MEDICATION </th>
+                                    <th>ORDERED BY</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>14Jan09 14:02 </td>
+                                    <td> </td>
+                                    <td ID="N104A6">Backache Tab 1 Tablet PO prn </td>
+                                    <td>Kitchen, Francine</td>
+                                </tr>
+                                <tr>
+                                    <td>14Jan09 14:01 </td>
+                                    <td> </td>
+                                    <td ID="N104CC">Daily Multivitamin-Minerals Tab 1 Tablet PO prn </td>
+                                    <td>Kitchen, Francine</td>
+                                </tr>
+                                <tr>
+                                    <td>14Jan09 14:01 </td>
+                                    <td> </td>
+                                    <td ID="N104F2">Dehydrocholic Acid Tab 1 Tablet PO prn </td>
+                                    <td>Kitchen, Francine</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </text>
+                    <entry>
+                        <substanceAdministration classCode="SBADM" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.24"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+                            <id extension="medication-101" root="1.3.6.1.4.1.21367.2008.1.2.148.1.9844"/>
+                            <text>
+                                <reference value="#N104A6"/>
+                            </text>
+                            <statusCode code="completed"/>
+                            <effectiveTime xsi:type="IVL_TS">
+                                <low value="200901141402-0800"/>
+                                <high nullFlavor="UNK"/>
+                            </effectiveTime>
+                            <consumable>
+                                <manufacturedProduct>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+                                    <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                                    <manufacturedMaterial>
+                                        <code>
+                                            <originalText>
+                                                <reference value="#N104A6"/>
+                                            </originalText>
+                                        </code>
+                                        <name/>
+                                    </manufacturedMaterial>
+                                </manufacturedProduct>
+                            </consumable>
+                        </substanceAdministration>
+                    </entry>
+                    <entry>
+                        <substanceAdministration classCode="SBADM" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.24"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+                            <id extension="medication-102" root="1.3.6.1.4.1.21367.2008.1.2.148.1.9844"/>
+                            <text>
+                                <reference value="#N104CC"/>
+                            </text>
+                            <statusCode code="completed"/>
+                            <effectiveTime xsi:type="IVL_TS">
+                                <low value="200901141401-0800"/>
+                                <high nullFlavor="UNK"/>
+                            </effectiveTime>
+                            <consumable>
+                                <manufacturedProduct>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+                                    <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                                    <manufacturedMaterial>
+                                        <code>
+                                            <originalText>
+                                                <reference value="#N104CC"/>
+                                            </originalText>
+                                        </code>
+                                        <name/>
+                                    </manufacturedMaterial>
+                                </manufacturedProduct>
+                            </consumable>
+                        </substanceAdministration>
+                    </entry>
+                    <entry>
+                        <substanceAdministration classCode="SBADM" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.24"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+                            <id extension="medication-103" root="1.3.6.1.4.1.21367.2008.1.2.148.1.9844"/>
+                            <text>
+                                <reference value="#N104F2"/>
+                            </text>
+                            <statusCode code="completed"/>
+                          <effectiveTime xsi:type="IVL_TS">
+                                <low value="200901141401-0800"/>
+                                <high nullFlavor="UNK"/>
+                          </effectiveTime>
+                          <consumable>
+                                <manufacturedProduct>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+                                    <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                                    <manufacturedMaterial>
+                                        <code>
+                                            <originalText>
+                                                <reference value="#N104F2"/>
+                                            </originalText>
+                                        </code>
+                                        <name/>
+                                    </manufacturedMaterial>
+                                </manufacturedProduct>
+                            </consumable>
+                        </substanceAdministration>
+                    </entry>
+                </section>
+            </component>
+            <component>
+                <section>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.29"/>
+                    <id extension="section-N10001" root="1.3.6.1.4.1.21367.2008.1.2.148.1.9844"/>
+                    <code code="11493-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HOSPITAL DISCHARGE STUDIES SUMMARY"/>
+                    <title>Hospital Studies Summary Section</title>
+                    <text>
+                        <table border="1" cellpadding="2" cellspacing="0" width="95%">
+                            <thead>
+                                <tr>
+                                    <th>TEST</th>
+                                    <th>DATE/TIME</th>
+                                    <th>RESULT NAME</th>
+                                    <th>RESULT VALUE</th>
+                                    <th>UNITS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>CBC - Manual Entry </td>
+                                    <td>14Jan09 13:49 </td>
+                                    <td ID="N10402">WBC - Manual Entry </td>
+                                    <td>6 </td>
+                                    <td>M/CMM</td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td>CBC - Manual Entry </td>
+                                    <td>14Jan09 13:49 </td>
+                                    <td ID="N10424">HCT - Manual Entry </td>
+                                    <td>50 </td>
+                                    <td>%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </text>
+                </section>
+            </component>
+            <component>
+                <section>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.5"/>
+                    <id extension="section-N10001" root="1.3.6.1.4.1.21367.2008.1.2.148.1.9844"/>
+                    <code code="8648-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HOSPITAL COURSE"/>
+                    <title>Hospital Course Section</title>
+                    <text>This is a sample test of a texual hospital course section of IHE discharge
+                        summary. <br/></text>
+                </section>
+            </component>
+            <component>
+                <section>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.31"/>
+                    <id extension="section-N10001" root="1.3.6.1.4.1.21367.2008.1.2.148.1.9844"/>
+                    <code code="18776-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="TREATMENT PLAN"/>
+                    <title>Care Plan Section</title>
+                    <text>DISPOSITION DATE:TIME= 2009-01-14:14:02; DISPOSITION CODE= 06 Unknown;
+                        <br/>This is a sample test of a texual plan of care section of IHE discharge
+                        summary. </text>
+                </section>
+            </component>
+        </structuredBody>
+    </component>
+</ClinicalDocument></TestObject></Report>

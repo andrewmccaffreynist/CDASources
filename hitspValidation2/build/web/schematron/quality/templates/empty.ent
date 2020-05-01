@@ -1,0 +1,25 @@
+<!--  HL7 QRDA Category I Header (Section 2.2) -->
+
+<!-- errors -->
+  <pattern id="p-qrda_category_I_header-errors">
+    <title>HL7 QRDA Category I Header (Section 2.2) - errors validation phase</title>
+    <rule context='/'>
+
+    </rule>
+
+  </pattern>
+
+  <pattern id="p-qrda_category_I_header-warnings">
+    <title>HL7 QRDA Category I Header (Section 2.2) - warning validation phase</title>
+    <rule context='/'>
+
+    </rule>
+  </pattern>
+
+  <pattern id="p-qrda_category_I_header-notes">
+    <title>HL7 QRDA Category I Header (Section 2.2) - note validation phase</title>
+    <rule context='/'>
+
+    </rule>
+  </pattern>
+  

@@ -1,0 +1,56 @@
+<!--  Meaningful Uuse Required Sections: mu -->
+
+
+<!-- Successful assertions -->
+
+
+<pattern id='p-mu-checks' see='#p-mu-checks'>
+	<title>Meaningful Use Required Sections - checks validation phase</title>
+	<rule context='/'>
+           <report test="//cda:templateId[@root='2.16.840.1.113883.10.20.1']">This Meaningful Use CCD document DOES contain the template ID for CCD (2.16.840.1.113883.10.20.1).</report>            
+	<report test="//cda:templateId[@root='2.16.840.1.113883.10.20.1.14']">This Meaningful Use CCD document DOES contain a (Lab) Results Section.</report>
+	<report test="//cda:templateId[@root='2.16.840.1.113883.10.20.1.11']">This Meaningful Use CCD document DOES contain a Problems Section.</report>
+	<report test="//cda:templateId[@root='2.16.840.1.113883.10.20.1.8']">This Meaningful Use CCD document DOES contain a Medications Section.</report>
+	<report test="//cda:templateId[@root='2.16.840.1.113883.10.20.1.2']">This Meaningful Use CCD document DOES contain an (Allergies) Alerts Section.</report>
+	<report test="//cda:templateId[@root='2.16.840.1.113883.10.20.1.6']">This Meaningful Use CCD document DOES contain an Immunizations Section.</report>
+	<report test="//cda:templateId[@root='2.16.840.1.113883.10.20.1.12']">This Meaningful Use CCD document DOES contain a Procedures Section.</report>
+
+           </rule>
+</pattern>
+
+<!-- errors -->
+
+<pattern id='p-mu-errors' see='#p-mu-errors'>
+	<title>Meaningful Use Required Sections - errors validation phase</title>
+	<rule context='/'>
+           <assert test="//cda:templateId[@root='2.16.840.1.113883.10.20.1']">A Meaningful Use CCD document SHALL contain the template ID for CCD (2.16.840.1.113883.10.20.1).</assert>	
+	<assert test="//cda:templateId[@root='2.16.840.1.113883.10.20.1.14']">A Meaningful Use CCD document SHALL contain a (Lab) Results Section.</assert>
+	<assert test="//cda:templateId[@root='2.16.840.1.113883.10.20.1.11']">A Meaningful Use CCD document SHALL contain a Problems Section.</assert>
+	<assert test="//cda:templateId[@root='2.16.840.1.113883.10.20.1.8']">A Meaningful Use CCD document SHALL contain a Medications Section.</assert>
+	<assert test="//cda:templateId[@root='2.16.840.1.113883.10.20.1.2']">A Meaningful Use CCD document SHALL contain an (Allergies) Alerts Section.</assert>
+	<assert test="//cda:templateId[@root='2.16.840.1.113883.10.20.1.6']">A Meaningful Use CCD document SHALL contain an Immunizations Section.</assert>
+	<assert test="//cda:templateId[@root='2.16.840.1.113883.10.20.1.12']">A Meaningful Use CCD document SHALL contain a Procedures Section.</assert>
+	
+	</rule>
+</pattern>
+
+<!-- warning -->
+
+<pattern id='p-mu-warning' see='#p-mu-warning'>
+	<title>Meaningful Use Required Sections - warning validation phase</title>
+	<rule context='/'>
+
+</rule>
+</pattern>
+
+<!-- manual -->
+
+<pattern id='p-mu-manual' see='#p-mu-manual'>
+	<title>Meaningful Use Required Sections - manual validation phase</title>
+	<rule context='/'>
+	<!--
+	<report test='.'></report>
+	-->
+	</rule>
+</pattern>
+

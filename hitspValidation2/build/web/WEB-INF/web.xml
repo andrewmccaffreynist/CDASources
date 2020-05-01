@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+         version="2.4">
+    <!--
+    <filter>
+        
+        <filter-name>StatFilter</filter-name>
+        <filter-class>gov.nist.healthcare.mu.core.stat.servlet.StatFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>StatFilter</filter-name>
+        <servlet-name>muValidatorCR/validationResultXml.jsp</servlet-name>
+    </filter-mapping>
+    <listener>
+        <listener-class>gov.nist.healthcare.mu.core.stat.servlet.StatSessionListener</listener-class>
+    </listener>
+    -->
+    <context-param>
+        <param-name>docTypesLocation</param-name>
+        <param-value>/home/mccaffrey/src/hitspValidation2/web/WEB-INF/docTypes.xml</param-value>
+    </context-param>
+    <context-param>
+        <param-name>webpageTitle</param-name>
+        <param-value>NIST CDA Guideline Validation</param-value>
+    </context-param>
+    <context-param>
+        <param-name>footnote1</param-name>
+        <param-value>If your selection has required dependencies, then they will be run
+                automatically.  For example, a HITSP/C32 must also conform to the rules of
+                CDA R2 and CCD.  Therefore, selecting HITSP/C32 will cause two
+                additional rule sets to execute.  The results from all executing
+                rule sets shall be displayed on the results page.</param-value>
+    </context-param>
+    <context-param>
+        <param-name>skeletonLocation</param-name>
+        <param-value>file:///home/mccaffrey/src/hitspValidation2/web/schematron/schematron-Validator-report.xsl</param-value>
+    </context-param>
+<!--
+    <context-param>
+        <param-name>schemaLocation</param-name>
+        <param-value>/home/mccaffrey/sst116/cvsfiles/muValidation/web/schema/cdar2c32/infrastructure/cda/C32_CDA.xsd</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>ccdSchematronLocation</param-name>
+        <param-value>/home/mccaffrey/sst116/cvsfiles/muCcdValidation/dist2/schematron/ccd/ccd.sch</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>cda4cdtSchematronLocation</param-name>
+        <param-value>/home/mccaffrey/sst116/cvsfiles/muCcdValidation/dist2/schematron/cda4cdt/HandP.IHE.PCC.sch</param-value>
+    </context-param>
+    -->
+<!--
+    <context-param>
+        <param-name>crSchematronLocation</param-name>
+        <param-value>/home/mccaffrey/working/cancerRegistry/schematron/ahprccr.sch</param-value>
+    </context-param>
+-->
+<!--
+    <context-param>
+        <param-name>crSchematronLocation</param-name>
+        <param-value>/home/mccaffrey/sst116/cvsfiles/muValidationCR/web/schematron/cr/ahprccr.sch</param-value>
+    </context-param>
+-->
+
+    <context-param>
+        <param-name>stylesheetLocation</param-name>
+        <param-value>http://localhost:8084/hitspValidation2/report.xsl</param-value>
+    </context-param>
+
+
+<context-param>
+<param-name>log4jConfigLocation</param-name>
+<param-value>/WEB-INF/log4j.properties</param-value>
+</context-param>
+
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>
+           validation.jsp
+        </welcome-file>
+    </welcome-file-list>
+</web-app>
+

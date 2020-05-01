@@ -1,0 +1,12 @@
+changelog.txt
+
+Release date: 2012/09/20
+
+   * Added barebones command-line utility (with source code) to demonstrate how schema and
+   schematron can be used in a Java utility.
+
+   * Added schematron for CCD and CDA4CDT
+
+   * The schematron for the Cancer Registry Report did not change.
+
+

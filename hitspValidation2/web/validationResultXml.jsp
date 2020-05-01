@@ -1,0 +1,1 @@
+<%@page contentType="text/xml"%><%@page pageEncoding="UTF-8"%><jsp:useBean id="validation" scope="session" class="gov.nist.hitsp.validation.ValidationHelper2" /><%= validation.processRequestXml(request) %>

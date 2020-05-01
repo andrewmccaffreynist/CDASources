@@ -1,0 +1,61 @@
+<!-- Template_2.16.840.1.113883.3.88.11.83.18.1 -->
+<!-- HITSP/C83 Family History Module -->
+
+<pattern id='p-2.16.840.1.113883.3.88.11.83.18.1-errors'>
+
+ <rule context='*[cda:templateId/@root="2.16.840.1.113883.3.88.11.83.18.1"]'>
+
+   <!-- Verify that templateId is used on the appropriate type of object -->
+   <assert test='self::cda:organizer'>
+      Error: The HITSP/C83 templateId for Family History (2.16.840.1.113883.3.88.11.83.18.1) is in the wrong location.  The
+      Family History module should be within an Organizer.
+      See HITSP/C83 Table 2-23, Data Element 18.02.
+   </assert> 
+
+   <assert test='count(cda:subject/cda:relatedSubject) = 1'>
+      Error: HITSP/C83 Family History, Family Member Demographics is a required, non-repeatable element.
+      See HITSP/C83 Table 2-23, Data Element 18.03.
+   </assert>
+
+   <assert test='count(cda:subject/cda:relatedSubject/cda:subject) = 1'>
+      Error: HITSP/C83 Family History, Family Member Person Information is a required, non-repeating data element.
+      See HITSP/C83 Table 2-23.
+   </assert>
+
+
+ </rule>
+ <rule context='*[cda:templateId/@root="2.16.840.1.113883.3.88.11.83.18.1"]/cda:subject/cda:relatedSubject/cda:subject'>
+   <assert test='sdtc:id'>
+      Error: HITSP/C83 Family History, Family Member Identifier is a required, repeatable data element.
+      See HITSP/C83 Table 2-23, Data Element 18.06.
+   </assert>
+
+ </rule>
+</pattern>
+
+<pattern id='p-2.16.840.1.113883.3.88.11.83.18.1-warning'>
+
+
+ <rule context='*[cda:templateId/@root="2.16.840.1.113883.3.88.11.83.18.1"]'>
+
+   <assert test='count(.//cda:templateId[@root="1.3.6.1.4.1.19376.1.5.3.1.4.13.3"]) > 1'>
+      Warning: HITSP/C83 Multiple Birth Indicator and Birth Order are required if known in IWG.
+      See HITSP/C83 Table 2-23, Data Elements 1.13 and 1.14.
+   </assert>   
+
+ </rule>
+
+</pattern>
+
+
+
+
+<pattern id='p-2.16.840.1.113883.3.88.11.83.18.1-note'>
+
+   <assert test='.//cda:templateId[@root="2.16.840.1.113883.10.20.1.38"]'>
+      Note: HITSP/C83 Age is optional in IWG.
+      See HITSP/C83 Table 2-23.
+   </assert>
+
+</pattern>
+

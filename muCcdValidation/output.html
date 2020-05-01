@@ -1,0 +1,1604 @@
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <style type="text/css">
+                    tr {
+                    border:1px solid #000;
+                    margin-bottom:4px;
+                    }
+                </style><title>Test result -- CCD Validation</title>
+   </head>
+   <body>
+      <h2>Validation Results</h2>
+      <table>
+         <tr>
+            <td>Validation Status</td>
+            <td>Complete</td>
+         </tr>
+         <tr>
+            <td>Service Name</td>
+            <td>CCD Validation</td>
+         </tr>
+         <tr>
+            <td>Service Provider</td>
+            <td>NIST</td>
+         </tr>
+         <tr>
+            <td>Standard Type</td>
+            <td>CDA R2</td>
+         </tr>
+         <tr>
+            <td>Standard Version</td>
+            <td>N/A</td>
+         </tr>
+         <tr>
+            <td>Date of Test</td>
+            <td>20100324</td>
+         </tr>
+         <tr>
+            <td>Time of Test</td>
+            <td>111340.0951 -0400</td>
+         </tr>
+         <tr>
+            <td>Report Positive Indicator</td>
+            <td>True</td>
+         </tr>
+         <tr>
+            <td>Result of Test</td>
+            <td>Failed</td>
+         </tr>
+         <tr>
+            <td>Error Count</td>
+            <td>6</td>
+         </tr>
+         <tr>
+            <td>Warning Count</td>
+            <td>17</td>
+         </tr>
+         <tr>
+            <td>Validation Status</td>
+            <td>Complete</td>
+         </tr>
+      </table>
+      <h3>Checks:</h3>
+      <table cellpadding="3" cellspacing="3">
+         <tr>
+            <td>Message</td>
+            <td>This Meaningful Use CCD document DOES contain a Problems Section.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>//cda:templateId[@root='2.16.840.1.113883.10.20.1.11']</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>This Meaningful Use CCD document DOES contain an (Allergies) Alerts Section.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>//cda:templateId[@root='2.16.840.1.113883.10.20.1.2']</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CCD Section 3.8: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>self::cda:section</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-256: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>cda:text</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-258: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>cda:code</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-260: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>cda:title</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-256: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>descendant::*[cda:templateId/@root='2.16.840.1.113883.10.20.1.27']</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-261: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>contains(translate(cda:title,'QWERTYUIOPASDFGHJKLZXCVBNM','qwertyuiopasdfghjklzxcvbnm'),'alert')
+               				or
+               				contains(translate(cda:title,'QWERTYUIOPASDFGHJKLZXCVBNM','qwertyuiopasdfghjklzxcvbnm'),'allergies
+               				and adverse reactions')
+            </td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-256: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[1]/act[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>descendant::*[cda:templateId/@root='2.16.840.1.113883.10.20.1.18']</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-256: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[2]/act[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>descendant::*[cda:templateId/@root='2.16.840.1.113883.10.20.1.18']</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-256: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[3]/act[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>descendant::*[cda:templateId/@root='2.16.840.1.113883.10.20.1.18']</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-140: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[3]/section[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>cda:text</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-142: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[3]/section[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>cda:code[@code='11450-4'][@codeSystem='2.16.840.1.113883.6.1']</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-143: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[3]/section[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>cda:title</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-140: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[3]/section[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>.//cda:templateId[@root='2.16.840.1.113883.10.20.1.27']</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-144: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[3]/section[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>contains(translate(cda:title,'QWERTYUIOPASDFGHJKLZXCVBNM','qwertyuiopasdfghjklzxcvbnm'),'problem')</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-262: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[1]/act[1]/entryRelationship[1]/observation[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>self::cda:observation</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-263: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[1]/act[1]/entryRelationship[1]/observation[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>@moodCode='EVN'</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-264: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[1]/act[1]/entryRelationship[1]/observation[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>count(cda:statusCode)=1</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-265: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[1]/act[1]/entryRelationship[1]/observation[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>cda:statusCode[@code='completed']</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-273: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[1]/act[1]/entryRelationship[1]/observation[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>cda:participant</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-274: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[1]/act[1]/entryRelationship[1]/observation[1]/participant[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>count(cda:participantRole/cda:playingEntity)=1</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[1]/act[1]/entryRelationship[1]/observation[1]/participant[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>@typeCode='CSM'</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-276: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[1]/act[1]/entryRelationship[1]/observation[1]/participant[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>cda:participantRole[@classCode='MANU']</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-277: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[1]/act[1]/entryRelationship[1]/observation[1]/participant[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>cda:participantRole/cda:playingEntity[@classCode='MMAT']</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-278: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[1]/act[1]/entryRelationship[1]/observation[1]/participant[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>cda:participantRole/cda:playingEntity/cda:code</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-262: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[2]/act[1]/entryRelationship[1]/observation[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>self::cda:observation</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-263: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[2]/act[1]/entryRelationship[1]/observation[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>@moodCode='EVN'</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-264: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[2]/act[1]/entryRelationship[1]/observation[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>count(cda:statusCode)=1</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-265: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[2]/act[1]/entryRelationship[1]/observation[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>cda:statusCode[@code='completed']</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-273: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[2]/act[1]/entryRelationship[1]/observation[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>cda:participant</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-274: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[2]/act[1]/entryRelationship[1]/observation[1]/participant[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>count(cda:participantRole/cda:playingEntity)=1</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[2]/act[1]/entryRelationship[1]/observation[1]/participant[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>@typeCode='CSM'</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-276: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[2]/act[1]/entryRelationship[1]/observation[1]/participant[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>cda:participantRole[@classCode='MANU']</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-277: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[2]/act[1]/entryRelationship[1]/observation[1]/participant[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>cda:participantRole/cda:playingEntity[@classCode='MMAT']</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-278: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[2]/act[1]/entryRelationship[1]/observation[1]/participant[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>cda:participantRole/cda:playingEntity/cda:code</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-262: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[3]/act[1]/entryRelationship[1]/observation[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>self::cda:observation</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-263: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[3]/act[1]/entryRelationship[1]/observation[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>@moodCode='EVN'</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-264: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[3]/act[1]/entryRelationship[1]/observation[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>count(cda:statusCode)=1</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-265: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[3]/act[1]/entryRelationship[1]/observation[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>cda:statusCode[@code='completed']</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-273: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[3]/act[1]/entryRelationship[1]/observation[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>cda:participant</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-274: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[3]/act[1]/entryRelationship[1]/observation[1]/participant[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>count(cda:participantRole/cda:playingEntity)=1</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[3]/act[1]/entryRelationship[1]/observation[1]/participant[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>@typeCode='CSM'</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-276: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[3]/act[1]/entryRelationship[1]/observation[1]/participant[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>cda:participantRole[@classCode='MANU']</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-277: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[3]/act[1]/entryRelationship[1]/observation[1]/participant[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>cda:participantRole/cda:playingEntity[@classCode='MMAT']</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-278: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[3]/act[1]/entryRelationship[1]/observation[1]/participant[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>cda:participantRole/cda:playingEntity/cda:code</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-356: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[8]/section[1]/entry[1]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>self::cda:manufacturedProduct</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-358: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[8]/section[1]/entry[1]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>count(cda:manufacturedMaterial/cda:code) = 1</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-363: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[8]/section[1]/entry[1]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>count(cda:manufacturedMaterial/cda:code/cda:originalText) = 1</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-356: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[9]/section[1]/entry[1]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>self::cda:manufacturedProduct</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-358: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[9]/section[1]/entry[1]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>count(cda:manufacturedMaterial/cda:code) = 1</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-363: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[9]/section[1]/entry[1]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>count(cda:manufacturedMaterial/cda:code/cda:originalText) = 1</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-356: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[1]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>self::cda:manufacturedProduct</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-358: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[1]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>count(cda:manufacturedMaterial/cda:code) = 1</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-363: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[1]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>count(cda:manufacturedMaterial/cda:code/cda:originalText) = 1</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-356: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[2]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>self::cda:manufacturedProduct</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-358: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[2]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>count(cda:manufacturedMaterial/cda:code) = 1</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-363: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[2]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>count(cda:manufacturedMaterial/cda:code/cda:originalText) = 1</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-356: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[3]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>self::cda:manufacturedProduct</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-358: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[3]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>count(cda:manufacturedMaterial/cda:code) = 1</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-363: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[3]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>count(cda:manufacturedMaterial/cda:code/cda:originalText) = 1</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-282: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[2]/act[1]/entryRelationship[1]/observation[1]/entryRelationship[1]/observation[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>self::cda:observation</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-283: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[2]/act[1]/entryRelationship[1]/observation[1]/entryRelationship[1]/observation[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>@classCode='OBS'</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-284: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[2]/act[1]/entryRelationship[1]/observation[1]/entryRelationship[1]/observation[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>@moodCode='EVN'</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-285: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[2]/act[1]/entryRelationship[1]/observation[1]/entryRelationship[1]/observation[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>count(cda:statusCode)=1</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-286: Success.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[2]/act[1]/entryRelationship[1]/observation[1]/entryRelationship[1]/observation[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>cda:statusCode[@code='completed']</td>
+         </tr>
+      </table>
+      <h3>CDA Schema Violations (errors):</h3>
+      <table cellpadding="3" cellspacing="3">
+         <tr>
+            <td>Message</td>
+            <td>src-resolve: Cannot resolve the name 'StrucDoc.Text' to a(n) 'type definition'
+               				component.
+            </td>
+         </tr>
+      </table>
+      <h3>Errors:</h3>
+      <table cellpadding="3" cellspacing="3">
+         <tr>
+            <td>Message</td>
+            <td>A Meaningful Use CCD document SHALL contain the template ID for CCD
+               				(2.16.840.1.113883.10.20.1).
+            </td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>//cda:templateId[@root='2.16.840.1.113883.10.20.1']</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>A Meaningful Use CCD document SHALL contain a (Lab) Results Section.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>//cda:templateId[@root='2.16.840.1.113883.10.20.1.14']</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>A Meaningful Use CCD document SHALL contain a Medications Section.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>//cda:templateId[@root='2.16.840.1.113883.10.20.1.8']</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>A Meaningful Use CCD document SHALL contain an Immunizations Section.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>//cda:templateId[@root='2.16.840.1.113883.10.20.1.6']</td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>A Meaningful Use CCD document SHALL contain a Procedures Section.</td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>//cda:templateId[@root='2.16.840.1.113883.10.20.1.12']</td>
+         </tr>
+      </table>
+      <h3>Warnings:</h3>
+      <table cellpadding="3" cellspacing="3">
+         <tr>
+            <td>Message</td>
+            <td>CONF-279: The value for "participant / participantRole / playingEntity / code"
+               				in an agent participation SHOULD be selected from the RxNorm
+               				(2.16.840.1.113883.6.88) code system for medications, and from the CDC Vaccine Code
+               				(2.16.840.1.113883.6.59) code system for immunizations.
+            </td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[1]/act[1]/entryRelationship[1]/observation[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>cda:participant/cda:participantRole/cda:playingEntity/cda:code[@codeSystem='2.16.840.1.113883.6.88'
+               				or @codeSystem='2.16.840.1.113883.6.59' ]
+            </td>
+         </tr>
+         <tr>
+            <td></td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-279: The value for "participant / participantRole / playingEntity / code"
+               				in an agent participation SHOULD be selected from the RxNorm
+               				(2.16.840.1.113883.6.88) code system for medications, and from the CDC Vaccine Code
+               				(2.16.840.1.113883.6.59) code system for immunizations.
+            </td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[2]/act[1]/entryRelationship[1]/observation[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>cda:participant/cda:participantRole/cda:playingEntity/cda:code[@codeSystem='2.16.840.1.113883.6.88'
+               				or @codeSystem='2.16.840.1.113883.6.59' ]
+            </td>
+         </tr>
+         <tr>
+            <td></td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-279: The value for "participant / participantRole / playingEntity / code"
+               				in an agent participation SHOULD be selected from the RxNorm
+               				(2.16.840.1.113883.6.88) code system for medications, and from the CDC Vaccine Code
+               				(2.16.840.1.113883.6.59) code system for immunizations.
+            </td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[3]/act[1]/entryRelationship[1]/observation[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>cda:participant/cda:participantRole/cda:playingEntity/cda:code[@codeSystem='2.16.840.1.113883.6.88'
+               				or @codeSystem='2.16.840.1.113883.6.59' ]
+            </td>
+         </tr>
+         <tr>
+            <td></td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-309: A medication activity SHOULD contain exactly one
+               				SubstanceAdministration / routeCode.
+            </td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[8]/section[1]/entry[1]/substanceAdministration[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>count(cda:routeCode)=1</td>
+         </tr>
+         <tr>
+            <td></td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-309: A medication activity SHOULD contain exactly one
+               				SubstanceAdministration / routeCode.
+            </td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[9]/section[1]/entry[1]/substanceAdministration[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>count(cda:routeCode)=1</td>
+         </tr>
+         <tr>
+            <td></td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-311: A medication activity SHOULD contain exactly one
+               				SubstanceAdministration / doseQuantity.
+            </td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[9]/section[1]/entry[1]/substanceAdministration[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>count(cda:doseQuantity)=1</td>
+         </tr>
+         <tr>
+            <td></td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-309: A medication activity SHOULD contain exactly one
+               				SubstanceAdministration / routeCode.
+            </td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[1]/substanceAdministration[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>count(cda:routeCode)=1</td>
+         </tr>
+         <tr>
+            <td></td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-311: A medication activity SHOULD contain exactly one
+               				SubstanceAdministration / doseQuantity.
+            </td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[1]/substanceAdministration[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>count(cda:doseQuantity)=1</td>
+         </tr>
+         <tr>
+            <td></td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-309: A medication activity SHOULD contain exactly one
+               				SubstanceAdministration / routeCode.
+            </td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[2]/substanceAdministration[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>count(cda:routeCode)=1</td>
+         </tr>
+         <tr>
+            <td></td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-311: A medication activity SHOULD contain exactly one
+               				SubstanceAdministration / doseQuantity.
+            </td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[2]/substanceAdministration[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>count(cda:doseQuantity)=1</td>
+         </tr>
+         <tr>
+            <td></td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-309: A medication activity SHOULD contain exactly one
+               				SubstanceAdministration / routeCode.
+            </td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[3]/substanceAdministration[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>count(cda:routeCode)=1</td>
+         </tr>
+         <tr>
+            <td></td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-311: A medication activity SHOULD contain exactly one
+               				SubstanceAdministration / doseQuantity.
+            </td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[3]/substanceAdministration[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>count(cda:doseQuantity)=1</td>
+         </tr>
+         <tr>
+            <td></td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-359: The value for manufacturedMaterial / code in a product template
+               				SHOULD be selected from the RxNorm (2.16.840.1.113883.6.88) code system for
+               				medications, and from the CDC Vaccine Code (2.16.840.1.113883.6.59) code system for
+               				immunizations, or MAY be selected from ValueSet 2.16.840.1.113883.1.11.20.8
+               				MedicationTypeCode STATIC 20061017.
+            </td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[8]/section[1]/entry[1]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td> cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.88' or
+               				cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.59' or
+               				cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.96'
+            </td>
+         </tr>
+         <tr>
+            <td></td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-359: The value for manufacturedMaterial / code in a product template
+               				SHOULD be selected from the RxNorm (2.16.840.1.113883.6.88) code system for
+               				medications, and from the CDC Vaccine Code (2.16.840.1.113883.6.59) code system for
+               				immunizations, or MAY be selected from ValueSet 2.16.840.1.113883.1.11.20.8
+               				MedicationTypeCode STATIC 20061017.
+            </td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[9]/section[1]/entry[1]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td> cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.88' or
+               				cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.59' or
+               				cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.96'
+            </td>
+         </tr>
+         <tr>
+            <td></td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-359: The value for manufacturedMaterial / code in a product template
+               				SHOULD be selected from the RxNorm (2.16.840.1.113883.6.88) code system for
+               				medications, and from the CDC Vaccine Code (2.16.840.1.113883.6.59) code system for
+               				immunizations, or MAY be selected from ValueSet 2.16.840.1.113883.1.11.20.8
+               				MedicationTypeCode STATIC 20061017.
+            </td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[1]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td> cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.88' or
+               				cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.59' or
+               				cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.96'
+            </td>
+         </tr>
+         <tr>
+            <td></td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-359: The value for manufacturedMaterial / code in a product template
+               				SHOULD be selected from the RxNorm (2.16.840.1.113883.6.88) code system for
+               				medications, and from the CDC Vaccine Code (2.16.840.1.113883.6.59) code system for
+               				immunizations, or MAY be selected from ValueSet 2.16.840.1.113883.1.11.20.8
+               				MedicationTypeCode STATIC 20061017.
+            </td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[2]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td> cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.88' or
+               				cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.59' or
+               				cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.96'
+            </td>
+         </tr>
+         <tr>
+            <td></td>
+         </tr>
+         <tr>
+            <td>Message</td>
+            <td>CONF-359: The value for manufacturedMaterial / code in a product template
+               				SHOULD be selected from the RxNorm (2.16.840.1.113883.6.88) code system for
+               				medications, and from the CDC Vaccine Code (2.16.840.1.113883.6.59) code system for
+               				immunizations, or MAY be selected from ValueSet 2.16.840.1.113883.1.11.20.8
+               				MedicationTypeCode STATIC 20061017.
+            </td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[3]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td> cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.88' or
+               				cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.59' or
+               				cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.96'
+            </td>
+         </tr>
+         <tr>
+            <td></td>
+         </tr>
+      </table>
+      <table cellpadding="3" cellspacing="3">
+         <tr bgcolor="$color">
+            <td>Message</td>
+            <td>CONF-279: The value for "participant / participantRole / playingEntity / code"
+               				in an agent participation SHOULD be selected from the RxNorm
+               				(2.16.840.1.113883.6.88) code system for medications, and from the CDC Vaccine Code
+               				(2.16.840.1.113883.6.59) code system for immunizations.
+            </td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[1]/act[1]/entryRelationship[1]/observation[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>cda:participant/cda:participantRole/cda:playingEntity/cda:code[@codeSystem='2.16.840.1.113883.6.88'
+               				or @codeSystem='2.16.840.1.113883.6.59' ]
+            </td>
+         </tr>
+         <tr>
+            <td></td>
+         </tr>
+         <tr bgcolor="$color">
+            <td>Message</td>
+            <td>CONF-279: The value for "participant / participantRole / playingEntity / code"
+               				in an agent participation SHOULD be selected from the RxNorm
+               				(2.16.840.1.113883.6.88) code system for medications, and from the CDC Vaccine Code
+               				(2.16.840.1.113883.6.59) code system for immunizations.
+            </td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[2]/act[1]/entryRelationship[1]/observation[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>cda:participant/cda:participantRole/cda:playingEntity/cda:code[@codeSystem='2.16.840.1.113883.6.88'
+               				or @codeSystem='2.16.840.1.113883.6.59' ]
+            </td>
+         </tr>
+         <tr>
+            <td></td>
+         </tr>
+         <tr bgcolor="$color">
+            <td>Message</td>
+            <td>CONF-279: The value for "participant / participantRole / playingEntity / code"
+               				in an agent participation SHOULD be selected from the RxNorm
+               				(2.16.840.1.113883.6.88) code system for medications, and from the CDC Vaccine Code
+               				(2.16.840.1.113883.6.59) code system for immunizations.
+            </td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[5]/section[1]/entry[3]/act[1]/entryRelationship[1]/observation[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>cda:participant/cda:participantRole/cda:playingEntity/cda:code[@codeSystem='2.16.840.1.113883.6.88'
+               				or @codeSystem='2.16.840.1.113883.6.59' ]
+            </td>
+         </tr>
+         <tr>
+            <td></td>
+         </tr>
+         <tr bgcolor="$color">
+            <td>Message</td>
+            <td>CONF-309: A medication activity SHOULD contain exactly one
+               				SubstanceAdministration / routeCode.
+            </td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[8]/section[1]/entry[1]/substanceAdministration[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>count(cda:routeCode)=1</td>
+         </tr>
+         <tr>
+            <td></td>
+         </tr>
+         <tr bgcolor="$color">
+            <td>Message</td>
+            <td>CONF-309: A medication activity SHOULD contain exactly one
+               				SubstanceAdministration / routeCode.
+            </td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[9]/section[1]/entry[1]/substanceAdministration[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>count(cda:routeCode)=1</td>
+         </tr>
+         <tr>
+            <td></td>
+         </tr>
+         <tr bgcolor="$color">
+            <td>Message</td>
+            <td>CONF-311: A medication activity SHOULD contain exactly one
+               				SubstanceAdministration / doseQuantity.
+            </td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[9]/section[1]/entry[1]/substanceAdministration[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>count(cda:doseQuantity)=1</td>
+         </tr>
+         <tr>
+            <td></td>
+         </tr>
+         <tr bgcolor="$color">
+            <td>Message</td>
+            <td>CONF-309: A medication activity SHOULD contain exactly one
+               				SubstanceAdministration / routeCode.
+            </td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[1]/substanceAdministration[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>count(cda:routeCode)=1</td>
+         </tr>
+         <tr>
+            <td></td>
+         </tr>
+         <tr bgcolor="$color">
+            <td>Message</td>
+            <td>CONF-311: A medication activity SHOULD contain exactly one
+               				SubstanceAdministration / doseQuantity.
+            </td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[1]/substanceAdministration[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>count(cda:doseQuantity)=1</td>
+         </tr>
+         <tr>
+            <td></td>
+         </tr>
+         <tr bgcolor="$color">
+            <td>Message</td>
+            <td>CONF-309: A medication activity SHOULD contain exactly one
+               				SubstanceAdministration / routeCode.
+            </td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[2]/substanceAdministration[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>count(cda:routeCode)=1</td>
+         </tr>
+         <tr>
+            <td></td>
+         </tr>
+         <tr bgcolor="$color">
+            <td>Message</td>
+            <td>CONF-311: A medication activity SHOULD contain exactly one
+               				SubstanceAdministration / doseQuantity.
+            </td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[2]/substanceAdministration[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>count(cda:doseQuantity)=1</td>
+         </tr>
+         <tr>
+            <td></td>
+         </tr>
+         <tr bgcolor="$color">
+            <td>Message</td>
+            <td>CONF-309: A medication activity SHOULD contain exactly one
+               				SubstanceAdministration / routeCode.
+            </td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[3]/substanceAdministration[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>count(cda:routeCode)=1</td>
+         </tr>
+         <tr>
+            <td></td>
+         </tr>
+         <tr bgcolor="$color">
+            <td>Message</td>
+            <td>CONF-311: A medication activity SHOULD contain exactly one
+               				SubstanceAdministration / doseQuantity.
+            </td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[3]/substanceAdministration[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td>count(cda:doseQuantity)=1</td>
+         </tr>
+         <tr>
+            <td></td>
+         </tr>
+         <tr bgcolor="$color">
+            <td>Message</td>
+            <td>CONF-359: The value for manufacturedMaterial / code in a product template
+               				SHOULD be selected from the RxNorm (2.16.840.1.113883.6.88) code system for
+               				medications, and from the CDC Vaccine Code (2.16.840.1.113883.6.59) code system for
+               				immunizations, or MAY be selected from ValueSet 2.16.840.1.113883.1.11.20.8
+               				MedicationTypeCode STATIC 20061017.
+            </td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[8]/section[1]/entry[1]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td> cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.88' or
+               				cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.59' or
+               				cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.96'
+            </td>
+         </tr>
+         <tr>
+            <td></td>
+         </tr>
+         <tr bgcolor="$color">
+            <td>Message</td>
+            <td>CONF-359: The value for manufacturedMaterial / code in a product template
+               				SHOULD be selected from the RxNorm (2.16.840.1.113883.6.88) code system for
+               				medications, and from the CDC Vaccine Code (2.16.840.1.113883.6.59) code system for
+               				immunizations, or MAY be selected from ValueSet 2.16.840.1.113883.1.11.20.8
+               				MedicationTypeCode STATIC 20061017.
+            </td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[9]/section[1]/entry[1]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td> cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.88' or
+               				cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.59' or
+               				cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.96'
+            </td>
+         </tr>
+         <tr>
+            <td></td>
+         </tr>
+         <tr bgcolor="$color">
+            <td>Message</td>
+            <td>CONF-359: The value for manufacturedMaterial / code in a product template
+               				SHOULD be selected from the RxNorm (2.16.840.1.113883.6.88) code system for
+               				medications, and from the CDC Vaccine Code (2.16.840.1.113883.6.59) code system for
+               				immunizations, or MAY be selected from ValueSet 2.16.840.1.113883.1.11.20.8
+               				MedicationTypeCode STATIC 20061017.
+            </td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[1]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td> cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.88' or
+               				cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.59' or
+               				cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.96'
+            </td>
+         </tr>
+         <tr>
+            <td></td>
+         </tr>
+         <tr bgcolor="$color">
+            <td>Message</td>
+            <td>CONF-359: The value for manufacturedMaterial / code in a product template
+               				SHOULD be selected from the RxNorm (2.16.840.1.113883.6.88) code system for
+               				medications, and from the CDC Vaccine Code (2.16.840.1.113883.6.59) code system for
+               				immunizations, or MAY be selected from ValueSet 2.16.840.1.113883.1.11.20.8
+               				MedicationTypeCode STATIC 20061017.
+            </td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[2]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td> cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.88' or
+               				cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.59' or
+               				cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.96'
+            </td>
+         </tr>
+         <tr>
+            <td></td>
+         </tr>
+         <tr bgcolor="$color">
+            <td>Message</td>
+            <td>CONF-359: The value for manufacturedMaterial / code in a product template
+               				SHOULD be selected from the RxNorm (2.16.840.1.113883.6.88) code system for
+               				medications, and from the CDC Vaccine Code (2.16.840.1.113883.6.59) code system for
+               				immunizations, or MAY be selected from ValueSet 2.16.840.1.113883.1.11.20.8
+               				MedicationTypeCode STATIC 20061017.
+            </td>
+         </tr>
+         <tr>
+            <td>Context</td>
+            <td>/ClinicalDocument[1]/component[1]/structuredBody[1]/component[10]/section[1]/entry[3]/substanceAdministration[1]/consumable[1]/manufacturedProduct[1]</td>
+         </tr>
+         <tr>
+            <td>Test</td>
+            <td> cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.88' or
+               				cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.59' or
+               				cda:manufacturedMaterial/cda:code/@codeSystem = '2.16.840.1.113883.6.96'
+            </td>
+         </tr>
+         <tr>
+            <td></td>
+         </tr>
+      </table>
+   </body>
+</html>

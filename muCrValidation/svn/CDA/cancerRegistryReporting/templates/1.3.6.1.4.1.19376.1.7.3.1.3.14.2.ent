@@ -1,0 +1,72 @@
+<!--  Narrative Radiation Oncology Section: 1.3.6.1.4.1.19376.1.7.3.1.3.14.2 -->
+
+<!-- errors -->
+
+  <pattern id="p-1.3.6.1.4.1.19376.1.7.3.1.3.14.2-errors">
+    <title>Narrative Radiation Oncology Section - errors validation phase</title>
+    <rule context='*[cda:templateId/@root="1.3.6.1.4.1.19376.1.7.3.1.3.14.2"]'>
+     <!-- Verify that the template id is used on the appropriate type of
+	       object --> 
+        <assert test='../cda:section'> 
+           Error: In Narrative Radiation Oncology Section (1.3.6.1.4.1.19376.1.7.3.1.3.14.2), the Narrative Radiation Oncology can only be used on 
+           sections. 
+        </assert>
+
+        <assert test='cda:title'>
+           Error: In Narrative Radiation Oncology Section (1.3.6.1.4.1.19376.1.7.3.1.3.14.2), the title element shall be present in each
+           section and should be valued with an appropriate text string representing the clinical data in that section.
+           See IHE PCC Technical Framework, Volume 2, Section 6.3.3.
+        </assert>
+
+        <assert test='cda:id'>
+           Error: In Narrative Radiation Oncology Section (1.3.6.1.4.1.19376.1.7.3.1.3.14.2), all sections SHALL have an instance id to 
+           uniquely identify that section content module.
+           See IHE PCC Technical Framework, Volume 2, Section 6.3.3.
+        </assert>     
+
+        <assert test='cda:text'>
+           Error: In Narrative Radiation Oncology Section (1.3.6.1.4.1.19376.1.7.3.1.3.14.2), the text element shall be present in each
+           section.
+        </assert>
+
+   <!-- Verify the section type code -->
+        <assert test='cda:code[@code = "34832-6"]'>
+           Error: In Narrative Radiation Oncology Section (1.3.6.1.4.1.19376.1.7.3.1.3.14.2), the section type code of a Payers must be
+           34832-6.
+        </assert>
+
+
+        <assert test='cda:code[@codeSystem = "2.16.840.1.113883.6.1"]'> 
+           Error: In Narrative Radiation Oncology Section (1.3.6.1.4.1.19376.1.7.3.1.3.14.2), the section type code of a 
+           Narrative Radiation Oncology must come from the LOINC code system (2.16.840.1.113883.6.1). 
+        </assert> 
+
+    </rule>
+
+  </pattern>
+
+  <!-- warning -->
+
+  <pattern id="p-1.3.6.1.4.1.19376.1.7.3.1.3.14.2-warnings">
+    <title>Narrative Radiation Oncology Section - warning validation phase</title>
+
+<!--
+    <rule context='*[cda:templateId/@root="1.3.6.1.4.1.19376.1.7.3.1.3.14.2"]'>
+      <report test="."/>
+    </rule>
+-->
+
+  </pattern>
+
+  <!-- manual -->
+
+  <pattern id="p-1.3.6.1.4.1.19376.1.7.3.1.3.14.2-manual">
+    <title>Narrative Radiation Oncology Section - manual validation phase</title>
+
+<!--
+    <rule context='*[cda:templateId/@root="1.3.6.1.4.1.19376.1.7.3.1.3.14.2"]'>
+      <report test="."/>
+    </rule>
+-->
+  </pattern>
+

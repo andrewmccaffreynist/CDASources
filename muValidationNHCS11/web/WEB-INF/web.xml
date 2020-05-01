@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+         version="2.4">
+    <!--
+    <filter>
+        
+        <filter-name>StatFilter</filter-name>
+        <filter-class>gov.nist.healthcare.mu.core.stat.servlet.StatFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>StatFilter</filter-name>        
+        <servlet-name>muValidatorNHCS/validationResultXml.jsp</servlet-name>
+    </filter-mapping>
+    
+    <listener>
+        <listener-class>gov.nist.healthcare.mu.core.stat.servlet.StatSessionListener</listener-class>
+    </listener>
+    -->
+    <context-param>
+        <param-name>docTypesLocation</param-name>
+        <param-value>/usr/local/tomcat/webapps/muValidationNHCS12/WEB-INF/docTypes.xml</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>skeletonLocation</param-name>
+        <param-value>/home/mccaffrey/src/muValidationNHCS12/src/main/webapp/schematron/schematron-Validator-report.xsl</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>schemaLocation</param-name>
+        <param-value>/home/mccaffrey/src/muValidationNHCS12/src/main/webapp/schema/cdar2nhcs/infrastructure/cda/CDA_SDTC.xsd</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>nhcsSchematronLocation</param-name>
+        <param-value>/home/mccaffrey/src/muValidationNHCS12/src/main/webapp/schematron/nhcs/CDAR2_IG_NHCS_R1.1_D1_2015OCT.sch</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>stylesheetLocation</param-name>
+        <param-value>http://localhost:9080/muValidationNHCS11/report.xsl</param-value>
+    </context-param>
+
+
+
+
+<context-param>
+<param-name>log4jConfigLocation</param-name>
+<param-value>/WEB-INF/log4j.properties</param-value>
+</context-param>
+
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>
+           validation.jsp
+        </welcome-file>
+    </welcome-file-list>
+</web-app>
+

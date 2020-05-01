@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="urn:hl7-org:v3 http://xreg2.nist.gov:8080/hitspValidation/schema/cdar2/infrastructure/cda/CDA.xsd"
+    classCode="DOCCLIN" moodCode="EVN">
+    <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+    <templateId root="2.16.840.1.113883.3.27.1776" assigningAuthorityName="CDA/R2"/>
+    <templateId root="2.16.840.1.113883.10.20.1" assigningAuthorityName="CCD"/>
+    <templateId root="2.16.840.1.113883.3.88.11.32.1" assigningAuthorityName="HITSP C32"/>
+    <id root="2.16.840.1.113883.3.72" extension="CCD_HITSP_C32_Test_1"
+        assigningAuthorityName="NIST Healthcare Project"/>
+    <code code="34133-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+        displayName="Summarization of episode note (CCD/CONF-1)"/>
+    <title>Test Instance of CCD Guide and HITSP C32 and C27 Profiles</title>
+    <effectiveTime value="20070912103022+0500"/>
+    <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+    <languageCode code="en-US"/>
+    <recordTarget>
+        <patientRole>
+            <id extension="996-756-495" root="2.16.840.1.113883.19.5"/>
+            <addr use="HP">
+                <country partType="CNT">US</country>
+                <state partType="STA">2-digit US state code</state>
+                <city partType="CTY">City Name in words</city>
+                <postalCode partType="ZIP">5-digit or 9-digit zip code for US addresses</postalCode>
+                <streetAddressLine partType="SAL">First address Line</streetAddressLine>
+                <streetAddressLine partType="SAL">Second and subsequent address
+                lines</streetAddressLine>
+            </addr>
+            <telecom use="HP" value="tel:+1-ddd-ddd-dddd"/>
+            <telecom use="HV" value="tel:+1-ddd-ddd-dddd&quot;"/>
+            <telecom use="WP" value="tel:+1-ddd-ddd-dddd&quot;"/>
+            <telecom use="MC" value="tel:+1-ddd-ddd-dddd&quot;"/>
+            <telecom value="mailto:yourName@yourDomain"/>
+            <patient>
+                <name use="L">
+                    <given qualifier="CL">Henry</given>
+                    <family qualifier="BR">Levin</family>
+                    <suffix>the 7th</suffix>
+                </name>                
+                <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1"/>                
+                <birthTime value="19320924"/>
+                
+                <maritalStatusCode code="S" displayName="Single"
+                    codeSystem="2.16.840.1.113883.5.2" codeSystemName="HL7 Marital Status Code"/>
+                <languageCommunication>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.2.1"/>
+                    <templateId root="2.16.840.1.113883.3.88.11.83.2"
+                        assigningAuthorityName="HITSP C32"/>
+                    <languageCode code="en-US"/>
+                    <preferenceInd value="true"/>
+                </languageCommunication>
+            </patient>
+            <providerOrganization>
+                <id root="2.16.840.1.113883.19.5"/>
+                <name>Good Health Clinic</name>
+            </providerOrganization>
+        </patientRole>
+    </recordTarget>
+    <author>
+        <time value="200709"/>
+        <assignedAuthor>
+            <id extension="LJG" root="2.16.840.1.113883.3.72.5.2"/>
+            <assignedPerson>
+                <name>
+                    <given>Len</given>
+                    <family>Gallagher</family>
+                </name>
+            </assignedPerson>
+            <representedOrganization>
+                <id root="2.16.840.1.113883.3.72.5"
+                    assigningAuthorityName="NIST Healthcare (NIST-H)"/>
+                <name>NIST HL7 Test Laboratory</name>
+                <telecom value="+1-301-975-3251"/>
+            </representedOrganization>
+        </assignedAuthor>
+    </author>
+    <informant>
+        <assignedEntity>
+            <id nullFlavor="NI"/>
+            <representedOrganization>
+                <id root="2.16.840.1.113883.3.72.5"
+                    assigningAuthorityName="NIST Healthcare (NIST-H)"/>
+                <name>NIST HL7 Test Laboratory</name>
+                <telecom value="+1-301-975-3251"/>
+            </representedOrganization>
+        </assignedEntity>
+    </informant>
+    <custodian>
+        <assignedCustodian>
+            <representedCustodianOrganization>
+                <id root="2.16.840.1.113883.3.72.5"
+                    assigningAuthorityName="NIST Healthcare (NIST-H)"/>
+                <name>NIST HL7 Test Laboratory</name>
+                <telecom value="+1-301-975-3251"/>
+            </representedCustodianOrganization>
+        </assignedCustodian>
+    </custodian>
+    <legalAuthenticator>
+        <time value="200709"/>
+        <signatureCode code="S"/>
+        <assignedEntity>
+            <id nullFlavor="NI"/>
+            <representedOrganization>
+                <id root="2.16.840.1.113883.3.72.5"
+                    assigningAuthorityName="NIST Healthcare (NIST-H)"/>
+                <name>NIST HL7 Test Laboratory</name>
+                <telecom value="+1-301-975-3251"/>
+            </representedOrganization>
+        </assignedEntity>
+    </legalAuthenticator>
+    <participant typeCode="IND">
+        <time>
+            <low value="2003"/>
+        </time>
+        <associatedEntity classCode="AGNT">
+            <id root="4ff51570-83a9-47b7-91f2-93ba30373141"/>
+            <addr>
+                <streetAddressLine>17 Daws Rd.</streetAddressLine>
+                <city>Blue Bell</city>
+                <state>MA</state>
+                <postalCode>02368</postalCode>
+            </addr>
+            <telecom value="tel:(888)555-1212"/>
+            <associatedPerson>
+                <name use="L">
+                    <given>Kenneth</given>
+                    <family>Ross</family>
+                </name>
+            </associatedPerson>
+        </associatedEntity>
+    </participant>
+    <participant typeCode="IND">
+        <templateId root="2.16.840.1.113883.3.88.11.32.3" assigningAuthorityName="HITSP C32"/>
+        <time>
+            <low value="2003"/>
+        </time>
+        <associatedEntity classCode="NOK">
+            <id root="4ac71514-6a10-4164-9715-f8d96af48e6d"/>
+            <code code="MTH" codeSystem="2.16.840.1.113883.5.111" displayName="Biological mother"/>
+            <telecom value="tel:(999)555-1212"/>
+            <associatedPerson>
+                <name use="L">
+                    <given>Henrietta</given>
+                    <family>Levin</family>
+                </name>
+            </associatedPerson>
+        </associatedEntity>
+    </participant>
+    <documentationOf typeCode="DOC">
+        <serviceEvent classCode="PCPR">
+            <effectiveTime>
+                <low value="2002"/>
+                <high value="200709"/>
+            </effectiveTime>
+            <performer typeCode="PRF">
+                <templateId root="2.16.840.1.113883.3.88.11.32.4" assigningAuthorityName="HITSP C32"/>
+                <functionCode code="PP" displayName="Primary Care Provider"
+                    codeSystem="2.16.840.1.113883.12.443" codeSystemName="Provider Role">
+                    <originalText>Primary Care Provider</originalText>
+                </functionCode>
+                <time>
+                    <low value="2002"/>
+                    <high value="200709"/>
+                </time>
+                <assignedEntity>
+                    <id extension="PseudoMD-1" root="2.16.840.1.113883.3.72.5.2"/>
+                    <code code="200000000X" displayName="Allopathic and Osteopathic Physicians"
+                        codeSystemName="Provider Codes" codeSystem="2.16.840.1.113883.6.101"/>
+                    <telecom value="tel:+1-301-975-3251" use="HP"/>
+                    <assignedPerson>
+                        <name>
+                            <prefix>Dr.</prefix>
+                            <given>Pseudo</given>
+                            <family>Physician</family>
+                        </name>
+                    </assignedPerson>
+                    <representedOrganization>
+                        <id root="2.16.840.1.113883.3.72.5"/>
+                        <name>NIST HL7 Test Laboratory</name>
+                    </representedOrganization>
+                </assignedEntity>
+            </performer>
+        </serviceEvent>
+    </documentationOf>
+    <component typeCode="COMP" contextConductionInd="true">
+
+        <structuredBody classCode="DOCBODY" moodCode="EVN">
+            <component>
+                <section>
+                    <templateId root="2.16.840.1.113883.10.20.1.1"/>
+                    <code code="42348-3" codeSystem="2.16.840.1.113883.6.1"/>
+                    <title>Advance Directives</title>
+                    <text>
+                        <table border="1" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>Directive</th>
+                                    <th>Description</th>
+                                    <th>Verification</th>
+                                    <th>Supporting Document(s)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Resuscitation status</td>
+                                    <td>
+                                        <content ID="AD1">Do not resuscitate</content>
+                                    </td>
+                                    <td>Dr. Robert Dolin, Nov 07, 1999</td>
+                                    <td>
+                                        <linkHtml href="AdvanceDirective.b50b7910-7ffb-4f4c-bbe4-177ed68cbbf3.pdf">Advance directive</linkHtml>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </text>
+                    <entry typeCode="DRIV">
+                        <observation classCode="OBS" moodCode="EVN">
+                            <templateId root="2.16.840.1.113883.10.20.1.17"/>
+                            <templateId root="2.16.840.1.113883.3.88.11.83.12"/>          
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.7"/>
+                            <templateId root='1.3.6.1.4.1.19376.1.5.3.1.4.13'/>
+                            <id root="9b54c3c9-1673-49c7-aef9-b037ed72ed27"/>
+                            <code code="304251008" codeSystem="2.16.840.1.113883.6.96" displayName="Resuscitation">
+                                <originalText>
+                                    <reference value="#123" />
+                                </originalText>
+                            </code>
+                            <statusCode code="completed"/>
+                            <effectiveTime>
+                                <low  nullFlavor="UNK"/>
+                                <high nullFlavor="NA"/>
+                            </effectiveTime>
+                            <value xsi:type="CD" code="304253006" codeSystem="2.16.840.1.113883.6.96" displayName="Do not resuscitate">
+                                <originalText>
+                                    <reference value="#AD1"/>
+                                </originalText>
+                            </value>
+                            <participant typeCode="CST" contextControlCode="OP">
+                                <participantRole classCode="AGNT">
+                                    <addr />
+                                    <telecom />
+                                    <playingEntity determinerCode="INSTANCE" >
+                                        <name />
+                                    </playingEntity>
+                                    
+                                </participantRole>
+                            </participant>
+                            
+                            <participant typeCode="VRF">
+                                <templateId root="2.16.840.1.113883.10.20.1.58"/>
+                                <!-- Verification of an advance directive observation template -->
+                                <time value="19991107"/>
+                                <participantRole>
+                                    <id root="20cf14fb-b65c-4c8c-a54d-b0cca834c18c"/>
+                                </participantRole>
+                            </participant>
+                            <entryRelationship typeCode="REFR">
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="2.16.840.1.113883.10.20.1.37"/>
+                                    <!-- Advance directive status observation template -->
+                                    <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+                                    <statusCode code="completed"/>
+                                    <value xsi:type="CE" code="15240007" codeSystem="2.16.840.1.113883.6.96" displayName="Current and verified"/>
+                                </observation>
+                            </entryRelationship>
+                            <reference typeCode="REFR">
+                                <externalDocument>
+                                    <templateId root="2.16.840.1.113883.10.20.1.36"/>
+                                    <!-- Advance directive reference template -->
+                                    <id root="b50b7910-7ffb-4f4c-bbe4-177ed68cbbf3"/>
+                                    <code code="371538006" codeSystem="2.16.840.1.113883.6.96" displayName="Advance directive"/>
+                                    <text mediaType="application/pdf">
+                                        <reference value="AdvanceDirective.b50b7910-7ffb-4f4c-bbe4-177ed68cbbf3.pdf"/>
+                                    </text>
+                                </externalDocument>
+                            </reference>
+                        </observation>
+                    </entry>
+                </section>
+            </component>
+            
+            
+            <component>
+            <section>
+                <templateId root="2.16.840.1.113883.10.20.1.2"/>
+                <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.13"/>
+                <code code="48765-2" codeSystem="2.16.840.1.113883.6.1" />
+                <title representation="TXT" mediaType="text/plain">Alert</title>
+            <text>
+                Penicillin Allergy on February 2, 2001
+                <content ID='severity-1'>Severe</content> <content ID='reaction-1'>Hives</content>
+            </text>
+            <entry>
+                <act classCode='ACT' moodCode='EVN'>
+                    <templateId root='2.16.840.1.113883.10.20.1.27'/>
+                    <templateId root='2.16.840.1.113883.3.88.11.83.6'/>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                    <id root='2C748172-7CC2-4902-8AF0-23A105C4401B'/>
+                    <code nullFlavor='NA'/>
+                    <statusCode code="completed"/>
+                    <effectiveTime>
+                        <low nullFlavor="UNK"/>
+                        <high nullFlavor="UNK"/>
+                    </effectiveTime>
+
+                    <entryRelationship typeCode='SUBJ' inversionInd="false">
+                        
+                        <observation classCode='OBS' moodCode='EVN' negationInd='false'>
+                            <templateId root='2.16.840.1.113883.10.20.1.18'/>
+                            <templateId root='2.16.840.1.113883.10.20.1.28'/>
+                            <templateId root='1.3.6.1.4.1.19376.1.5.3.1.4.6'/>
+                            <templateId root='1.3.6.1.4.1.19376.1.5.3.1.4.5'/>
+                            <id />
+                            <code 
+                                code='418038007' 
+                                codeSystem='2.16.840.1.113883.6.96'  />
+
+                            <text><reference value=' '/></text>
+                            <statusCode code='completed'/>
+                            <effectiveTime  >
+                                <low nullFlavor="UNK"/>
+                            </effectiveTime>
+                            <value xsi:type='CD' code="TMP" codeSystem="TMP" />
+                            <participant typeCode='CSM'>
+                                <participantRole classCode='MANU'>
+                                    <playingEntity classCode='MMAT'>
+                                        <code  code='TMP' codeSystem="TMP">
+                                            <originalText><reference value='#substance'/></originalText>
+                                        </code>
+                                        <name></name>
+                                    </playingEntity>
+                                </participantRole>
+                            </participant>
+                        </observation>
+                    </entryRelationship>
+                </act>
+            </entry>
+            </section>
+                
+            </component>
+            
+            
+            
+            <!-- Encounter -->
+            <component>
+                <section>
+                    <templateId root="2.16.840.1.113883.10.20.1.3"/>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.3"/>
+                    <id root="root" extension="ext"/>
+                    <code code="46240-8" codeSystem="2.16.840.1.113883.6.1" />
+                    <title>Encounter</title>
+                    <text>
+                        Encounter
+                    </text>
+                    <entry>
+                    <encounter classCode='ENC' moodCode='EVN'>
+                        <templateId root='1.3.6.1.4.1.19376.1.5.3.1.4.14'/>
+                        <templateId root='2.16.840.1.113883.10.20.1.21'/>
+                        <templateId root='2.16.840.1.113883.3.88.11.83.16'/>
+                        <id nullFlavor="NA"/>
+                        <code code='TMP' codeSystem='2.16.840.1.113883.5.4' codeSystemName='ActEncounterCode' />
+                        <text><reference value='#xxx'/></text>
+                        <effectiveTime>
+                            <low value='20081010'/>
+                            <high value='20081010'/>
+                        </effectiveTime>
+                        <priorityCode code='Q'/>
+                        <performer typeCode='PRF'>
+                            <time><low value='20081010'/><high value='20081010'/></time>
+                            <assignedEntity>
+                                <id />
+                            </assignedEntity>
+                        </performer>
+                        <author >
+                            <time value="20081010"/>
+                            <assignedAuthor classCode="ASSIGNED">
+                                <id/>
+                                <assignedPerson classCode="PSN" determinerCode="INSTANCE">
+                                    <name nullFlavor="NA"></name>
+                                </assignedPerson>
+                            </assignedAuthor>
+                            
+                        </author>
+                        <informant >
+                            <assignedEntity classCode="ASSIGNED">
+                                <id/>
+                            </assignedEntity>
+                            
+                        </informant>
+                        <participant typeCode='LOC'>
+                            <participantRole classCode='SDLOC'>
+                                <id/>
+                                <code/>
+                                <addr>...</addr>
+                                <telecom value=' ' use=' '/>
+                                <playingEntity classCode='PLC' >
+                                    <name></name>
+                                </playingEntity>
+                            </participantRole>
+                        </participant>
+                    </encounter>
+                        </entry>
+                </section>
+            </component>
+            
+            
+            
+            
+            <!-- Immunizations Section -->
+            
+            <component>
+                <section>
+                    <templateId root="2.16.840.1.113883.10.20.1.6"/>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.23"/>
+
+                    <code code="11369-6" displayName="HISTORY OF IMMUNIZATIONS"
+                        codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                    <title>Immunizations</title>
+                    <text> Text as described above </text>
+                    <entry>
+                        <substanceAdministration classCode="SBADM" moodCode="EVN" negationInd="false" >
+                            <templateId root="2.16.840.1.113883.10.20.1.24"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.12"/>
+                            <templateId root='2.16.840.1.113883.3.88.11.83.13'/>
+                            <id/>
+                            <code code="IMMUNIZ" codeSystem="2.16.840.1.113883.5.4"
+                                codeSystemName="ActCode"/>
+                            <text>
+                                <reference value="#ignore"/>
+                            </text>
+                            <statusCode code="completed"/>
+                            <effectiveTime value="20071010"/>
+                            <routeCode code="ignore" displayName="ignore"/>
+                            
+                            <approachSiteCode code="ignore" codeSystem="ignore">
+                                <originalText>
+                                    <reference value="#ignore"/>
+                                </originalText>
+                            </approachSiteCode>
+                            <doseQuantity>
+                                <low value="1"/>
+                                <high value="2"/>
+                            </doseQuantity>
+                            <consumable>
+                                <manufacturedProduct>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+                                    <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                                    <manufacturedMaterial>
+                                        <code nullFlavor="UNK" >
+                                            <originalText> 
+                                                <reference nullFlavor="UNK"/>
+                                            </originalText>
+                                        </code> 
+                                        <name>This is my name</name>
+                                    </manufacturedMaterial>
+                                </manufacturedProduct>
+                            </consumable>
+                            
+                            <entryRelationship typeCode="REFR" inversionInd="false">
+                                <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.3"/>
+                                <sequenceNumber value="1"/>
+                                <supply classCode="SPLY" moodCode="INT">
+                                    <templateId root="2.16.840.1.113883.10.20.1.34"/>
+                                    <id/>
+                                    <statusCode code="ignore"/>
+                                    <effectiveTime value="20071210"/>
+                                    <repeatNumber value="1"/>
+                                    <quantity unit="1" value="1"/>
+                                    <performer typeCode="PRF">
+                                        <time value="20071010"/>
+                                        <assignedEntity>
+                                            <id root="ignore" extension="ignore"/>
+                                            <addr/>
+                                            <telecom nullFlavor="UNK"/>
+                                            <assignedPerson>
+                                                <name/>
+                                            </assignedPerson>
+                                        </assignedEntity>
+                                        
+                                    </performer>
+                                    <entryRelationship typeCode="SUBJ">
+                                        <act classCode="ACT" moodCode="INT">
+                                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.3.1"/>
+                                            <templateId root="2.16.840.1.113883.10.20.1.43"/>
+                                            <code code="FINSTRUCT"
+                                                codeSystem="1.3.6.1.4.1.19376.1.5.3.2"
+                                                codeSystemName="IHEActCode"/>
+                                            <text>
+                                                <reference value="#ignore"/>
+                                            </text>
+                                            <statusCode code="completed"/>
+                                        </act>
+                                        
+                                        
+                                    </entryRelationship>
+                                    
+                                </supply>
+                            </entryRelationship>
+                            
+                        </substanceAdministration>
+                        
+                    </entry>
+                    
+                </section>
+            </component>
+
+<!-- Insurance Provider -->
+            
+            <component >
+                <section>
+                    <templateId root="2.16.840.1.113883.10.20.1.9"/>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.7"/>
+                    <code code="48768-6" 
+                        codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                    <title>Immunizations</title>
+                    <text> Text as described above </text>
+                    
+                    
+                    <entry>
+                        
+                        <act classCode='ACT' moodCode='DEF'>
+                            <templateId root='2.16.840.1.113883.10.20.1.20'/>
+                            <id />
+                            <code code='48768-6' displayName='Payment Sources'
+                                codeSystem='2.16.840.1.113883.6.1' codeSystemName='LOINC'/>
+                            <statusCode code='completed'/>
+                            <!-- Example 1, A health plan -->
+                            <entryRelationship typeCode='COMP'>
+                                <sequenceNumber value='1'/>
+                                <act classCode='ACT' moodCode='EVN'>
+                                    <templateId root='2.16.840.1.113883.10.20.1.26'/>
+                                    <templateId root='2.16.840.1.113883.3.88.11.83.5'/>
+                                    <id root='2844AF96-37D5-42a8-9FE3-3995C110B4F8'
+                                        extension='GroupOrContract#'/>
+                                    <code code='PP' codeSystem='2.16.840.1.113883.6.255.1336'
+                                        codeSystemName='X12N-1336'/>
+                                    <statusCode code='completed'/>
+                                    <performer typeCode="PRF">
+                                        <assignedEntity classCode="ASSIGNED">
+                                            <id/>
+                                            <code code="PAT" codeSystem="2.16.840.1.113883.5.110"/>
+                                        </assignedEntity>
+                                    </performer>
+                                    
+                                </act>
+                            </entryRelationship>
+                            </act>
+                        
+                    </entry>
+                </section>
+            </component>
+            
+            
+            
+            <!-- Medications -->
+            
+            <component>
+                <section>
+                    <templateId root="2.16.840.1.113883.10.20.1.8"/>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.19"/>
+                    <id/>
+                    <code code="10160-0" displayName="HISTORY OF MEDICATION USE"
+                        codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                    <title>Medications</title>
+                    <text> Text as described above </text>
+                    <entry>
+                        
+                        <!-- Required Medications element -->
+                        <substanceAdministration classCode="SBADM" moodCode="EVN">
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+                            <templateId root="2.16.840.1.113883.10.20.1.24"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+                            <templateId root="2.16.840.1.113883.3.88.11.83.8"/>
+                            <id/>
+                            <statusCode code="completed"/>
+                            <effectiveTime xsi:type="IVL_TS">
+                                <low value="20071010"/>
+                                <high value="20071011"/>
+                            </effectiveTime>
+                            <effectiveTime xsi:type="PIVL_TS" operator="A" institutionSpecified="false">
+                                <period value="12" unit="h"></period>
+                            </effectiveTime>
+                            <routeCode codeSystem="2.16.840.1.113883.3.26.1.1" code="TMP"/>
+                            <doseQuantity value="2" />
+                                
+                            
+                            <rateQuantity>
+                                <low value="20071010"/>
+                                <high value="20071010"/>
+                            </rateQuantity>
+                            <consumable>
+                                <manufacturedProduct>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+                                    <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                                    
+                                    
+                                    <manufacturedMaterial>
+                                        <code nullFlavor="UNK">
+                                            <originalText>
+                                                <reference value="#something"/>
+                                            </originalText>
+                                        </code>
+                                        <name>This is my name</name>
+                                    </manufacturedMaterial>
+                                    
+                                </manufacturedProduct>
+                                
+                                
+                                
+                            </consumable>
+                            <entryRelationship typeCode="SUBJ" inversionInd="true">
+                                <act classCode="ACT" moodCode="INT">
+                                    <templateId root="2.16.840.1.113883.10.20.1.49"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.3"/>
+                                    <code code="PINSTRUCT" codeSystem="1.3.6.1.4.1.19376.1.5.3.2"
+                                        codeSystemName="IHEActCode"/>
+                                    <text>
+                                        <reference value="#comment-2"/>
+                                    </text>
+                                    <statusCode code="completed"/>
+                                </act>
+                            </entryRelationship>
+                            
+                        </substanceAdministration>
+                    </entry>
+                    
+                </section>
+            </component>   
+            
+            
+            <!-- Surgeries -->
+            
+            <component>
+                <section>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.11"/>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.12"/>
+                    <templateId root="2.16.840.1.113883.10.20.1.12"/>
+                    <code code="47519-4" displayName="HISTORY OF PROCEDURES"
+                        codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                    <title>Procedures</title>
+                    <text>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Procedure</th>
+                                    <th>Physician</th>
+                                    <th>Date</th>
+                                    <th>Location</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Right knee arthroscopy</td>
+                                    <td>Roger Sutherland</td>
+                                    <td>1/10/2007</td>
+                                    <td>St Lukes Hospital </td>
+                                </tr>
+                                <tr>
+                                    <td>Left knee arthroscopy</td>
+                                    <td>Roger Sutherland</td>
+                                    <td>5/15/1997</td>
+                                    <td>West County Orthopedic Center</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </text>
+                    <!-- Required Procedure Entry  element -->
+                    <entry>
+                        <procedure classCode="PROC" moodCode="EVN">
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19"/>
+                            <templateId root="2.16.840.1.113883.10.20.1.29"/>
+                            <templateId root="2.16.840.1.113883.3.88.11.83.17"/>
+                            <id/>
+                            <code code="ignore" codeSystem="2.16.840.1.113883.6.1"
+                                codeSystemName="LOINC">
+                                <originalText>
+                                    <reference value="#ref"></reference>
+                                </originalText>
+                            </code>
+                            <text>
+                                <reference value="#ignore"/>
+                            </text>
+                            <statusCode code="cancelled"/>
+                            <effectiveTime value="20071010"/>
+                        </procedure>
+                        
+                    </entry>
+                    
+                </section>
+                </component>
+            
+            
+            
+            <!-- Coded Vital Signs Section -->
+            <component>
+                <section>
+                    <templateId root="2.16.840.1.113883.10.20.1.16"/>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.25"/>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.2"/>
+                    <code code="8716-3" displayName="VITAL SIGNS" codeSystem="2.16.840.1.113883.6.1"
+                        codeSystemName="LOINC"/>
+                    <title>Vital Signs</title>
+                    <text> Text as described above </text>
+                    <entry>
+                        <organizer classCode="CLUSTER" moodCode="EVN">
+                            <!-- Required Vital Signs Organizer element -->
+                            <templateId root="2.16.840.1.113883.10.20.1.32"/>
+                            <templateId root="2.16.840.1.113883.10.20.1.35"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.1"/>
+                            <id/>
+                            <code code="46680005" displayName="Vital signs"
+                                codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
+                            <statusCode code="completed"/>
+                            <effectiveTime/>
+                            <author>
+                                <time value="20081010121212"/>
+                                <assignedAuthor>
+                                    <id/>
+                                    <addr/>
+                                    <telecom nullFlavor="UNK"/>
+                                    <assignedPerson >
+                                        <name>
+                                            <family>Smith</family>
+                                            <given>John</given>
+                                        </name>
+                                    </assignedPerson>
+                                </assignedAuthor>
+                            </author>
+                            <component typeCode="COMP">
+                                <observation classCode="OBS" moodCode="EVN">
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                                    <templateId root="2.16.840.1.113883.10.20.1.31"/>
+                                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.2"/>
+                                    <templateId root="2.16.840.1.113883.3.88.11.83.14"/>
+                                    <id/>
+                                    <code code="2710-2" codeSystem="2.16.840.1.113883.6.1"/>
+                                    <text>
+                                        <reference value="#ignore"/>
+                                    </text>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime nullFlavor="UNK"/>
+                                    <value xsi:type="PQ" value="0" unit="%"/>
+                                    <interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83"/>
+                                    <referenceRange>
+                                        <observationRange>
+                                            <text>Reference Range Text Here</text>
+                                        </observationRange>
+                                    </referenceRange>                                    
+                                </observation>
+                            </component>
+                        </organizer>
+                    </entry>
+                </section>
+            </component>
+            
+            
+            <!-- Plan of care -->
+            
+            <component>
+                <section>
+                    <templateId root="2.16.840.1.113883.10.20.2.7"/>
+                    <templateId root="2.16.840.1.113883.10.20.1.10"/>
+                    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.31"/>
+                    <code code="18776-5" displayName="TREATMENT PLAN"
+                        codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                    <title>Care Plan Section</title>
+                    <text>
+                        <table border='1'>
+                            <thead>
+                                <tr><th>Anesthesia Consult Planned?</th><th>Plan Details</th><th>Planned Date</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td ID='AnesthesiaPlanned'>yes</td>
+                                    <td ID='AnesthesiaDetails'>Epidural</td>
+                                    <td ID='AnesthesiaDate'>12/12/2008</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </text>
+                    <entry typeCode='DRIV'>
+                        <observation classCode='OBS' moodCode='RQO'>
+                            <templateId root='2.16.840.1.113883.10.20.1.25'/>
+                            <id />
+                            <code code='(xx-anest-cons-pland)' codeSystem='2.16.840.1.113883.6.1'
+                                displayName='Anesthesia Consult Status-FIND-PT-^PATIENT-ORD-'
+                                codeSystemName='LOINC'>
+                                <originalText><reference value='#AnesthesiaPlanned'/></originalText>
+                            </code>
+                            <statusCode code='complete'/>
+                            <effectiveTime value='20081212'/>
+                            <value xsi:type='BL' value='true'/>
+                        </observation>
+                    </entry>
+                </section>
+            </component>
+            
+            
+        </structuredBody>
+
+
+    </component>
+</ClinicalDocument>

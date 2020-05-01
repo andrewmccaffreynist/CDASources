@@ -1,0 +1,74 @@
+<!-- Template_2.16.840.1.113883.3.88.11.83.8.1 -->
+<!-- HITSP/C83 Medications Module, Medication Information, Type of Medication data element -->
+
+
+<!-- Errors pattern -->
+
+<pattern id='p-2.16.840.1.113883.3.88.11.83.8.1-errors'>
+
+ <rule context='*[cda:templateId/@root="2.16.840.1.113883.3.88.11.83.8.1"]'>
+
+   <!-- Verify that templateId is used on the appropriate type of object -->
+   <assert test='ancestor::cda:section[cda:templateId/@root="2.16.840.1.113883.10.20.1.8"]
+             and (ancestor::cda:substanceAdministration[cda:templateId/@root="2.16.840.1.113883.10.20.1.24"] 
+              or ancestor::cda:supply[cda:templateId/@root="2.16.840.1.113883.10.20.1.34"])
+             and parent::cda:entryRelationship[@typeCode="SUBJ"]
+             and self::cda:observation'>
+     Error: The HITSP/C83 templateId for Type of Medication (2.16.840.1.113883.3.88.11.83.8.1) is in the wrong location. 
+A HITSP/C83 Type of Medication data element shall be represented as an observation entry under an entryRelationship of type subject (SUBJ) in a CCD substance Administration (2.16.840.1.113883.10.20.1.24) or CCD supply (2.16.840.1.113883.10.20.1.34) in a CCD Medications section (2.16.840.1.113883.10.20.1.8). 
+   </assert>
+   
+   <assert test='cda:code'>
+     Error: A C83 Type of Medication data element shall have a code element that represents the kind of medication actually or intended to be administered or supplied. 
+     See rule C83-[183].
+   </assert>
+   
+   <assert test='cda:code[@codeSystem="2.16.840.1.113883.6.96" and (@code="329505003" or @code="73639000")]'>
+     Error: A C83 Type of Medication data element shall have a code element with a code attribute taken from SNOMED CT (2.16.840.1.113883.6.96) and with the code restricted to Over the counter products (329505003) or prescription drug (73639000). 
+     See rule C83-[184].
+   </assert>
+
+ </rule>
+
+</pattern>
+   
+<!-- Warnings pattern -->
+
+<pattern id='p-2.16.840.1.113883.3.88.11.83.8.1-warning'>
+
+
+ <rule context='*[ancestor::cda:section[cda:templateId/@root="2.16.840.1.113883.10.20.1.8"]
+              and self::cda:substanceAdministration[cda:templateId/@root="2.16.840.1.113883.10.20.1.24"]]'>
+     
+   <assert test='cda:entryRelationship[@typeCode="SUBJ"]/cda:observation/cda:code[@codeSystem="2.16.840.1.113883.6.96" and (@code="329505003" or @code="73639000")]'>
+     Warning: A HITSP/C83 Medications - Administration Information data element (i.e. cda:substanceAdministration) should contain a C83 Type of Medication data element (i.e. a SUBJ observation with a specific SNOMED code) to indicate whether the medication is a prescription drug (SNOMED 73639000) or an over the counter medication (SNOMED 329505003).  
+   </assert>
+
+ </rule>
+
+<!--
+
+ <rule context='*[ancestor::cda:section[cda:templateId/@root="2.16.840.1.113883.10.20.1.8"]
+              and (ancestor::cda:substanceAdministration[cda:templateId/@root="2.16.840.1.113883.10.20.1.24"] 
+                   or ancestor::cda:supply[cda:templateId/@root="2.16.840.1.113883.10.20.1.34"]) 
+              and parent::cda:entryRelationship[@typeCode="SUBJ"]
+              and self::cda:observation[cda:code[@codeSystem="2.16.840.1.113883.6.96" and (@code="329505003" or @code="73639000")]]]'>
+   
+   <assert test='cda:templateId/@root="2.16.840.1.113883.3.88.11.83.8.1"'>
+     Warning: If a HITSP/C83 Medications - Administration Information data element contains a CDA SUBJ observation with a SNOMED CT code for prescription drug (73639000) or Over the counter product (329505003), then the CDA observation should be identified as a C83 Type of Medication data element by including a cda:templateId with the root attribute set to "2.16.840.1.113883.3.88.11.83.8.1".  
+   </assert>
+
+ </rule>
+-->
+</pattern>
+   
+
+
+<!-- Notes pattern -->
+
+<pattern id='p-2.16.840.1.113883.3.88.11.83.8.1-note'>
+
+ <rule context='*[cda:templateId/@root="2.16.840.1.113883.3.88.11.83.8.1"]'>
+ </rule>
+
+</pattern>

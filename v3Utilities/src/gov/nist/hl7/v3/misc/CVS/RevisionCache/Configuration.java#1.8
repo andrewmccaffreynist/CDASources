@@ -1,0 +1,411 @@
+/*
+ * Configuration.java
+ *
+ * Created on August 11, 2006, 10:00 AM
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
+ */
+
+package gov.nist.hl7.v3.misc;
+
+import javax.servlet.ServletConfig;
+
+
+/**
+ *
+ * This class represents the configuration of this applications and contains
+ * variables such as the location of the database, the name of the database,
+ * the port of the MLLP listener, the location of the SMTP mailbox, etc.
+ * @author mccaffrey
+ */
+public class Configuration {
+    
+    private String databaseHostname = null;     // 129.6.58.91:5433
+    private String databaseUsername = null;     // hl7applrole
+    private String databasePassword = null;     // """
+    private String databaseName = null;         // postgres_v8_hl7
+    
+    private boolean loggingOn = false;             // true
+    private String logDatabaseHostname = null;     // 129.6.58.91:5433
+    private String logDatabaseUsername = null;     // logs
+    private String logDatabasePassword = null;     // """
+    private String logDatabaseName = null;         // logs
+    
+    private String mllpPort = null;             // 8087
+    
+    private String smtpServer = null;           // localhost/smtp.gmail.com
+    private String smtpPort = null;             // 465
+    private String smtpPopServer = null;        // localhost/pop.gmail.com
+    private String smtpPopPort = null;          // 995
+    private boolean smtpSecure = false;         // false;
+    private boolean smtpPopSecure = false;      // false
+    private String smtpEmailAddressOutgoing = null;     // v3sender@sst116
+    private String smtpEmailPasswordOutgoing = null;     // dummy
+    private String smtpEmailUsernameIncoming = null;    // v3receiver
+    private String smtpEmailPasswordIncoming = null;    // dummy
+    private String smtpOutgoingSubjectLine = null;      // NIST V3 Laboratory Reference Implementation
+    private int smtpMailboxCheckTime = 60000;
+    
+    private int transportRetry =  3600000;
+    
+    private String registryHost = null;
+    private String registryPort = null;
+    private String registryService = null;
+    
+    private String registryQueryManagerUrl = null;
+    
+    /**
+     * Constructs an empty Configuration object.
+     */
+    public Configuration() {}
+    
+    /**
+     * Builds a new instance of Configuration based on the init parameters contained
+     * within a ServletConfig object.
+     * @param servletConfig The ServletConfig which should contain the init parameters which is what will
+     * be used to create the Configuration object.
+     */
+    public Configuration(ServletConfig servletConfig) {
+        this.setDatabaseHostname(servletConfig.getInitParameter("databaseHostname"));
+        this.setDatabaseUsername(servletConfig.getInitParameter("databaseUsername"));
+        this.setDatabasePassword(servletConfig.getInitParameter("databasePassword"));
+        this.setDatabaseName(servletConfig.getInitParameter("databaseName"));
+        
+        String loggingOnString = servletConfig.getInitParameter("loggingOn");
+        if(loggingOnString.equalsIgnoreCase("true"))
+            this.setLoggingOn(true);
+        else
+            this.setLoggingOn(false);
+        this.setLogDatabaseHostname(servletConfig.getInitParameter("logDatabaseHostname"));
+        this.setLogDatabaseUsername(servletConfig.getInitParameter("logDatabaseUsername"));
+        this.setLogDatabasePassword(servletConfig.getInitParameter("logDatabasePassword"));
+        this.setLogDatabaseName(servletConfig.getInitParameter("logDatabaseName"));
+        
+        this.setMllpPort(servletConfig.getInitParameter("mllpPort"));
+        this.setSmtpServer(servletConfig.getInitParameter("smtpServer"));
+        this.setSmtpPort(servletConfig.getInitParameter("smtpPort"));
+        this.setSmtpPopServer(servletConfig.getInitParameter("smtpPopServer"));
+        this.setSmtpPopPort(servletConfig.getInitParameter("smtpPopPort"));
+        String securePop = servletConfig.getInitParameter("smtpPopSecure");
+        if(securePop.equalsIgnoreCase("true"))
+            this.setSmtpPopSecure(true);
+        else
+            this.setSmtpPopSecure(false);
+        String secureSmtp = servletConfig.getInitParameter("smtpSecure");
+        if(secureSmtp.equalsIgnoreCase("true"))
+            this.setSmtpSecure(true);
+        else
+            this.setSmtpSecure(false);
+        
+        this.setSmtpEmailAddressOutgoing(servletConfig.getInitParameter("smtpEmailAddressOutgoing"));
+        this.setSmtpEmailPasswordOutgoing(servletConfig.getInitParameter("smtpEmailPasswordOutgoing"));
+        this.setSmtpEmailUsernameIncoming(servletConfig.getInitParameter("smtpEmailUsernameIncoming"));
+        this.setSmtpEmailPasswordIncoming(servletConfig.getInitParameter("smtpEmailPasswordIncoming"));
+        this.setSmtpOutgoingSubjectLine(servletConfig.getInitParameter("smtpOutgoingSubjectLine"));
+        try {
+            this.setSmtpMailboxCheckTime(Integer.parseInt(servletConfig.getInitParameter("smtpMailboxCheckTime")));
+        } catch (NumberFormatException nfe) {
+            // then Mailbox Check Time remains the default...
+            nfe.printStackTrace();
+        }
+        try {
+            this.setTransportRetry(Integer.parseInt(servletConfig.getInitParameter("transportRetry")));
+        } catch (NumberFormatException nfe) {
+            nfe.printStackTrace();
+        }
+        this.setRegistryHost(servletConfig.getInitParameter("registryHost"));
+        this.setRegistryPort(servletConfig.getInitParameter("registryPort"));
+        this.setRegistryService(servletConfig.getInitParameter("registryService"));
+        this.setRegistryQueryManagerUrl(servletConfig.getInitParameter("registryQueryManagerUrl"));
+    }
+    
+    /**
+     * Gets the Database Hostname.
+     * @return The Database Hostname.
+     */
+    public String getDatabaseHostname() {
+        return databaseHostname;
+    }
+    
+    /**
+     * Sets the Database Hostname.
+     * @param databaseHostname The Database Hostname
+     */
+    public void setDatabaseHostname(String databaseHostname) {
+        this.databaseHostname = databaseHostname;
+    }
+    
+    /**
+     * Gets the Database Username.
+     * @return The Database Username
+     */
+    public String getDatabaseUsername() {
+        return databaseUsername;
+    }
+    
+    /**
+     * Sets the Database Username.
+     * @param databaseUsername The Database Username
+     */
+    public void setDatabaseUsername(String databaseUsername) {
+        this.databaseUsername = databaseUsername;
+    }
+    
+    /**
+     * Gets the Database Password.
+     * @return The Database Password
+     */
+    public String getDatabasePassword() {
+        return databasePassword;
+    }
+    
+    /**
+     * Sets the Database Password.
+     * @param databasePassword The Database Password
+     */
+    public void setDatabasePassword(String databasePassword) {
+        this.databasePassword = databasePassword;
+    }
+    
+    /**
+     * Gets the Database Name.
+     * @return The Database Name
+     */
+    public String getDatabaseName() {
+        return databaseName;
+    }
+    
+    /**
+     * Sets the Database Name.
+     * @param databaseName The Database Name.
+     */
+    public void setDatabaseName(String databaseName) {
+        this.databaseName = databaseName;
+    }
+    
+    /**
+     * Gets the MLLP Port.
+     * @return The MLLP Port
+     */
+    public String getMllpPort() {
+        return mllpPort;
+    }
+    
+    /**
+     * Sets the MLLP Port.
+     * @param mllpPort The MLLP Port
+     */
+    public void setMllpPort(String mllpPort) {
+        this.mllpPort = mllpPort;
+    }
+    
+    /**
+     * Gets the SMTP Server.
+     * @return The SMTP Server
+     */
+    public String getSmtpServer() {
+        return smtpServer;
+    }
+    
+    /**
+     * Sets the SMTP Server.
+     * @param smtpServer Sets the SMTP Server.
+     */
+    public void setSmtpServer(String smtpServer) {
+        this.smtpServer = smtpServer;
+    }
+    
+    /**
+     * Gets the Outgoing Email Address for the SMTP service.
+     * @return The Outgoing Email Address for the SMTP service
+     */
+    public String getSmtpEmailAddressOutgoing() {
+        return smtpEmailAddressOutgoing;
+    }
+    
+    /**
+     * Sets the Outgoing Email Address for the SMTP service
+     * @param smtpEmailAddressOutgoing The Outgoing Email Address
+     */
+    public void setSmtpEmailAddressOutgoing(String smtpEmailAddressOutgoing) {
+        this.smtpEmailAddressOutgoing = smtpEmailAddressOutgoing;
+    }
+    
+    /**
+     * Gets the incoming username for the SMTP service.
+     * @return The incoming username for the SMTP service
+     */
+    public String getSmtpEmailUsernameIncoming() {
+        return smtpEmailUsernameIncoming;
+    }
+    
+    /**
+     * Sets the incoming username for the SMTP service.
+     * @param smtpEmailUsernameIncoming The incoming username
+     */
+    public void setSmtpEmailUsernameIncoming(String smtpEmailUsernameIncoming) {
+        this.smtpEmailUsernameIncoming = smtpEmailUsernameIncoming;
+    }
+    
+    /**
+     * Gets the Subject Line to use for outgoing SMTP messages.
+     * @return The Subject Line to use for outgoing SMTP messages
+     */
+    public String getSmtpOutgoingSubjectLine() {
+        return smtpOutgoingSubjectLine;
+    }
+    
+    /**
+     * Sets the Subject Line to use for outgoing SMTP messages.
+     * @param smtpOutgoingSubjectLine The Subject Line to use for outgoing SMTP messages
+     */
+    public void setSmtpOutgoingSubjectLine(String smtpOutgoingSubjectLine) {
+        this.smtpOutgoingSubjectLine = smtpOutgoingSubjectLine;
+    }
+    
+    public String getSmtpEmailPasswordIncoming() {
+        return smtpEmailPasswordIncoming;
+    }
+    
+    public void setSmtpEmailPasswordIncoming(String smtpEmailPasswordIncoming) {
+        this.smtpEmailPasswordIncoming = smtpEmailPasswordIncoming;
+    }
+    
+    public String getSmtpPopServer() {
+        return smtpPopServer;
+    }
+    
+    public void setSmtpPopServer(String smtpPopServer) {
+        this.smtpPopServer = smtpPopServer;
+    }
+    
+    public String getSmtpPopPort() {
+        return smtpPopPort;
+    }
+    
+    public void setSmtpPopPort(String smtpPopPort) {
+        this.smtpPopPort = smtpPopPort;
+    }
+    
+    public boolean isSmtpPopSecure() {
+        return smtpPopSecure;
+    }
+    
+    public void setSmtpPopSecure(boolean smtpPopSecure) {
+        this.smtpPopSecure = smtpPopSecure;
+    }
+    
+    public int getSmtpMailboxCheckTime() {
+        return smtpMailboxCheckTime;
+    }
+    
+    public void setSmtpMailboxCheckTime(int smtpMailboxCheckTime) {
+        this.smtpMailboxCheckTime = smtpMailboxCheckTime;
+    }
+    
+    public String getLogDatabaseHostname() {
+        return logDatabaseHostname;
+    }
+    
+    public void setLogDatabaseHostname(String logDatabaseHostname) {
+        this.logDatabaseHostname = logDatabaseHostname;
+    }
+    
+    public String getLogDatabaseUsername() {
+        return logDatabaseUsername;
+    }
+    
+    public void setLogDatabaseUsername(String logDatabaseUsername) {
+        this.logDatabaseUsername = logDatabaseUsername;
+    }
+    
+    public String getLogDatabasePassword() {
+        return logDatabasePassword;
+    }
+    
+    public void setLogDatabasePassword(String logDatabasePassword) {
+        this.logDatabasePassword = logDatabasePassword;
+    }
+    
+    public String getLogDatabaseName() {
+        return logDatabaseName;
+    }
+    
+    public void setLogDatabaseName(String logDatabaseName) {
+        this.logDatabaseName = logDatabaseName;
+    }
+    
+    public String getSmtpPort() {
+        return smtpPort;
+    }
+    
+    public void setSmtpPort(String smtpPort) {
+        this.smtpPort = smtpPort;
+    }
+    
+    public boolean isSmtpSecure() {
+        return smtpSecure;
+    }
+    
+    public void setSmtpSecure(boolean smtpSecure) {
+        this.smtpSecure = smtpSecure;
+    }
+    
+    public String getSmtpEmailPasswordOutgoing() {
+        return smtpEmailPasswordOutgoing;
+    }
+    
+    public void setSmtpEmailPasswordOutgoing(String smtpEmailPasswordOutgoing) {
+        this.smtpEmailPasswordOutgoing = smtpEmailPasswordOutgoing;
+    }
+    
+    public String getRegistryHost() {
+        return registryHost;
+    }
+    
+    public void setRegistryHost(String registryHost) {
+        this.registryHost = registryHost;
+    }
+    
+    public String getRegistryPort() {
+        return registryPort;
+    }
+    
+    public void setRegistryPort(String registryPort) {
+        this.registryPort = registryPort;
+    }
+    
+    public String getRegistryService() {
+        return registryService;
+    }
+    
+    public void setRegistryService(String registryService) {
+        this.registryService = registryService;
+    }
+    
+    public String getRegistryQueryManagerUrl() {
+        return registryQueryManagerUrl;
+    }
+    
+    public void setRegistryQueryManagerUrl(String registryQueryManagerUrl) {
+        this.registryQueryManagerUrl = registryQueryManagerUrl;
+    }
+    
+    public boolean isLoggingOn() {
+        return loggingOn;
+    }
+    
+    public void setLoggingOn(boolean loggingOn) {
+        this.loggingOn = loggingOn;
+    }
+    
+    public int getTransportRetry() {
+        return transportRetry;
+    }
+    
+    public void setTransportRetry(int transportRetry) {
+        this.transportRetry = transportRetry;
+    }
+    
+}

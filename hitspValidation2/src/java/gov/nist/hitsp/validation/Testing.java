@@ -1,0 +1,101 @@
+/*
+ * Testing.java
+ *
+ * Created on September 5, 2007, 10:59 AM
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
+ */
+
+package gov.nist.hitsp.validation;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
+
+/**
+ *
+ * @author mccaffrey
+ */
+public class Testing {
+    
+    /** Creates a new instance of Testing */
+    private Testing() {
+    }
+    
+    
+    
+    public static void main(String args[]) {
+        
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        factory.setNamespaceAware(true);
+        factory.setValidating(true);
+        factory.setAttribute("http://java.sun.com/xml/jaxp/properties/schemaLanguage",
+                "http://www.w3.org/2001/XMLSchema");      
+       //       "http://www.ascc.net/xml/schematron");
+       //         "http://xml.ascc.net/schematron/");
+        String schemaLocation = "http://localhost:8080/test/schematron.xsd";
+        
+        
+        factory.setAttribute("http://java.sun.com/xml/jaxp/properties/schemaSource",
+                schemaLocation);
+        factory.setIgnoringElementContentWhitespace(true);
+        File file = new File("/home/mccaffrey/schematron/test1.xml");
+        FileInputStream fis = null;
+        try {
+            fis = new FileInputStream(file);
+        } catch (FileNotFoundException fnfe) {
+            fnfe.printStackTrace();
+            System.exit(-1);
+        }
+//        StringReader sr = new StringReader(xmlSource);
+//        InputSource is = new InputSource(sr);
+        DocumentBuilder builder = null;
+        try {
+            builder = factory.newDocumentBuilder();
+        } catch (ParserConfigurationException pce) {
+            pce.printStackTrace();
+            System.exit(-1);
+        }
+        SchemaValidationErrorHandler handler = new SchemaValidationErrorHandler();
+        builder.setErrorHandler(handler);
+        Document doc = null;
+        
+        try {
+            doc = builder.parse(fis);
+        } catch (SAXException e) {
+            System.out.println("Message is not valid XML.");
+            e.printStackTrace();
+        } catch (IOException e) {
+            System.out.println("Message is not valid XML.  Possible empty message.");
+            e.printStackTrace();
+        } catch (NullPointerException e) {
+            System.out.println("Unknown Error.  Possible invalid schema location.  Verify location and check host is accepting connections.");
+            e.printStackTrace();
+        }
+        
+        /*
+        System.out.println(handler.getPrintableFatalErrors());
+        System.out.println(handler.getPrintableErrors());
+        System.out.println(handler.getPrintableWarnings());
+        
+        
+        if(handler.hasErrors() || handler.hasFatalErrors()) {
+            StringBuffer sb = new StringBuffer();
+            if(handler.hasFatalErrors())
+                sb.append(handler.getPrintableFatalErrors());
+            if(handler.hasErrors())
+                sb.append(handler.getPrintableErrors());
+            throw new FailsSchemaException(sb.toString());
+        }
+         */
+        
+    }
+    
+}

@@ -1,0 +1,1156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="cda.xsl"?>
+<!-- The sample document for the Implementation Guide for CDA Release 2.0 Personal Healthcare Monitoring Report (PHMR) Release 2-->
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 http://xreg2.nist.gov:8080/hitspValidation/schema/cdar2c32/infrastructure/cda/C32_CDA.xsd">
+	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+	<templateId root="2.16.840.1.113883.10.20.9"/>
+	<id root="db734647-fc99-424c-a864-7e3cda82e703"/>
+	<code code="53576-5" codeSystem="2.16.840.1.113883.6.1"/>
+	<title>Good Health Personal Healthcare Monitoring Report</title>
+	<effectiveTime value="20080501123333-0500"/>
+	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+	<languageCode code="en-US"/>
+	<recordTarget>
+		<patientRole>
+			<id extension="996-756-495" root="2.16.840.1.113883.19.5"/>
+			<!-- The following tag was modified in Release 2-->
+			<addr>
+				<streetAddressLine>6666 Home Street</streetAddressLine>
+				<city>Ann Arbor</city>
+				<state>MI</state>
+				<postalCode>99999</postalCode>
+				<country>USA</country>
+			</addr>
+			<telecom value="tel:555-555-5001"/>
+			<patient>
+				<name>
+					<given>Ned</given>
+					<family>Nuclear</family>
+					<suffix/>
+				</name>
+				<administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1"/>
+				<birthTime value="19320924"/>
+			</patient>
+		</patientRole>
+	</recordTarget>
+	<author>
+		<time value="20080501123333-0500"/>
+		<assignedAuthor>
+			<id extension="996-756-498" root="2.16.840.1.113883.19.5"/>
+			<!-- The following tag was modified in Release 2-->
+			<addr>
+				<streetAddressLine>1002 Healthcare Drive</streetAddressLine>
+				<city>Ann Arbor</city>
+				<state>MI</state>
+				<postalCode>99999</postalCode>
+				<country>USA</country>
+			</addr>
+			<telecom value="tel:555-555-1002" use="WP"/>
+			<assignedPerson>
+				<name>Dr. Henry Seven</name>
+			</assignedPerson>
+			<representedOrganization>
+				<id root="8a54f393-8015-460c-abd2-f29aad15481c"/>
+				<name>Good Health Disease Management</name>
+				<telecom value="tel:(999)555-1212" use="DIR"/>
+				<addr>
+					<streetAddressLine>1002 Healthcare Drive</streetAddressLine>
+					<city>Ann Arbor</city>
+					<state>MI</state>
+					<postalCode>99999</postalCode>
+					<country>USA</country>
+				</addr>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<id root="8a54f393-8015-460c-abd2-f29aad15481c"/>
+				<name>Good Health Hospital</name>
+				<telecom value="tel:(999)555-3004" use="DIR"/>
+				<addr>
+					<streetAddressLine>1000 Hospital Lane</streetAddressLine>
+					<city>Ann Arbor</city>
+					<state>MI</state>
+					<postalCode>99999</postalCode>
+					<country>USA</country>
+				</addr>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<informationRecipient>
+		<intendedRecipient>
+			<id root="8a54f393-8015-460c-abd2-f29aad15481c"/>
+			<addr>
+				<streetAddressLine>1000 Hospital Lane</streetAddressLine>
+				<city>Ann Arbor</city>
+				<state>MI</state>
+				<postalCode>99999</postalCode>
+				<country>USA</country>
+			</addr>
+			<telecom value="tel:(999)555-1212" use="DIR"/>
+			<informationRecipient>
+				<name>Good Health Hospital</name>
+			</informationRecipient>
+		</intendedRecipient>
+	</informationRecipient>
+	<documentationOf>
+		<serviceEvent classCode="MPROT">
+			<effectiveTime>
+				<low value="20080501"/>
+				<high value="20080531"/>
+			</effectiveTime>
+		</serviceEvent>
+	</documentationOf>
+	<component>
+		<structuredBody>
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.1.16"/>
+					<templateId root="2.16.840.1.113883.10.20.9.2"/>
+					<code code="8716-3" codeSystem="2.16.840.1.113883.6.1"/>
+					<title>Vital Signs</title>
+					<text>
+						<paragraph>Blood Pressure Cuff Results</paragraph>
+						<table border="1" width="100%">
+							<tbody>
+								<tr>
+									<th>Date/Time</th>
+									<th>Systolic BP</th>
+									<th>Diastolic BP</th>
+									<th>Mean BP</th>
+									<th>Pulse</th>
+								</tr>
+								<tr>
+									<td>2008/05/01 10:40:33</td>
+									<td>155 mmHg</td>
+									<td>70 mmHg</td>
+									<td>120 mmHg</td>
+									<td>88 / minute</td>
+								</tr>
+							</tbody>
+						</table>
+						<paragraph>Thermometer Results</paragraph>
+						<table border="1" width="100%">
+							<tbody>
+								<tr>
+									<th>Date/Time</th>
+									<th>Body Temp</th>
+									<th>Finger Temp</th>
+									<th>Oral Temp</th>
+								</tr>
+								<tr>
+									<td>2008/05/01 10:40:33</td>
+									<td>99.9 deg F</td>
+									<td>88.8 deg F</td>
+									<td>37.5 deg C</td>
+								</tr>
+							</tbody>
+						</table>
+						<paragraph>Pulse Oximeter Results</paragraph>
+						<list listType="unordered">
+							<caption>Peripheral oxygen saturation</caption>
+							<item>Value: 16%</item>
+							<item>High threshold: 25</item>
+							<item>Low threshold: 17</item>
+						</list>
+						<list>
+							<caption>Pulse rate</caption>
+							<item>Value: 150 bpm</item>
+							<item>High threshold: 150</item>
+							<item>Low threshold: 50</item>
+							<item>Alert: Agent reports that the monitored value is at or below stated threshold.</item>
+						</list>
+					</text>
+					<entry typeCode="COMP">
+						<organizer classCode="CLUSTER" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.1.35"/>
+							<id root="b606a959-baab-4836-84a8-97c4e9857533"/>
+							<code code="46680005" codeSystem="2.16.840.1.113883.6.96" displayName="Vital signs"/>
+							<statusCode code="completed"/>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="2.16.840.1.113883.10.20.9.8"/>
+									<id root="fde90f67-529b-49e4-871b-bab296e8d499"/>
+									<code code="271649006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Systolic blood pressure">
+										<translation code="MDC_PRESS_BLD_NONINV_SYS" codeSystem="2.16.840.1.113883.6.24" codeSystemName="MDC" displayName="Systolic BP"/>
+									</code>
+									<statusCode code="completed"/>
+									<effectiveTime value="20080501104033-0500"/>
+									<!-- The following tag was modified in Release 2 - corrected units-->
+									<value xsi:type="PQ" value="155" unit="mm[Hg]"/>
+									<participant typeCode="DEV">
+										<participantRole>
+											<id root="1.2.840.10004.1.1.1.0.0.1.0.0.1.2680" assigningAuthorityName="EUI-64" extension="1F-3E-46-78-9A-BC-DE-F1"/>
+										</participantRole>
+									</participant>
+								</observation>
+							</component>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="2.16.840.1.113883.10.20.9.8"/>
+									<id root="7e21aa1e-a786-40e2-a269-eca392ff5f08"/>
+									<code code="271650006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Diastolic blood pressure">
+										<translation code="MDC_PRESS_BLD_NONINV_DIA" codeSystem="2.16.840.1.113883.6.24" codeSystemName="MDC" displayName="Diastolic BP"/>
+									</code>
+									<statusCode code="completed"/>
+									<effectiveTime value="20080501104033-0500"/>
+									<!-- The following tag was modified in Release 2 - corrected units-->
+									<value xsi:type="PQ" value="70" unit="mm[Hg]"/>
+									<participant typeCode="DEV">
+										<participantRole>
+											<id root="1.2.840.10004.1.1.1.0.0.1.0.0.1.2680" assigningAuthorityName="EUI-64" extension="1F-3E-46-78-9A-BC-DE-F1"/>
+										</participantRole>
+									</participant>
+								</observation>
+							</component>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="2.16.840.1.113883.10.20.9.8"/>
+									<id root="10252df8-57a9-4705-8d0c-999e28453230"/>
+									<code code="6797001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Mean blood pressure">
+										<!-- No SNOMED mapping in the IEEE to SNOMED appendix, but used 6797001, Mean blood pressure -->
+										<translation code="MDC_PRESS_BLD_NONINV_MEAN" codeSystem="2.16.840.1.113883.6.24" codeSystemName="MDC" displayName="Mean BP"/>
+									</code>
+									<statusCode code="completed"/>
+									<effectiveTime value="20080501104033-0500"/>
+									<!-- The following tag was modified in Release 2 - corrected units-->
+									<value xsi:type="PQ" value="120" unit="mm[Hg]"/>
+									<participant typeCode="DEV">
+										<participantRole>
+											<id root="1.2.840.10004.1.1.1.0.0.1.0.0.1.2680" assigningAuthorityName="EUI-64" extension="1F-3E-46-78-9A-BC-DE-F1"/>
+										</participantRole>
+									</participant>
+								</observation>
+							</component>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="2.16.840.1.113883.10.20.9.8"/>
+									<id root="f15b3846-269a-4c22-8bd5-9bb37fff94bc"/>
+									<code code="78564009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Pulse rate">
+										<!-- The following tag was modified in Release 2 - code was corrected-->
+										<translation code="MDC_PULS_RATE_NON_INV" codeSystem="2.16.840.1.113883.6.24" codeSystemName="MDC" displayName="Pulse"/>
+									</code>
+									<statusCode code="completed"/>
+									<effectiveTime value="20080501104033-0500"/>
+									<!-- The following tag was modified in Release 2 - corrected units-->
+									<value xsi:type="PQ" value="88" unit="{beat}/min"/>
+									<participant typeCode="DEV">
+										<participantRole>
+											<id root="1.2.840.10004.1.1.1.0.0.1.0.0.1.2680" assigningAuthorityName="EUI-64" extension="1F-3E-46-78-9A-BC-DE-F1"/>
+										</participantRole>
+									</participant>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+					<entry typeCode="COMP">
+						<organizer classCode="CLUSTER" moodCode="EVN">
+							<!-- Vital sign data /  Test Groups -->
+							<!-- A VITAL SIGNS ORGANIZER IS USED TO GROUP RELATED  -->
+							<templateId root="2.16.840.1.113883.10.20.1.35"/>
+							<id root="b606a959-baab-4836-84a8-97c4e9857533"/>
+							<code code="46680005" codeSystem="2.16.840.1.113883.6.96" displayName="Vital signs"/>
+							<statusCode code="completed"/>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="2.16.840.1.113883.10.20.9.8"/>
+									<id root="975c2f3b-2bd4-4e45-aed1-84af9ff51b10"/>
+									<code code="386725007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Body Temperature">
+										<translation code="MDC_TEMP_BODY" codeSystem="2.16.840.1.113883.6.24" codeSystemName="MDC" displayName="Body Temperature"/>
+									</code>
+									<statusCode code="completed"/>
+									<effectiveTime value="20080501104033-0500"/>
+									<value xsi:type="PQ" value="99.9" unit="[degF]"/>
+									<participant typeCode="DEV">
+										<participantRole>
+											<id root="1.2.840.10004.1.1.1.0.0.1.0.0.1.2680" assigningAuthorityName="EUI-64" extension="1A-34-46-78-9A-BC-DE-F3"/>
+										</participantRole>
+									</participant>
+								</observation>
+							</component>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="2.16.840.1.113883.10.20.9.8"/>
+									<id root="975c2f3b-2bd4-4e45-aed1-84af9ff51b10"/>
+									<!-- The following tag was modified in Release 2 - code and translation code corrected-->
+									<code code="433588001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Temperature of digit of hand">
+										<translation code="MDC_TEMP_FINGER" codeSystem="2.16.840.1.113883.6.24" codeSystemName="MDC" displayName="Finger Temperature"/>
+									</code>
+									<statusCode code="completed"/>
+									<effectiveTime value="20080501104033-0500"/>
+									<value xsi:type="PQ" value="88.8" unit="[degF]"/>
+									<participant typeCode="DEV">
+										<participantRole>
+											<id root="1.2.840.10004.1.1.1.0.0.1.0.0.1.2680" assigningAuthorityName="EUI-64" extension="1A-34-46-78-9A-BC-DE-F3"/>
+										</participantRole>
+									</participant>
+								</observation>
+							</component>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="2.16.840.1.113883.10.20.9.8"/>
+									<id root="975c2f3b-2bd4-4e45-aed1-84af9ff51b10"/>
+									<code code="415945006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Oral Temperature">
+										<translation code="MDC_TEMP_ORAL" codeSystem="2.16.840.1.113883.6.24" codeSystemName="MDC" displayName="Oral Temperature"/>
+									</code>
+									<statusCode code="completed"/>
+									<effectiveTime value="20080501104033-0500"/>
+									<value xsi:type="PQ" value="37.5" unit="Cel"/>
+									<participant typeCode="DEV">
+										<participantRole>
+											<id root="1.2.840.10004.1.1.1.0.0.1.0.0.1.2680" assigningAuthorityName="EUI-64" extension="1A-34-46-78-9A-BC-DE-F3"/>
+										</participantRole>
+									</participant>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+					<entry typeCode="COMP">
+						<organizer classCode="CLUSTER" moodCode="EVN">
+							<!-- Vital sign data /  Test Groups -->
+							<!-- A VITAL SIGNS ORGANIZER IS USED TO GROUP RELATED  -->
+							<templateId root="2.16.840.1.113883.10.20.1.35"/>
+							<id root="b606a959-baab-4836-84a8-97c4e9857533"/>
+							<code code="46680005" codeSystem="2.16.840.1.113883.6.96" displayName="Vital signs"/>
+							<statusCode code="completed"/>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="2.16.840.1.113883.10.20.9.8"/>
+									<id root="c144d149-2608-4b92-9be7-0ee2e4affca3"/>
+									<code code="431314004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Peripheral oxygen saturation">
+										<translation code="MDC_PULS_OXIM_SAT_O2" codeSystem="2.16.840.1.113883.6.24" codeSystemName="MDC" displayName="SpO2"/>
+									</code>
+									<statusCode code="completed"/>
+									<effectiveTime value="20071206125500.66-0400"/>
+									<value xsi:type="PQ" value="16" unit="%"/>
+									<participant typeCode="DEV">
+										<participantRole>
+											<id root="1.2.840.10004.1.1.1.0.0.1.0.0.1.2680" assigningAuthorityName="EUI-64" extension="1A-3E-41-78-9A-BC-DE-42"/>
+										</participantRole>
+									</participant>
+									<entryRelationship typeCode="COMP">
+										<observation classCode="OBS" moodCode="EVN">
+											<code code="MDC_THRESH_VAL_HI" codeSystem="2.16.840.1.113883.6.24" codeSystemName="MDC" displayName="High threshold"/>
+											<value xsi:type="INT" value="25"/>
+										</observation>
+									</entryRelationship>
+									<entryRelationship typeCode="COMP">
+										<observation classCode="OBS" moodCode="EVN">
+											<code code="MDC_THRESH_VAL_LO" codeSystem="2.16.840.1.113883.6.24" codeSystemName="MDC" displayName="Low threshold"/>
+											<value xsi:type="INT" value="17"/>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</component>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="2.16.840.1.113883.10.20.9.8"/>
+									<id root="85217d15-4136-44eb-bacc-3867a230fb38"/>
+									<code code="78564009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Pulse rate">
+										<translation code="MDC_PULS_OXIM_PULS_RATE" codeSystem="2.16.840.1.113883.6.24" codeSystemName="MDC" displayName="Pulse rate"/>
+									</code>
+									<statusCode code="completed"/>
+									<effectiveTime value="20071206125500.66-0400"/>
+									<!-- The following tag was modified in Release 2 - units were corrected-->
+									<value xsi:type="PQ" value="150" unit="{beat}/min"/>
+									<interpretationCode code="A" displayName="abnormal">
+										<!-- Note: these alerts are not IEEE coded, thus it may only be possible to mark them as "abnormal", then include whatever text is appropriate based on the info in the device spec. -->
+										<originalText>Agent reports that the monitored value is at or below stated threshold.</originalText>
+									</interpretationCode>
+									<participant typeCode="DEV">
+										<participantRole>
+											<id root="1.2.840.10004.1.1.1.0.0.1.0.0.1.2680" assigningAuthorityName="EUI-64" extension="1A-3E-41-78-9A-BC-DE-42"/>
+										</participantRole>
+									</participant>
+									<entryRelationship typeCode="COMP">
+										<observation classCode="OBS" moodCode="EVN">
+											<code code="MDC_THRESH_VAL_HI" codeSystem="2.16.840.1.113883.6.24" codeSystemName="MDC" displayName="SpO2"/>
+											<value xsi:type="INT" value="120"/>
+										</observation>
+									</entryRelationship>
+									<entryRelationship typeCode="COMP">
+										<observation classCode="OBS" moodCode="EVN">
+											<code code="MDC_THRESH_VAL_LO" codeSystem="2.16.840.1.113883.6.24" codeSystemName="MDC" displayName="SpO2"/>
+											<value xsi:type="INT" value="50"/>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.1.14"/>
+					<templateId root="2.16.840.1.113883.10.20.9.14"/>
+					<code code="30954-2" codeSystem="2.16.840.1.113883.6.1"/>
+					<title>Results</title>
+					<text>
+						<paragraph>Glucose Meter Results</paragraph>
+						<table border="1" width="100%">
+							<tbody>
+								<tr>
+									<th>Date/Time</th>
+									<th>Value</th>
+									<th>Measurement Condition</th>
+									<th>Sample Location</th>
+									<th>Tester</th>
+								</tr>
+								<tr>
+									<td>2008/05/01 12:33:33</td>
+									<td>104 mg/dL</td>
+									<td>Post meal</td>
+									<td>Ear lobe</td>
+									<td>Patient</td>
+								</tr>
+							</tbody>
+						</table>
+						<paragraph>Weigh Scale Results</paragraph>
+						<table border="1" width="100%">
+							<tbody>
+								<tr>
+									<th>Date/Time</th>
+									<th>Weight</th>
+									<th>Body Length</th>
+									<th>Mass/Body Length Ratio</th>
+								</tr>
+								<tr>
+									<td>2008/05/01 12:33:33</td>
+									<td>201.5 lbs</td>
+									<td>188 cm</td>
+									<td>24.5 kg(m<sup>2</sup>)</td>
+								</tr>
+							</tbody>
+						</table>
+						<paragraph>Pulse Oximeter Results</paragraph>
+						<table border="1" width="100%">
+							<tbody>
+								<tr>
+									<th>Date/Time</th>
+									<th>Sample Period</th>
+									<th>Values</th>
+								</tr>
+								<tr>
+									<td>2007/12/06 12:10:00.00</td>
+									<td>13.375 ms</td>
+									<td>
+                      94<br/>
+                      92<br/>
+                      92<br/>
+                      91<br/>
+                      90<br/>
+                      90<br/>
+                      89<br/>
+                      88<br/>
+                      86<br/>
+                      85<br/>
+                      84<br/>
+                      82<br/>
+                      81<br/>
+                      80<br/>
+                      79<br/>
+                      78<br/>
+                      77<br/>
+                      77<br/>
+                      77<br/>
+                      76<br/>
+                      77<br/>
+                      77<br/>
+                      77<br/>
+                      78<br/>
+                      78
+                  </td>
+								</tr>
+								<tr>
+									<td>2007/12/06 12:10:00.33</td>
+									<td>13.375 ms</td>
+									<td>
+                      79<br/>
+                      79<br/>
+                      80<br/>
+                      80<br/>
+                      80<br/>
+                      80<br/>
+                      80<br/>
+                      80<br/>
+                      80<br/>
+                      80<br/>
+                      79<br/>
+                      79<br/>
+                      78<br/>
+                      78<br/>
+                      77<br/>
+                      77<br/>
+                      76<br/>
+                      76<br/>
+                      75<br/>
+                      75<br/>
+                      74<br/>
+                      74<br/>
+                      73<br/>
+                      73<br/>
+                      74
+                  </td>
+								</tr>
+								<tr>
+									<td>2007/12/06 12:10:00.66</td>
+									<td>13.375 ms</td>
+									<td>
+                      76<br/>
+                      80<br/>
+                      87<br/>
+                      97<br/>
+                      110<br/>
+                      122<br/>
+                      134<br/>
+                      142<br/>
+                      147<br/>
+                      149<br/>
+                      150<br/>
+                      148<br/>
+                      146<br/>
+                      144<br/>
+                      142<br/>
+                      141<br/>
+                      139<br/>
+                      138<br/>
+                      136<br/>
+                      133<br/>
+                      131<br/>
+                      127<br/>
+                      123<br/>
+                      119<br/>
+                      114
+                  </td>
+								</tr>
+							</tbody>
+						</table>
+						<renderMultiMedia referencedObject="waveSeries1"/>
+						<list>
+							<caption>Pulse amplitude</caption>
+							<item>Value: 20</item>
+						</list>
+						<list>
+							<caption>Pulse characteristics Event</caption>
+							<item>Value: Maximal inrush of the pulsatile event has been detected</item>
+						</list>
+					</text>
+					<entry typeCode="COMP">
+						<organizer classCode="CLUSTER" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.1.35"/>
+							<id root="b606a959-baab-4836-84a8-97c4e9857533"/>
+							<code code="15220000" codeSystem="2.16.840.1.113883.6.96" displayName="Tests"/>
+							<statusCode code="completed"/>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="2.16.840.1.113883.10.20.9.8"/>
+									<id root="975c2f3b-2bd4-4e45-aed1-84af9ff51b10"/>
+									<!-- The following tag was modified in Release 2 - code was corrected-->
+									<code code="434912009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Blood glucose status">
+										<translation code="MDC_CONC_GLU_CAPILLARY_WHOLEBLOOD" codeSystem="2.16.840.1.113883.6.24" codeSystemName="MDC" displayName="Blood Glucose Level"/>
+									</code>
+									<statusCode code="completed"/>
+
+									<effectiveTime value="20080501123333-0500"/>
+									<value xsi:type="PQ" value="104" unit="mg/dL"/>
+									<targetSiteCode code="48800003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Ear lobe">
+										<translation nullFlavor="OTH">
+											<originalText>3</originalText>
+										</translation>
+									</targetSiteCode>
+									<participant typeCode="PRF">
+										<participantRole>
+											<!-- The following tag was modified in Release 2 - extension was corrected-->
+											<id extension="12-34-56-78-9A-BC-DE-F1" root="1.2.840.10004.1.1.1.0.0.1.0.0.1.2680"/>
+											<!-- The following tag was modified in Release 2 - code was corrected-->
+											<code code="MDC_CTXT_GLU_TESTER_SELF" codeSystem="2.16.840.1.113883.6.24" codeSystemName="MDC" displayName="Tester"/>
+										</participantRole>
+									</participant>
+									<participant typeCode="DEV">
+										<participantRole>
+											<id root="1.2.840.10004.1.1.1.0.0.1.0.0.1.2680" assigningAuthorityName="EUI-64" extension="12-34-56-78-9A-BC-DE-F1"/>
+										</participantRole>
+									</participant>
+									<entryRelationship typeCode="COMP">
+										<observation classCode="OBS" moodCode="EVN">
+											<code code="MDC_ATTR_MEASUREMENT_CONDITION" codeSystem="2.16.840.1.113883.6.24" codeSystemName="MDC" displayName="Measurement condition"/>
+											<value xsi:type="CD" code="24863003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="After meal">
+												<translation nullFlavor="OTH">
+													<originalText>1</originalText>
+												</translation>
+											</value>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+					<entry typeCode="COMP">
+						<organizer classCode="CLUSTER" moodCode="EVN">
+							<!-- Vital sign data /  Test Groups -->
+							<!-- A VITAL SIGNS ORGANIZER IS USED TO GROUP RELATED  -->
+							<templateId root="2.16.840.1.113883.10.20.1.35"/>
+							<id root="b606a959-baab-4836-84a8-97c4e9857533"/>
+							<code code="15220000" codeSystem="2.16.840.1.113883.6.96" displayName="Tests"/>
+							<statusCode code="completed"/>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="2.16.840.1.113883.10.20.9.8"/>
+									<id root="975c2f3b-2bd4-4e45-aed1-84af9ff51b10"/>
+									<code code="27113001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Body weight">
+										<translation code="MDC_MASS_BODY_ACTUAL" codeSystem="2.16.840.1.113883.6.24" codeSystemName="MDC" displayName="Mass Body Actual"/>
+									</code>
+									<statusCode code="completed"/>
+									<effectiveTime value="20080501123333-0500"/>
+									<!-- The following tag was modified in Release 2 - unit was corrected-->
+									<value xsi:type="PQ" value="201.5" unit="[lb_av]"/>
+									<participant typeCode="DEV">
+										<participantRole>
+											<id root="1.2.840.10004.1.1.1.0.0.1.0.0.1.2680" assigningAuthorityName="EUI-64" extension="12-32-56-78-9A-AC-DE-F3"/>
+										</participantRole>
+									</participant>
+								</observation>
+							</component>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="2.16.840.1.113883.10.20.9.8"/>
+									<id root="975c2f3b-2bd4-4e45-aed1-84af9ff51b10"/>
+									<code code="50373000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Body height measure">
+										<translation code="MDC_LEN_BODY_ACTUAL" codeSystem="2.16.840.1.113883.6.24" codeSystemName="MDC" displayName="Mass Body Actual"/>
+									</code>
+									<statusCode code="completed"/>
+									<effectiveTime value="20080501123333-0500"/>
+									<value xsi:type="PQ" value="188" unit="cm"/>
+									<participant typeCode="DEV">
+										<participantRole>
+											<id root="1.2.840.10004.1.1.1.0.0.1.0.0.1.2680" assigningAuthorityName="EUI-64" extension="12-32-56-78-9A-AC-DE-F3"/>
+										</participantRole>
+									</participant>
+								</observation>
+							</component>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="2.16.840.1.113883.10.20.9.8"/>
+									<id root="975c2f3b-2bd4-4e45-aed1-84af9ff51b10"/>
+									<code code="60621009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Body mass index">
+										<translation code="MDC_RATIO_MASS_BODY_LEN_SQ" codeSystem="2.16.840.1.113883.6.24" codeSystemName="MDC" displayName="Mass Body Actual"/>
+									</code>
+									<statusCode code="completed"/>
+									<effectiveTime value="20080501123333-0500"/>
+									<!-- The following tag was modified in Release 2 - unit was corrected-->
+									<value xsi:type="PQ" value="24.5" unit="kg/m2"/>
+									<participant typeCode="DEV">
+										<participantRole>
+											<id root="1.2.840.10004.1.1.1.0.0.1.0.0.1.2680" assigningAuthorityName="EUI-64" extension="12-32-56-78-9A-AC-DE-F3"/>
+										</participantRole>
+									</participant>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+					<entry typeCode="COMP">
+						<organizer classCode="CLUSTER" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.1.35"/>
+							<id root="d118761e-ac49-48ed-b664-22c0b6fa6bb0"/>
+							<code codeSystem="2.16.840.1.113883.6.96" code="15220000" displayName="Tests"/>
+							<statusCode code="completed"/>
+							<component>
+								<observation classCode="OBSSER" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.9.12"/>
+									<id root="f37a5e13-aae6-4f9c-8afc-af7a9ab087e0"/>
+									<!-- The following tag was modified in Release 2 - code was corrected-->
+									<code code="250864000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Pulse oximetry waveform">
+										<translation code="MDC_PULS_OXIM_PLETH" codeSystem="2.16.840.1.113883.6.24" codeSystemName="MDC" displayName="Pulse Oximeter Plethysmograph"/>
+									</code>
+									<effectiveTime>
+										<low value="20071206121000.00-0400"/>
+										<high value="20071206121000.99-0400"/>
+									</effectiveTime>
+									<participant typeCode="DEV">
+										<participantRole>
+											<id root="1.2.840.10004.1.1.1.0.0.1.0.0.1.2680" assigningAuthorityName="EUI-64" extension="1A-3E-41-78-9A-BC-DE-42"/>
+										</participantRole>
+									</participant>
+									<entryRelationship typeCode="COMP">
+										<observationMedia classCode="OBS" moodCode="EVN" ID="waveSeries1">
+											<id root="d122a5e9-823e-403a-b49e-2c6daa150110"/>
+											<value mediaType="image/jpeg">
+												<reference value="wave1.jpg"/>
+											</value>
+										</observationMedia>
+									</entryRelationship>
+									<entryRelationship typeCode="COMP">
+										<observation classCode="OBSCOR" moodCode="EVN">
+											<code nullFlavor="NA"/>
+											<entryRelationship typeCode="COMP">
+												<observation classCode="OBS" moodCode="EVN">
+													<templateId root="2.16.840.1.113883.10.20.9.13"/>
+													<code code="TIME_ABSOLUTE" codeSystem="2.16.840.1.113883.5.4" codeSystemName="ActCode" displayName="Absolute Time"/>
+													<value xsi:type="GLIST_TS">
+														<head value="20071206121000.00"/>
+														<!-- The sample period is 13.375 ms -->
+														<increment value="0.013375" unit="s"/>
+													</value>
+												</observation>
+											</entryRelationship>
+											<entryRelationship typeCode="COMP">
+												<observation classCode="OBS" moodCode="EVN">
+													<templateId root="2.16.840.1.113883.10.20.9.11"/>
+													<!-- The following tag was modified in Release 2 - code was corrected-->
+													<code code="250864000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Pulse oximetry waveform">
+														<translation code="MDC_PULS_OXIM_PLETH" codeSystem="2.16.840.1.113883.6.24" codeSystemName="MDC" displayName="Pulse Oximeter Plethysmograph"/>
+													</code>
+													<statusCode code="completed"/>
+													<value xsi:type="SLIST_PQ">
+														<origin value="0" unit="1"/>
+														<scale value="1" unit="1"/>
+														<digits>94 92 92 91 90 90 89 88 86 85 84 82 81 80 79 78 77 77 77 76 77 77 77 78 78</digits>
+													</value>
+												</observation>
+											</entryRelationship>
+											<entryRelationship typeCode="COMP">
+												<observation classCode="OBS" moodCode="EVN">
+													<templateId root="2.16.840.1.113883.10.20.9.11"/>
+													<!-- The following tag was modified in Release 2 - code was corrected-->
+													<code code="250864000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Pulse oximetry waveform">
+														<translation code="MDC_PULS_OXIM_PLETH" codeSystem="2.16.840.1.113883.6.24" codeSystemName="MDC" displayName="Pulse Oximeter Plethysmograph"/>
+													</code>
+													<statusCode code="completed"/>
+													<value xsi:type="SLIST_PQ">
+														<origin value="0" unit="1"/>
+														<scale value="1" unit="1"/>
+														<digits>79 79 80 80 80 80 80 80 80 80 79 79 78 78 77 77 76 76 75 75 74 74 73 73 74</digits>
+													</value>
+												</observation>
+											</entryRelationship>
+											<entryRelationship typeCode="COMP">
+												<observation classCode="OBS" moodCode="EVN">
+													<templateId root="2.16.840.1.113883.10.20.9.11"/>
+													<!-- The following tag was modified in Release 2 - code was corrected-->
+													<code code="250864000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Pulse oximetry waveform">
+														<translation code="MDC_PULS_OXIM_PLETH" codeSystem="2.16.840.1.113883.6.24" codeSystemName="MDC" displayName="Pulse Oximeter Plethysmograph"/>
+													</code>
+													<statusCode code="completed"/>
+													<value xsi:type="SLIST_PQ">
+														<origin value="0" unit="1"/>
+														<scale value="1" unit="1"/>
+														<digits>76 80 87 97 110 122 134 142 147 149 150 148 146 144 142 141 139 138 136 133 131 127 123 119 114</digits>
+													</value>
+												</observation>
+											</entryRelationship>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</component>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.1.31"/>
+									<templateId root="2.16.840.1.113883.10.20.9.8"/>
+									<id root="6b7462b7-fddc-42ed-b683-9baf2b07c180"/>
+									<!-- The following tag was modified in Release 2 - code and translation code was corrected-->
+									<code code="431591009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Pulse oximetry waveform">
+										<translation code="MDC_PULS_OXIM_PERF_REL" codeSystem="2.16.840.1.113883.6.24" codeSystemName="MDC" displayName="Pulse Oximeter Amplitude"/>
+									</code>
+									<statusCode code="completed"/>
+									<effectiveTime value="20071206125500.66-0400"/>
+									<value xsi:type="PQ" value="20" unit="1"/>
+									<participant typeCode="DEV">
+										<participantRole>
+											<id root="1.2.840.10004.1.1.1.0.0.1.0.0.1.2680" assigningAuthorityName="EUI-64" extension="1A-3E-41-78-9A-BC-DE-42"/>
+										</participantRole>
+									</participant>
+								</observation>
+							</component>
+							<component>
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="2.16.840.1.113883.10.20.9.7"/>
+									<id root="5d186d6a-40c8-4d2d-9187-069ddf08e288"/>
+									<code code="MDC_PULS_OXIM_PULS_CHAR" codeSystem="2.16.840.1.113883.6.24" codeSystemName="MDC" displayName="Pulse characteristics Event"/>
+									<statusCode code="completed"/>
+									<effectiveTime value="20071206125500.66-0400"/>
+									<value xsi:type="ST">Maximal inrush of the pulsatile event has been detected</value>
+									<participant typeCode="DEV">
+										<participantRole>
+											<id root="1.2.840.10004.1.1.1.0.0.1.0.0.1.2680" assigningAuthorityName="EUI-64" extension="1A-3E-41-78-9A-BC-DE-42"/>
+										</participantRole>
+									</participant>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.10.20.1.7"/>
+					<templateId root="2.16.840.1.113883.10.20.9.1"/>
+					<code code="46264-8" codeSystem="2.16.840.1.113883.6.1"/>
+					<title>Medical Equipment</title>
+					<text>
+						<!-- Device information -->
+						<table border="1" width="100%">
+							<tbody>
+								<tr>
+									<th>System Type</th>
+									<th>System Model</th>
+									<th>System Manufacturer</th>
+									<th>System ID</th>
+									<th>Production Spec</th>
+									<th>Regulated</th>
+								</tr>
+								<tr>
+									<td>Blood Pressure Monitor</td>
+									<td>Pulse Master 2000</td>
+									<td>Nonin</td>
+									<td>1F-3E-46-78-9A-BC-DE-F1</td>
+									<td>
+                      Unspecified: 
+                    Serial Number: 584216<br/>
+                    Part Number: 69854<br/>
+                    Hardware Revision: 2.1<br/>
+                    Software Revision: 1.1<br/>
+                    Protocol Revision:  1.0<br/>
+                    Prod Spec GMDN: 
+                  </td>
+									<td>Regulated</td>
+								</tr>
+								<tr>
+									<td>Glucose Meter</td>
+									<td>Diastar</td>
+									<td>Roche</td>
+									<td>12-34-56-78-9A-BC-DE-F1</td>
+									<td>
+                      Unspecified: 
+                    Serial Number: 123456789<br/>
+                    Part Number: 1234<br/>
+                    Hardware Revision: 1.1<br/>
+                    Software Revision: 1.5<br/>
+                    Protocol Revision:  1.0<br/>
+                    Prod Spec GMDN: 
+                  </td>
+									<td>Regulated</td>
+								</tr>
+								<tr>
+									<td>Weight scale</td>
+									<td>Weightstar</td>
+									<td>Philips</td>
+									<td>12-32-56-78-9A-AC-DE-F3</td>
+									<td>
+                      Unspecified: 
+                    Serial Number: 45865487<br/>
+                    Part Number: 365845<br/>
+                    Hardware Revision: 1.0<br/>
+                    Software Revision: 1.4<br/>
+                    Protocol Revision:  1.0<br/>
+                    Prod Spec GMDN: 
+                  </td>
+									<td>Not Regulated</td>
+								</tr>
+								<tr>
+									<td>Thermometer</td>
+									<td>Thermoking</td>
+									<td>Acme</td>
+									<td>1A-34-46-78-9A-BC-DE-F3</td>
+									<td>
+                      Unspecified: 
+                    Serial Number: 321654987<br/>
+                    Part Number: 987<br/>
+                    Hardware Revision: 3.1<br/>
+                    Software Revision: 1.2<br/>
+                    Protocol Revision:  1.0<br/>
+                    Prod Spec GMDN: 
+                  </td>
+									<td>Not Regulated</td>
+								</tr>
+								<tr>
+									<td>Pulse Oximeter</td>
+									<td>Onyx</td>
+									<td>Nonin</td>
+									<td>1A-3E-41-78-9A-BC-DE-42</td>
+									<td>
+                      Unspecified: 
+                    Serial Number: 584216<br/>
+                    Part Number: 69854<br/>
+                    Hardware Revision: 2.1<br/>
+                    Software Revision: 1.2<br/>
+                    Protocol Revision:  1.0<br/>
+                    Prod Spec GMDN: 
+                  </td>
+									<td>Not Regulated</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry typeCode="COMP">
+						<organizer classCode="CLUSTER" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.9.4"/>
+							<id root="5a2ddd7e-f725-40f7-94f4-35d99218e587"/>
+							<statusCode code="completed"/>
+							<effectiveTime value="200708011348-0500"/>
+							<participant typeCode="SBJ">
+								<participantRole classCode="MANU">
+									<templateId root="2.16.840.1.113883.10.20.1.52"/>
+									<templateId root="2.16.840.1.113883.10.20.9.9"/>
+									<id root="1.2.840.10004.1.1.1.0.0.1.0.0.1.2680" assigningAuthorityName="EUI-64" extension="1F-3E-46-78-9A-BC-DE-F1"/>
+									<code nullFlavor="OTH">
+										<originalText>Regulated Device</originalText>
+									</code>
+									<playingDevice>
+										<!-- The following tag was modified in Release 2 - code was corrected-->
+										<code code="MDC_DEV_SPEC_PROFILE_BP" codeSystem="2.16.840.1.113883.6.24" codeSystemName="MDC" displayName="BloodPressure Monitor">
+											<translation code="32033000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Arterial pressure monitor"/>
+										</code>
+										<manufacturerModelName>
+											<!-- free text, could be any format -->											
+                      Model: Pulse Master 2000
+                      Serial number:584216
+                      Part number: 69854
+                      Hardware revision: 2.1
+                      Software revision: 1.1
+                      Protocol revision: 1.0
+                      Unspecified (free text comment):
+                    </manufacturerModelName>
+									</playingDevice>
+									<scopingEntity>
+										<desc>Nonin</desc>
+									</scopingEntity>
+								</participantRole>
+							</participant>
+							<component>
+								<!-- sampling frequency observation -->
+								<observation classCode="OBS" moodCode="DEF">
+									<templateId root="2.16.840.1.113883.10.20.9.10"/>
+									<code code="MDC_ATTR_TIME_PD_SAMP" codeSystem="2.16.840.1.113883.6.24"/>
+									<value xsi:type="PQ" value="10" unit="ms"/>
+								</observation>
+							</component>
+							<component>
+								<!-- device resolution observation -->
+								<observation classCode="OBS" moodCode="DEF">
+									<templateId root="2.16.840.1.113883.10.20.9.6"/>
+									<code code="17441009" codeSystem="2.16.840.1.113883.6.96" displayName="Resolution threshold (observable entity)"/>
+									<!-- The following tag was modified in Release 2 - unit was corrected-->
+									<value xsi:type="PQ" value=".1" unit="mm[Hg]"/>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+					<entry typeCode="COMP">
+						<organizer classCode="CLUSTER" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.9.4"/>
+							<id root="788c20dd-f8bb-428b-97d5-28ea1f10ff55"/>
+							<statusCode code="completed"/>
+							<effectiveTime value="200708011349-0500"/>
+							<!-- The following tag was modified in Release 2 - typeCode was corrected-->
+							<participant typeCode="SBJ">
+								<participantRole classCode="MANU">
+									<templateId root="2.16.840.1.113883.10.20.1.52"/>
+									<templateId root="2.16.840.1.113883.10.20.9.9"/>
+									<id root="1.2.840.10004.1.1.1.0.0.1.0.0.1.2680" assigningAuthorityName="EUI-64" extension="12-34-56-78-9A-BC-DE-F1"/>
+									<code nullFlavor="OTH">
+										<originalText>Regulated Device</originalText>
+									</code>
+									<playingDevice>
+										<!-- The following tag was modified in Release 2 - code and translation code was corrected-->
+										<code code="MDC_DEV_SPEC_PROFILE_GLUCOSE" codeSystem="2.16.840.1.113883.6.24" codeSystemName="MDC" displayName="Glucose meter">
+											<translation code="337414009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Blood glucose meters"/>
+										</code>
+										<manufacturerModelName>
+                      Model: Diastar
+                      Serial number:123456789
+                      Part number: 1234
+                      Hardware revision: 1.1
+                      Software revision: 1.5
+                      Protocol revision: 1.0
+                      Unspecified (free text comment):
+                    </manufacturerModelName>
+									</playingDevice>
+									<scopingEntity>
+										<desc>Roche</desc>
+									</scopingEntity>
+								</participantRole>
+							</participant>
+							<!-- device measurement range observation -->
+							<component>
+								<observation classCode="OBS" moodCode="DEF">
+									<templateId root="2.16.840.1.113883.10.20.9.5"/>
+									<!-- The following tag was modified in Release 2 - code was corrected-->
+									<code code="MDC_ATTR_NU_RANGE_MSMT" displayName="Device Measurement Range" codeSystemName="MDC" codeSystem="2.16.840.1.113883.6.24"/>
+									<value xsi:type="IVL_PQ">
+										<low value="0" unit="mg"/>
+										<high value="2000" unit="mg"/>
+									</value>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+					<entry typeCode="COMP">
+						<organizer classCode="CLUSTER" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.9.4"/>
+							<id root="ffcb4ef3-8551-4e88-8f45-e7aea7a6a32e"/>
+							<statusCode code="completed"/>
+							<effectiveTime value="200708011349-0500"/>
+							<!-- The following tag was modified in Release 2 - typeCode was corrected-->
+							<participant typeCode="SBJ">
+								<participantRole classCode="MANU">
+									<templateId root="2.16.840.1.113883.10.20.1.52"/>
+									<templateId root="2.16.840.1.113883.10.20.9.9"/>
+									<id root="1.2.840.10004.1.1.1.0.0.1.0.0.1.2680" assigningAuthorityName="EUI-64" extension="12-32-56-78-9A-AC-DE-F3"/>
+									<code nullFlavor="OTH">
+										<originalText>Unregulated Device</originalText>
+									</code>
+									<playingDevice>
+										<!-- The following tag was modified in Release 2 - code and translation code was corrected-->
+										<code code="MDC_DEV_SPEC_PROFILE_SCALE" codeSystem="2.16.840.1.113883.6.24" codeSystemName="MDC" displayName="Weight scale">
+											<translation code="5042005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Patient scale"/>
+										</code>
+										<manufacturerModelName>
+                      Model: Weightstar
+                      Serial number:45865487
+                      Part number: 365845
+                      Hardware revision: 1.0
+                      Software revision: 1.4
+                      Protocol revision: 1.0
+                      Unspecified (free text comment):
+                    </manufacturerModelName>
+									</playingDevice>
+									<scopingEntity>
+										<desc>Philips</desc>
+									</scopingEntity>
+								</participantRole>
+							</participant>
+							<component>
+								<!-- device resolution bservation -->
+								<observation classCode="OBS" moodCode="DEF">
+									<templateId root="2.16.840.1.113883.10.20.9.6"/>
+									<code code="17441009" codeSystem="2.16.840.1.113883.6.96" displayName="Resolution threshold (observable entity)"/>
+									<!-- The following tag was modified in Release 2 - unit was corrected-->
+									<value xsi:type="PQ" value=".1" unit="[lb_av]"/>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+					<entry typeCode="COMP">
+						<organizer classCode="CLUSTER" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.9.4"/>
+							<id root="788c20dd-f8bb-428b-97d5-28ea1f10ff55"/>
+							<statusCode code="completed"/>
+							<effectiveTime value="200708011350-0500"/>
+							<!-- The following tag was modified in Release 2 - typeCode was corrected-->
+							<participant typeCode="SBJ">
+								<participantRole classCode="MANU">
+									<templateId root="2.16.840.1.113883.10.20.1.52"/>
+									<templateId root="2.16.840.1.113883.10.20.9.9"/>
+									<id root="1.2.840.10004.1.1.1.0.0.1.0.0.1.2680" assigningAuthorityName="EUI-64" extension="1A-34-46-78-9A-BC-DE-F3"/>
+									<code nullFlavor="OTH">
+										<originalText>Unregulated Device</originalText>
+									</code>
+									<playingDevice>
+										<!-- The following tag was modified in Release 2 - code and translation code was corrected-->
+										<code code="MDC_DEV_SPEC_PROFILE_TEMP" codeSystem="2.16.840.1.113883.6.24" codeSystemName="MDC" displayName="Thermometer">
+											<translation code="27991004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Thermometer"/>
+										</code>
+										<manufacturerModelName>
+                      Model: Thermoking
+                      Serial number:321654987
+                      Part number: 987
+                      Hardware revision: 3.1
+                      Software revision: 1.2
+                      Protocol revision: 1.0
+                      Unspecified (free text comment):
+                    </manufacturerModelName>
+									</playingDevice>
+									<scopingEntity>
+										<desc>Acme</desc>
+									</scopingEntity>
+								</participantRole>
+							</participant>
+							<component>
+								<!-- device measurement range observation -->
+								<observation classCode="OBS" moodCode="DEF">
+									<templateId root="2.16.840.1.113883.10.20.9.5"/>
+									<!-- The following tag was modified in Release 2 - code was corrected-->
+									<code code="MDC_ATTR_NU_RANGE_MSMT" displayName="Device Measurement Range" codeSystemName="MDC" codeSystem="2.16.840.1.113883.6.24"/>
+									<value xsi:type="IVL_PQ">
+										<low value="0" unit="Cel"/>
+										<high value="100" unit="Cel"/>
+									</value>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+					<entry typeCode="COMP">
+						<organizer classCode="CLUSTER" moodCode="EVN">
+							<templateId root="2.16.840.1.113883.10.20.9.4"/>
+							<id root="28f6b1a2-f313-4a11-b0a1-e488920e8d14"/>
+							<statusCode code="completed"/>
+							<effectiveTime value="200708011351-0500"/>
+							<!-- The following tag was modified in Release 2 - typeCode was corrected-->
+							<participant typeCode="SBJ">
+								<participantRole classCode="MANU">
+									<templateId root="2.16.840.1.113883.10.20.1.52"/>
+									<templateId root="2.16.840.1.113883.10.20.9.9"/>
+									<id root="1.2.840.10004.1.1.1.0.0.1.0.0.1.2680" assigningAuthorityName="EUI-64" extension="1A-3E-41-78-9A-BC-DE-42"/>
+									<code nullFlavor="OTH">
+										<originalText>Unregulated Device</originalText>
+									</code>
+									<playingDevice>
+										<!-- The following tag was modified in Release 2 - code and translation code was corrected-->
+										<code code="MDC_DEV_SPEC_PROFILE_PULS_OXIM" codeSystem="2.16.840.1.113883.6.24" codeSystemName="MDC" displayName="Pulse Oximeter">
+											<translation code="59181002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Oximeter"/>
+										</code>
+										<!-- The following tag was modified in Release 2 - manufacturerModelName was corrected-->
+										<manufacturerModelName>
+                      Model: Onyx
+                      Serial number:584216
+                      Part number: 69854
+                      Hardware revision: 2.1
+                      Software revision: 1.1
+                      Protocol revision: 1.0
+                      Unspecified (free text comment):
+                    </manufacturerModelName>
+									</playingDevice>
+									<scopingEntity>
+										<desc>Acme</desc>
+									</scopingEntity>
+								</participantRole>
+							</participant>
+							<component>
+								<!-- sampling frequency observation -->
+								<observation classCode="OBS" moodCode="DEF">
+									<templateId root="2.16.840.1.113883.10.20.9.10"/>
+									<code code="MDC_ATTR_TIME_PD_SAMP" codeSystem="2.16.840.1.113883.6.24"/>
+									<value xsi:type="PQ" value="500" unit="ms"/>
+								</observation>
+							</component>
+							<component>
+								<!-- device accuracy observation -->
+								<observation classCode="OBS" moodCode="DEF">
+									<templateId root="2.16.840.1.113883.10.20.9.3"/>
+									<code code="MDC_ATTR_NU_ACCUR_MSMT" codeSystem="2.16.840.1.113883.6.24"/>
+									<value xsi:type="PQ" value="3" unit="%"/>
+								</observation>
+							</component>
+						</organizer>
+					</entry>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

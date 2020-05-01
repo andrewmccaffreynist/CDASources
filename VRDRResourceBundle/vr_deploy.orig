@@ -1,0 +1,4 @@
+cd /cygdrive/c/VitalRecords
+/cygdrive/c/apache-maven-3.3.3/bin/mvn clean install -DskipTests
+scp /cygdrive/c/Users/kbrady/.m2/repository/gov/nist/hit/erx/resource/VitalRecords-resource-bundle/1.0.3/VitalRecords-resource-bundle-1.0.3.jar kbrady@129.6.24.81:
+ssh -X -Y hit-dev.nist.gov

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="urn:gov:nist:cdaGuidelineValidator" xmlns="urn:gov:nist:cdaGuidelineValidator"
+    elementFormDefault="qualified">
+
+    <xs:element name="documentTypes">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="documentType" type="DocumentType" minOccurs="1"
+                    maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="DocumentType">
+        <xs:sequence>
+            <xs:element name="displayName" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="1" />
+            <xs:element name="validation" type="Validation" minOccurs="1" maxOccurs="1" />
+            <xs:element name="dependencies" type="Dependencies" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:ID" use="required"/>
+        <xs:attribute name="backendOnly" type="xs:boolean" use="optional" default="false" />
+    </xs:complexType>
+
+    <xs:complexType name="Validation">        
+        <xs:simpleContent>
+            <xs:extension base="xs:string">                
+                <xs:attribute name="type" type="ValidValidations" use="required"/>                
+            </xs:extension>
+        </xs:simpleContent>        
+    </xs:complexType>
+
+    <xs:simpleType name="ValidValidations">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="schema"/>
+            <xs:enumeration value="schematron"/>
+        </xs:restriction>
+    </xs:simpleType>       
+    
+    <xs:complexType name="Dependencies">
+        <xs:sequence>
+            <xs:element name="dependency" type="Dependency" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Dependency">
+        <xs:simpleContent>
+            <xs:extension base="xs:IDREF">                
+                <xs:attribute name="sequenceNumber" type="xs:int" use="required"/>                
+            </xs:extension>
+        </xs:simpleContent>           
+    </xs:complexType>
+
+</xs:schema>

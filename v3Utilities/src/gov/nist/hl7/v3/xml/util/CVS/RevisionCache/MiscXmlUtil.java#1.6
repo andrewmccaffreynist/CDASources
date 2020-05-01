@@ -1,0 +1,171 @@
+/*
+ * MiscXmlUtil.java
+ *
+ * Created on May 18, 2006, 2:59 PM
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
+ */
+
+package gov.nist.hl7.v3.xml.util;
+
+import com.sun.org.apache.xpath.internal.XPathAPI;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.StringReader;
+import java.io.StringWriter;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import javax.xml.transform.Result;
+import javax.xml.transform.Source;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+
+import javax.xml.transform.stream.StreamResult;
+import org.w3c.dom.Attr;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
+
+/**
+ * A collection of static methods for performing commonly used XML routines.
+ * @author mccaffrey
+ */
+public class MiscXmlUtil {
+    
+    /**
+     * Given an incoming XML Node, returns a String representation of that Node.
+     * @param inputNode The Node to be represented as a String.
+     * @return The String that represents the incoming Node.
+     */
+    public static String xmlToString(Node inputNode) {
+        try {
+            Source source = new DOMSource(inputNode);
+            StringWriter stringWriter = new StringWriter();
+            Result result = new StreamResult(stringWriter);
+            TransformerFactory factory = TransformerFactory.newInstance();
+            Transformer transformer = factory.newTransformer();
+            transformer.transform(source, result);
+            return stringWriter.getBuffer().toString();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    
+    public static Document inputStreamToDom(InputStream is) throws SAXException, ParserConfigurationException, IOException {
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        factory.setIgnoringElementContentWhitespace(true);
+        DocumentBuilder builder = factory.newDocumentBuilder();        
+        return builder.parse(is);
+    }
+    
+    /**
+     * Given a String, turn that formatted XML into a DOM Document representation.
+     * @param xmlSource The formatted XML String to be turned into a DOM Document.
+     * @throws org.xml.sax.SAXException Thrown if there is a problem parsing the String.  (Bad XML.)
+     * @throws javax.xml.parsers.ParserConfigurationException Thrown if the Parser has not been configured correctly.
+     * @throws java.io.IOException Thrown if there is an I/O problem.  (Should not occur.)
+     * @return A DOM Document representing the original formatted XML String.
+     */
+    public static Document stringToDom(String xmlSource) throws SAXException, ParserConfigurationException, IOException {
+        
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        factory.setIgnoringElementContentWhitespace(true);        
+        DocumentBuilder builder = factory.newDocumentBuilder();        
+        return builder.parse(new InputSource(new StringReader(xmlSource)));        
+    }
+    
+    /**
+     * Given a filename, turn the file at that location into a DOM Document
+     * representation.
+     * @param filename The path and filename of the XML file to be represented as a DOM object.
+     * @return A DOM Document representing the XML document at the given location.
+     * @throws org.xml.sax.SAXException Thrown if there is a parsing error.
+     * @throws javax.xml.parsers.ParserConfigurationException Thrown if the Parser has not been configured correctly.
+     * @throws java.io.IOException Thrown if there is an I/O problem reading input files.
+     */
+    public static Document fileToDom(String filename) throws SAXException, ParserConfigurationException, IOException {
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        File file = new File(filename);
+        return builder.parse(file);
+    }
+    
+    /**
+     * Creates a new, empty DOM Document which can then have nodes added to it.
+     * @throws javax.xml.parsers.ParserConfigurationException Thrown if the Parser has not been configured correctly.
+     * @return A new, empty DOM Document.
+     */
+    public static Document createDomDocument() throws ParserConfigurationException {
+        DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+        Document doc = builder.newDocument();
+        return doc;
+    }
+    
+    /**
+     * Removes "&lt;?xml version='1.0' encoding='UTF-8'?>" from the beginning of a
+     * String of XML.  If it cannot find the header, it will return the same String
+     * that was passed to it.
+     * @param xmlString The XML String to have its header removed.
+     * @return The XML String minus the opening XML header.
+     */
+    public static String removeXmlHeader(String xmlString) {
+        int beginXmlHeader = xmlString.indexOf("<?xml");
+        int endXmlHeader = xmlString.indexOf("?>");
+        if(beginXmlHeader == -1 || endXmlHeader == -1)
+            return xmlString;
+        return xmlString.substring(endXmlHeader + 2).trim();
+    }
+    
+    /**
+     * Given a Node and an element name, this method will remove all elements in the
+     * Node tree which have that exact name.
+     * @param node The node to be worked on.
+     * @param elementName The name of the element(s) we wish removed from "node".
+     * @throws javax.xml.transform.TransformerException Thrown if there is an XPath error.
+     */
+    public static void removeElements(Node node, String elementName) throws TransformerException {
+        NodeList nodesToRemove = XPathAPI.selectNodeList(node,"//" + elementName);
+        
+        for(int i = 0; i < nodesToRemove.getLength(); i++) {
+            Node current = nodesToRemove.item(i);
+            if(current instanceof Element) {
+                Node parent = current.getParentNode();
+                parent.removeChild(current);
+            }
+        }
+    }
+    
+    public static Element duplicate(Element original, String newName, Document doc) {
+        
+        Element newElement = doc.createElement(newName);
+        Element duplicated = (Element) doc.importNode(original,true);
+        NamedNodeMap attrs = duplicated.getAttributes();
+        for (int i = 0; i < attrs.getLength(); i++) {
+            Attr attr = (Attr) doc.importNode(attrs.item(i), true);
+            newElement.setAttributeNode(attr);
+        }        
+        while (duplicated.hasChildNodes()) {
+            newElement.appendChild(duplicated.getFirstChild());
+        }
+        return newElement;
+    }
+
+    private MiscXmlUtil(){
+    }
+    
+}

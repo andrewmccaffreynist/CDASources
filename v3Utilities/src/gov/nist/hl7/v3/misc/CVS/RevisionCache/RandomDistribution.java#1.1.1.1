@@ -1,0 +1,56 @@
+/*
+ * RandomDistribution.java
+ *
+ * Created on June 14, 2006, 12:33 PM
+ *
+ * To change this template, choose Tools | Template Manager
+ * and open the template in the editor.
+ */
+
+package gov.nist.hl7.v3.misc;
+
+import java.util.Random;
+
+/**
+ * A collection of static methods to do various tasks involving random
+ * distributions.
+ * @author mccaffrey
+ */
+
+public class RandomDistribution {
+        
+    /**
+     * Performs a bell-curve random distribution based on a given mean and standard
+     * deviation.  Returns a double.
+     * @param mean The mean needed for the calculation.
+     * @param standardDeviation The standard deviation needed for the calculation.
+     * @return A double which was generated using a random distribution on a bell curve.
+     */
+    public static double getRandomNormalDistributionDouble(double mean, double standardDeviation) {
+        Random random = new Random();
+        double init = random.nextGaussian();
+        return mean + (init * standardDeviation);
+    }    
+    /**
+     * Performs a bell-curve random distribution based on a given mean and standard
+     * deviation.  Returns an int.
+     * @param mean The mean needed for the calculation.
+     * @param standardDeviation The standard deviation needed for the calculation.
+     * @return An int which was generated using a random distribution on a bell curve.
+     */
+    public static int getRandomNormalDistributionInt(double mean, double standardDeviation) {
+        return new Double(RandomDistribution.getRandomNormalDistributionDouble(mean,standardDeviation)).intValue();
+    }
+    /**
+     * Given two ints, this returns an int which is somewhere in between those two
+     * values.
+     * @param start The beginning of the interval.
+     * @param end The end of the interval.
+     * @return A random number along the interval described by the start and end inputs.
+     */
+    public static int getRandomUniformDistributionInt(int start, int end) {
+        Random random = new Random();
+        int randomNumber = random.nextInt(end - start + 1);
+        return start + randomNumber;
+    }
+}

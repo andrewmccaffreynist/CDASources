@@ -1,0 +1,126 @@
+<!-- Template_2.16.840.1.113883.3.88.11.83.12 -->
+<!-- HITSP/C83 Advance Directives Module -->
+
+<pattern id='p-2.16.840.1.113883.3.88.11.83.12-errors'>
+
+ <rule context='*[cda:templateId/@root="2.16.840.1.113883.3.88.11.83.12"]'>
+
+   <!-- Verify that templateId is used on the appropriate type of object -->
+   <assert test='ancestor::cda:section[cda:templateId/@root="2.16.840.1.113883.10.20.1.1"]
+             and self::cda:observation[cda:templateId/@root="2.16.840.1.113883.10.20.1.17"]'>
+     Error: The HITSP/C83 templateId for Advance Directives (2.16.840.1.113883.3.88.11.83.12) is in the wrong location. A HITSP/C83 Advance Directive data element shall be represented as a CCD Advance Directive Observation (2.16.840.1.113883.10.20.1.17) under a CCD Advance Directives section (2.16.840.1.113883.10.20.1.1). 
+   </assert>
+
+   <assert test='cda:code/cda:originalText'>
+     Error: A HITSP/C83 Advance Directive shall contain an Advance Directive Free Text Type element.   
+     See HITSP/C83 Table 2.2.2.12-2.
+   </assert>
+
+   <assert test='cda:effectiveTime'>
+     Error: A HITSP/C83 Advance Directive shall contain an Effective Date element.   
+     See HITSP/C83 Table 2.2.2.12-2.
+   </assert>
+
+   <assert test='cda:participant/cda:participantRole'>
+     Error: A HITSP/C83 Advance Directive shall contain a Custodian of the Document element.   
+     See HITSP/C83 Table 2.2.2.12-2.
+   </assert>
+
+   <assert test='not(cda:code/@code) or cda:code[@code and @codeSystem="2.16.840.1.113883.6.96"]'>
+     Error: A HITSP/C83 Advance Directive with Coded Type shall contain an advance directive code from from the advance directive subset of SNOMED CT (2.16.840.1.113883.6.96). CHECK list of values. 
+     See HITSP/C83 Table 2.2.2.12-2 and rule C83-[224].
+   </assert>
+
+   <assert test='cda:code/cda:originalText/cda:reference/@value'>
+     Error: The human readable description of the type of advance directive shall appear in the narrative text of the parent section and shall be pointed to by the value attribute of the reference element inside the originalText element of the code element.   
+     See HITSP/C83 Table 2.2.2.12-2.
+   </assert>
+
+   <assert test='cda:effectiveTime/cda:low'>
+     Error: The starting time of the C83 Advance Directive shall be recorded in the low element of the Effective Date.   
+     See rule C83-[226].
+   </assert>
+
+   <assert test='cda:effectiveTime/cda:low[@value or @nullFlavor="UNK"]'>
+     Error: If the starting time of an Advance Directive is unknown, then the low element of its Effective Date shall have a nullFlavor attribute set to UNK.   
+     See rule C83-[227].
+   </assert>
+
+   <assert test='cda:effectiveTime/cda:high'>
+     Error: The endingtime of the C83 Advance Directive shall be recorded in the high element of the Effective Date.   
+     See rule C83-[228].
+   </assert>
+
+   <assert test='cda:effectiveTime/cda:high[@value or @nullFlavor="UNK" or @nullFlavor="NA"]'>
+     Error: If the ending time of an Advance Directive is unknown, then the high element of its Effective Date shall have a nullFlavor attribute set to UNK. If the Advance Directive does not have a specified ending time, then the high element of its Effective Date shall have a nullFlavor attribute set to NA.
+     See rules C83-[229] and C83-[230].
+   </assert>
+
+   <assert test='cda:participant/cda:participantRole'>
+     Error: Information required to obtain a copy of a C83 Advance Directive shall be recorded in the Custodian of the Document data element.   
+     See rule C83-[231].
+   </assert>
+
+   <assert test='cda:participant[@typeCode="CST"]/cda:participantRole'>
+     Error: A C83 Custodian of the Document data element shall have participant typeCode set to CST.   
+     See rule C83-[232].
+   </assert>
+
+   <assert test='cda:participant[@typeCode="CST"]/cda:participantRole[@classCode="AGNT"]'>
+     Error: A C83 Custodian of the Document data element shall have classCode set to AGNT.    
+     See rule C83-[233].
+   </assert>
+
+   <assert test='cda:participant/cda:participantRole/cda:playingEntity/cda:name'>
+     Error: A C83 Custodian of the Document data element shall contain a playingEntity element and the name of the agent who can provide a copy of the advance directive shall be recorded in the name element.   
+     See rule C83-[236].
+   </assert>
+      
+ </rule>
+
+</pattern>
+
+
+<!-- Advance Directive Warnings -->
+
+
+<pattern id='p-2.16.840.1.113883.3.88.11.83.12-warning'>
+
+
+
+ <rule context='*[ancestor::cda:section[cda:templateId/@root="2.16.840.1.113883.10.20.1.1"]
+             and self::cda:observation[cda:templateId/@root="2.16.840.1.113883.10.20.1.17"]]'>
+
+   <!-- Verify ruleC83-[170]  -->
+   <assert test='cda:code/@code'>
+     Warning: A HITSP/C83 Advance Directive should contain a C83 Advance Directive Coded Type with an explicit code.   
+   </assert>
+
+   <!-- Verify rule C83-[180] -->
+   <assert test='cda:participant[@typeCode="CST"]/cda:participantRole[@classCode="AGNT"]/cda:addr'>
+     Warning: A C83 Custodian of the Document data element should contain an addr element with address information.   
+   </assert>
+
+   <!-- Verify rule C83-[181] -->
+   <assert test='cda:participant[@typeCode="CST"]/cda:participantRole[@classCode="AGNT"]/cda:telecom'>
+     Warning: A C83 Custodian of the Document data element should contain a telecom element with the telephone number or other electronic communications address for the agent.   
+   </assert>
+      
+ </rule>
+
+</pattern>
+
+
+
+<!-- Advance Directive notes -->
+
+
+<pattern id='p-2.16.840.1.113883.3.88.11.83.12-note'>
+
+ <rule context='*[ancestor::cda:section[cda:templateId/@root="2.16.840.1.113883.10.20.1.1"]
+             and self::cda:observation[cda:templateId/@root="2.16.840.1.113883.10.20.1.17"]]'>
+      
+ </rule>
+
+</pattern>
+

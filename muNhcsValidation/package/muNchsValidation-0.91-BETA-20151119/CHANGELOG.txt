@@ -1,0 +1,14 @@
+changelog.txt
+
+Release version 0.91-BETA
+Release date: 2015/11/19
+
+   * ADD: Initial add of commandline version.
+
+
+Release version: 0.9-BETA
+Release date: 2015/10/29
+
+   * ADD: Initial add of schema/schematron.  Initial add of deployable .war file. 
+
+

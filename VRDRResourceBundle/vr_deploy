@@ -1,0 +1,5 @@
+cd VitalRecordsCDA
+#mvn clean install -DskipTests
+mvn clean install -Dmaven.test.skip=true
+scp /home/mccaffrey/.m2/gov/nist/hit/erx/resource/VitalRecords-resource-bundle/1.0.3/VitalRecords-resource-bundle-1.0.3.jar amccaff@129.6.24.81:
+ssh -X -Y amccaff@hit-dev.nist.gov

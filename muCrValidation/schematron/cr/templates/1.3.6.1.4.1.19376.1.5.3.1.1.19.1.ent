@@ -1,0 +1,190 @@
+<!--  IHE PCC EMS Transfer of Care (ETC) 1.3.6.1.4.1.19376.1.5.3.1.1.19.1 --> 
+
+<!-- errors -->
+
+  <pattern id="p-1.3.6.1.4.1.19376.1.5.3.1.1.19.1-errors">
+    <title>IHE PCC EMS Transfer of Care (ETC) - errors validation phase</title>
+
+    <rule context='/'>
+    <assert
+    test='//cda:templateId[@root="1.3.6.1.4.1.19376.1.5.3.1.1.19.1"]'>
+       Error: IHE PCC EMS Transfer of Care (1.3.6.1.4.1.19376.1.5.3.1.1.19.1) requires the IHE PCC
+       EMS Transfer of Care template ID (1.3.6.1.4.1.19376.1.5.3.1.1.19.1).
+    </assert>
+    </rule>
+
+
+    <rule context='*[cda:templateId/@root="1.3.6.1.4.1.19376.1.5.3.1.1.19.1"]'>
+
+   <assert test='../cda:ClinicalDocument'>
+     Error: IHE PCC EMS Transfer of Care (1.3.6.1.4.1.19376.1.5.3.1.1.19.1) can only be used on Clinical Documents.
+   </assert> 
+
+   <assert test='cda:code[@code = "X-EMS"]'>
+     Error: In IHE PCC EMS Transfer of Care (1.3.6.1.4.1.19376.1.5.3.1.1.19.1), the document type code of a Prehospital 
+     Patient Care Report must be X-EMS.
+   </assert>
+
+   <assert test='cda:code[@codeSystem = "2.16.840.1.113883.6.1"]'>
+     Error: In IHE PCC EMS Transfer of Care (1.3.6.1.4.1.19376.1.5.3.1.1.19.1), the document type code must come from 
+     the LOINC code system (2.16.840.1.113883.6.1).
+   </assert> 
+
+   <assert test='cda:componentOf/cda:encompassingEncounter'>
+      Error: In IHE PCC EMS Transfer of Care (1.3.6.1.4.1.19376.1.5.3.1.1.19.1), the EMS encounter identifier shall 
+      appear in the componentOf/encompassingEncounter element of the CDA header. The effective time of the encounter 
+      starts when the emergency responder contacts the patient. It ends at the transfer of care or when the patient 
+      is no longer receiving care.
+   </assert>
+
+   <assert test='.//cda:templateId[@root = "1.3.6.1.4.1.19376.1.5.3.1.1.13.2.1"]'> 
+      Error: IHE PCC EMS Transfer of Care (1.3.6.1.4.1.19376.1.5.3.1.1.19.1) must contain a(n) Chief Complaint Section.
+   </assert> 
+
+   <assert test='.//cda:templateId[@root = "1.3.6.1.4.1.19376.1.5.3.1.1.13.2.2"]'> 
+     Error: IHE PCC EMS Transfer of Care (1.3.6.1.4.1.19376.1.5.3.1.1.19.1) must contain a(n) Acuity Assessment Section.
+   </assert> 
+
+   <assert test='.//cda:templateId[@root = "1.3.6.1.4.1.19376.1.5.3.1.1.5.3.2"]'> 
+     Error: IHE PCC EMS Transfer of Care (1.3.6.1.4.1.19376.1.5.3.1.1.19.1) must contain a(n) Vital Signs Section.
+   </assert> 
+
+   <assert test='.//cda:templateId[@root = "1.3.6.1.4.1.19376.1.5.3.1.1.13.2.4"]'> 
+     Error: IHE PCC EMS Transfer of Care (1.3.6.1.4.1.19376.1.5.3.1.1.19.1) must contain a(n) Assessement Section.
+   </assert> 
+
+   <assert test='.//cda:templateId[@root = "1.3.6.1.4.1.19376.1.5.3.1.1.10.3.2"]'> 
+     Error: IHE PCC EMS Transfer of Care (1.3.6.1.4.1.19376.1.5.3.1.1.19.1) must contain a(n) Transport Mode Section.
+   </assert> 
+
+   <assert test='.//cda:templateId[@root = "1.3.6.1.4.1.19376.1.5.3.1.1.19.2.1"] or
+                 .//cda:templateId[@root = "1.3.6.1.4.1.19376.1.5.3.1.3.4"]'>
+     Error: IHE PCC EMS Transfer of Care (1.3.6.1.4.1.19376.1.5.3.1.1.19.1), either the Injury Incident Description 
+     or the History of Present Illness section shall be present. Both are permitted to be present. A content creator 
+     must demonstrate the ability to complete both, though not necessarily in the same report.
+   </assert>
+
+</rule>
+</pattern>
+
+  <!-- warning -->
+
+  <pattern id="p-1.3.6.1.4.1.19376.1.5.3.1.1.19.1-warnings">
+    <title>IHE PCC EMS Transfer of Care (ETC) - warning validation phase</title>
+
+
+    <rule context="*[cda:templateId/@root=&quot;1.3.6.1.4.1.19376.1.5.3.1.1.19.1&quot;]">
+
+   <assert test='.//cda:templateId[@root = "1.3.6.1.4.1.19376.1.5.3.1.2.4"]'>
+     Warning: IHE PCC EMS Transfer of Care (1.3.6.1.4.1.19376.1.5.3.1.1.19.1) must contain a Patient Contacts Section if that
+     information is known.
+   </assert>
+
+   <assert test='.//cda:templateId[@root = "1.3.6.1.4.1.19376.1.5.3.1.3.6"]'>
+     Warning: In IHE PCC EMS Transfer of Care (1.3.6.1.4.1.19376.1.5.3.1.1.19.1), Active Problems is a conditionally
+     optional requirement.
+     The content creator must demonstrate the ability to complete this section. If no data is available, the
+     recommended behavior is to send indication that the data is not known, but this is not required.
+   </assert>
+
+   <assert test='.//cda:templateId[@root = "1.3.6.1.4.1.19376.1.5.3.1.3.19"]'>
+     Warning: In IHE PCC EMS Transfer of Care (1.3.6.1.4.1.19376.1.5.3.1.1.19.1), Current Medications is a conditionally
+     optional requirement.
+     The content creator must demonstrate the ability to complete this section. If no data is available, the
+     recommended behavior is to send indication that the data is not known, but this is not required.
+   </assert>
+
+   <assert test='.//cda:templateId[@root = "1.3.6.1.4.1.19376.1.5.3.1.3.13"]'>
+     Warning: In IHE PCC EMS Transfer of Care (1.3.6.1.4.1.19376.1.5.3.1.1.19.1), Allergies is a conditionally
+     optional requirement.
+     The content creator must demonstrate the ability to complete this section. If no data is available, the
+     recommended behavior is to send indication that the data is not known, but this is not required.
+   </assert>
+
+   <assert test='.//cda:templateId[@root = "1.3.6.1.4.1.19376.1.5.3.1.3.8"]'>
+     Warning: In IHE PCC EMS Transfer of Care (1.3.6.1.4.1.19376.1.5.3.1.1.19.1), Past Medical History is a conditionally
+     optional requirement.
+     The content creator must demonstrate the ability to complete this section. If no data is available, the
+     recommended behavior is to send indication that the data is not known, but this is not required.
+   </assert>
+
+   <assert test='.//cda:templateId[@root = "1.3.6.1.4.1.19376.1.5.3.1.1.5.3.4"]'>
+     Warning: In IHE PCC EMS Transfer of Care (1.3.6.1.4.1.19376.1.5.3.1.1.19.1), History of Pregnancies is a conditionally
+     optional requirement.
+     The content creator must demonstrate the ability to complete this section. If no data is available, the
+     recommended behavior is to send indication that the data is not known, but this is not required.
+   </assert>
+
+   <assert test='.//cda:templateId[@root = "1.3.6.1.4.1.19376.1.5.3.1.3.34"]'>
+     Warning: In IHE PCC EMS Transfer of Care (1.3.6.1.4.1.19376.1.5.3.1.1.19.1), Advanced Directives is a conditionally
+     optional requirement.
+     The content creator must demonstrate the ability to complete this section. If no data is available, the
+     recommended behavior is to send indication that the data is not known, but this is not required.
+   </assert>
+
+   <assert test='.//cda:templateId[@root = "1.3.6.1.4.1.19376.1.5.3.1.3.18"]'>
+     Warning: In IHE PCC EMS Transfer of Care (1.3.6.1.4.1.19376.1.5.3.1.1.19.1), Pertinent ROS is a conditionally
+     optional requirement.
+     The content creator must demonstrate the ability to complete this section. If no data is available, the
+     recommended behavior is to send indication that the data is not known, but this is not required.
+   </assert>
+
+   <assert test='.//cda:templateId[@root = "1.3.6.1.4.1.19376.1.5.3.1.1.9.15"]'>
+     Warning: In IHE PCC EMS Transfer of Care (1.3.6.1.4.1.19376.1.5.3.1.1.19.1), Physical Examination is a conditionally
+     optional requirement.
+     The content creator must demonstrate the ability to complete this section. If no data is available, the
+     recommended behavior is to send indication that the data is not known, but this is not required.
+   </assert>
+
+   <assert test='.//cda:templateId[@root = "1.3.6.1.4.1.19376.1.5.3.1.1.13.2.6"]'>
+     Warning: In IHE PCC EMS Transfer of Care (1.3.6.1.4.1.19376.1.5.3.1.1.19.1), Intravenous Fluids Administered is a conditionally
+     optional requirement.
+     The content creator must demonstrate the ability to complete this section. If no data is available, the
+     recommended behavior is to send indication that the data is not known, but this is not required.
+   </assert>
+
+   <assert test='.//cda:templateId[@root = "1.3.6.1.4.1.19376.1.5.3.1.3.21"]'>
+     Warning: In IHE PCC EMS Transfer of Care (1.3.6.1.4.1.19376.1.5.3.1.1.19.1), Medications Administered is a conditionally
+     optional requirement.
+     The content creator must demonstrate the ability to complete this section. If no data is available, the
+     recommended behavior is to send indication that the data is not known, but this is not required.
+   </assert>
+
+   <assert test='.//cda:templateId[@root = "1.3.6.1.4.1.19376.1.5.3.1.1.13.2.11"]'>
+     Warning: In IHE PCC EMS Transfer of Care (1.3.6.1.4.1.19376.1.5.3.1.1.19.1), Procedures Performed is a conditionally
+     optional requirement.
+     The content creator must demonstrate the ability to complete this section. If no data is available, the
+     recommended behavior is to send indication that the data is not known, but this is not required.
+   </assert>
+
+</rule>
+
+
+  </pattern>
+
+  <pattern id="p-1.3.6.1.4.1.19376.1.5.3.1.1.19.1-notes">
+    <title>IHE PCC EMS Transfer of Care (ETC) - notes validation phase</title>
+
+
+    <rule context="*[cda:templateId/@root=&quot;1.3.6.1.4.1.19376.1.5.3.1.1.19.1&quot;]">
+
+   <assert test='.//cda:templateId[@root = "1.3.6.1.4.1.19376.1.5.3.1.3.23"]'>
+     Note: IHE PCC EMS Transfer of Care (1.3.6.1.4.1.19376.1.5.3.1.1.19.1) may contain an Immunizations Section.
+   </assert>
+
+   <assert test='.//cda:templateId[@root = "1.3.6.1.4.1.19376.1.5.3.1.3.14"]'>
+     Note: IHE PCC EMS Transfer of Care (1.3.6.1.4.1.19376.1.5.3.1.1.19.1) may contain a Family History Section.
+   </assert>
+
+   <assert test='.//cda:templateId[@root = "1.3.6.1.4.1.19376.1.5.3.1.3.16"]'>
+     Note: IHE PCC EMS Transfer of Care (1.3.6.1.4.1.19376.1.5.3.1.1.19.1) may contain a Social History Section.
+   </assert>
+
+
+    </rule>
+
+
+  </pattern>
+
+
+

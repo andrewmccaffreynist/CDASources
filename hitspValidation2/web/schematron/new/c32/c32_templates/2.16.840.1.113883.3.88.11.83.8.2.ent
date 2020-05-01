@@ -1,0 +1,102 @@
+<!-- Template_2.16.840.1.113883.3.88.11.83.8.2 -->
+<!-- HITSP/C83 Medications Module, Medication Information data element -->
+<!-- HITSP/C83 Immunizations Module, Medication Information data element -->
+
+
+<!-- Errors Pattern -->
+
+<pattern id='p-2.16.840.1.113883.3.88.11.83.8.2-errors'>
+
+<!--
+ <rule context='*[cda:templateId/@root="2.16.840.1.113883.3.88.11.83.8.2"]'>
+-->
+   <!-- Verify that templateId is used on the appropriate type of object -->
+
+   <!-- Medication Information -->
+<!--
+   <assert test='ancestor::cda:substanceAdministration[cda:templateId/@root="2.16.840.1.113883.10.20.1.24"]
+             and self::cda:manufacturedProduct[cda:templateId/@root="2.16.840.1.113883.10.20.1.53"]'>
+     Error: The HITSP/C83 templateId for Medication Information (2.16.840.1.113883.3.88.11.83.8.2) is in the wrong location. A HITSP/C83 Medication Information data element shall be represented as a CCD Manufactured Product (2.16.840.1.113883.10.20.1.53) under a CCD Medication Activity (2.16.840.1.113883.10.20.1.24). The parent CCD section may be Medications or Immunizations. The C83 templateId for Medication Information may optionally be included on the CCD Manufactured Product element.
+   </assert>   
+   
+ </rule>
+-->
+
+<!-- Asserts with new Rule context for existence of code in manufactured material --> 
+
+<rule context='*[ancestor::cda:substanceAdministration[cda:templateId/@root="2.16.840.1.113883.10.20.1.24"]
+             and self::cda:manufacturedProduct[cda:templateId/@root="2.16.840.1.113883.10.20.1.53"]]/cda:manufacturedMaterial/cda:code'>
+
+
+   <assert test='not(ancestor::cda:section[cda:templateId/@root="2.16.840.1.113883.10.20.1.8"])
+              or @codeSystem="2.16.840.1.113883.6.88" or cda:translation[@codeSystem="2.16.840.1.113883.6.88"]
+              or @codeSystem="2.16.840.1.113883.6.69" or cda:translation[@codeSystem="2.16.840.1.113883.6.69"]
+              or @codeSystem="2.16.840.1.113883.4.209"
+              or @codeSystem="2.16.840.1.113883.4.9"
+              or @nullFlavor
+              or (not(@code) and not(@codeSystem)) '>
+     Error: The product name or brand name of a C83 Medications - Medication Information shall be coded using code system RxNorm (2.16.840.1.113883.6.88) or NDC (2.16.840.1.113883.6.69). The code shall appear in the code attribute of the code or translation element. When only the class of a drug is known (e.g. Beta Blocker or Sulfa Drug), it shall be coded using NDF-RT (2.16.840.1.113883.4.209). FDA Unique Ingredient Identifier codes (UNII) may be used when there are no suitable codes in the other vocabularies to identify the medication. If the code for a generic product is unknown, the code and codeSystem attributes may be omitted. Check list.
+     See rules C83-[172] through C83-[175].
+   </assert>
+
+   <assert test='not(ancestor::cda:section[cda:templateId/@root="2.16.840.1.113883.10.20.1.6"])
+              or @codeSystem="2.16.840.1.113883.12.292" or cda:translation[@codeSystem="2.16.840.1.113883.12.292"]
+              or @codeSystem="2.16.840.1.113883.6.59" or cda:translation[@codeSystem="2.16.840.1.113883.6.59"]
+              or @nullFlavor
+              or (not(@code) and not(@codeSystem)) '>
+     Error: The product name or brand name of a C83 Immunizations- Medication Information shall be coded using code system CVX (2.16.840.1.113883.12.292) or (2.16.840.1.113883.6.59). The code shall appear in the code attribute of the code or translation element. If the code for an immunization product is unknown, the code and codeSystem attributes may be omitted. Check list.
+     See rule C83-[175].
+   </assert>
+
+   <assert test='@nullFlavor or cda:originalText'>
+     Error: The product (generic) name (Medication or Immunization) shall appear in the originalText element beneath the code element. 
+     See rule C83-[176].
+   </assert>
+
+   <assert test='cda:translation'>
+     Error: The code for the specific brand of a product SHALL appear in a translation element under the code element.  
+     See rule C83-[177].
+   </assert>
+ 
+ </rule>
+
+</pattern>
+
+
+<!-- Warnings Pattern -->
+
+<pattern id='p-2.16.840.1.113883.3.88.11.83.8.2-warning'>
+
+
+
+ <!-- Asserts with new Rule context for existence of manufactured material --> 
+
+ <rule context='*[ancestor::cda:substanceAdministration[cda:templateId/@root="2.16.840.1.113883.10.20.1.24"]
+             and self::cda:manufacturedProduct[cda:templateId/@root="2.16.840.1.113883.10.20.1.53"]]'> 
+
+   <assert test='cda:manufacturedMaterial/cda:name'>
+     Warning: The brand name of a Medication or Immunization, if known, shall appear in the name element of the manufacturedMaterial. 
+   </assert>
+ 
+ </rule>
+
+</pattern>
+
+
+
+<!-- Notes Pattern -->
+
+<pattern id='p-2.16.840.1.113883.3.88.11.83.8.2-note'> 
+
+ <rule context='*[ancestor::cda:substanceAdministration[cda:templateId/@root="2.16.840.1.113883.10.20.1.24"]
+             and self::cda:manufacturedProduct[cda:templateId/@root="2.16.840.1.113883.10.20.1.53"]]'>
+
+   <assert test='cda:manufacturerOrganization'>
+     Note: A HITSP/C83 Medication Information data element (Medication or Immunization) may contain information about the manufacturer organization in a cda:manufacturerOrganization element.
+   </assert>
+ 
+ </rule>
+
+</pattern>
+
+

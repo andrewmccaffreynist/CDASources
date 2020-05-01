@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<documentTypes xmlns="urn:gov:nist:cdaGuidelineValidator"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="urn:hl7-org:v3 docTypes.xsd">
+
+    <documentType id="ccdMu">
+        <displayName>CCD (Meaningful Use)</displayName>
+        <description>HL7 Continuity of Care Document (for Meaningful Use)</description>
+        <validation type="schematron">http://localhost:8084/muValidation/schematron/ccd-mu/ccd.sch</validation>
+        <dependencies>
+            <dependency sequenceNumber="1">cdar2</dependency>
+        </dependencies>
+    </documentType>
+
+    <documentType id="cdar2">
+        <displayName>CDA R2</displayName>
+        <description>HL7 CDA R2 (with no extensions)</description>
+        <validation type="schema"
+            >http://localhost:8084/muValidation/schema/cdar2/infrastructure/cda/CDA.xsd</validation>
+        <dependencies/>
+    </documentType>
+
+</documentTypes>

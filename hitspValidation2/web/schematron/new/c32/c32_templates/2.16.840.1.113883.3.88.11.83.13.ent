@@ -1,0 +1,127 @@
+<!-- Template_2.16.840.1.113883.3.88.11.83.13 -->
+<!-- HITSP/C83 Immunizations Module -->
+
+
+<!-- Errors Pattern -->
+
+<pattern id='p-2.16.840.1.113883.3.88.11.83.13-errors'>
+
+ <rule context='*[cda:templateId/@root="2.16.840.1.113883.3.88.11.83.13"]'>
+
+   <!-- Verify that templateId is used on the appropriate type of object -->
+
+   <assert test='ancestor::cda:section[cda:templateId/@root="2.16.840.1.113883.10.20.1.6"]
+           and self::cda:substanceAdministration[cda:templateId/@root="2.16.840.1.113883.10.20.1.24"]'>
+     Error: The HITSP/C83 templateId for Immunization Event (2.16.840.1.113883.3.88.11.83.13) is in the wrong location. The HITSP/C83 Immunizations Event Entry data element shall be represented as a CCD Medication Activity substanceAdministration act (2.16.840.1.113883.10.20.1.24) under a CCD Immunizations section (2.16.840.1.113883.10.20.1.6). 
+   </assert>
+
+<!-- Medication Information  Required (R) -->
+
+   <assert test='cda:consumable/cda:manufacturedProduct[cda:templateId/@root="2.16.840.1.113883.10.20.1.53"]'>
+     Error: A HITSP/C83 Immunization Event Entry data element (2.16.840.1.113883.3.88.11.83.13) shall contain a C83 Medication Information element represented as a CCD Manufactured Product (2.16.840.1.113883.10.20.1.53). 
+   </assert>   
+
+<!-- Refusal Indication Required (R) -->
+
+   <assert test='@negationInd'>
+     Error: A HITSP/C83 Immunization Event Entry data element (2.16.840.1.113883.3.88.11.83.13) shall contain a C83 Refusal Indication attribute (Boolean). A value of false indicates that the immunization was administered. A value of true indicates that the medication was refused and not taken. The reason for refusal, if known, is carried by the C83 Refusal Reason data element.
+     See HITSP/C83 Table 2.2.2.13-2.
+   </assert>
+
+   <assert test='not(@negationInd="true") or cda:entryRelationship[@typeCode="RSON"]'>
+     Error: If a HITSP/C83 Immunization Event Entry data element (2.16.840.1.113883.3.88.11.83.13) contains a Refusal Indication that indicates an immunization was refused, then the Immunization Event Entry shall contain a C83 Refusal Reason data element.
+     See rule C83-[240].
+   </assert>
+
+   <assert test='not(@negationInd="true") or cda:entryRelationship[@typeCode="RSON"]/cda:act/cda:code[@code 
+                                             and @codeSystem="2.16.840.1.113883.11.19725"]'>
+     Error: A HITSP/C83 Refusal Reason data element shall be an act with code drawn from the HL7 ActNoImmunizationReason vocabulary (2.16.840.1.113883.11.19725).
+     See rule C32-[240].
+   </assert>
+
+   <assert test='not(@negationInd="true") or cda:entryRelationship[@typeCode="RSON"]/cda:act/cda:code[@codeSystem="2.16.840.1.113883.11.19725" and 
+                                               (@code="IMMUNE" 
+                                             or @code="MEDPREC" or @code="OSTOCK" 
+                                             or @code="PATOBJ" or @code="PHILISOP" or @code="RELIG" 
+                                             or @code="VACEFF" or @code="VACSAF")]'>
+     Error: A HITSP/C83 Refusal Reason data element shall be an act with code drawn from the HL7 ActNoImmunizationReason vocabulary (2.16.840.1.113883.11.19725). Valid values are: IMMUNE (immunity), MEDPREC (medical precaution), OSTOCK (out of stock), PATOBJ (patient objection), PHILISOP (philosophical objection), RELIG (religious objection), VACEFF (vaccine efficiency concerns), or VACSAF (vaccine safety concerns).
+     See rule C83-[240].
+   </assert>
+   
+ </rule>
+
+</pattern>
+
+
+
+<!-- Warnings Pattern -->
+
+<pattern id='p-2.16.840.1.113883.3.88.11.83.13-warning'>
+
+
+
+ <!-- Asserts with new Rule context for existence of manufactured material --> 
+
+ <rule context='*[ancestor::cda:section[cda:templateId/@root="2.16.840.1.113883.10.20.1.6"]
+           and self::cda:substanceAdministration[cda:templateId/@root="2.16.840.1.113883.10.20.1.24"]]/cda:consumable/cda:manufacturedProduct/cda:manufacturedMaterial'> 
+
+   <assert test='cda:code/@code'>
+     Warning: A HITSP/C83 Immunization Event Entry data element (2.16.840.1.113883.3.88.11.83.13) should contain a C83 coded Product Name. 
+   </assert> 
+
+   <assert test='cda:lotNumberText'>
+     Warning: A HITSP/C83 Immunization Event Entry data element (2.16.840.1.113883.3.88.11.83.13) should contain a C83 Lot Number. 
+   </assert>
+
+   <!-- Rule Immunizations C83-[198] See Medication Information entity file 2.16.840.1.113883.3.88.11.32.9 -->
+ 
+ </rule>
+
+
+ <!-- Set new Context for Medication Information -->
+
+ <rule context='*[ancestor::cda:section[cda:templateId/@root="2.16.840.1.113883.10.20.1.6"]
+           and self::cda:substanceAdministration[cda:templateId/@root="2.16.840.1.113883.10.20.1.24"]]/cda:consumable/cda:manufacturedProduct[cda:templateId/@root="2.16.840.1.113883.10.20.1.53"]'>
+
+   <assert test='cda:templateId[@root="2.16.840.1.113883.3.88.11.32.9"]'>
+   Warning: If a HITSP/C83 Immunization Event Entry data element (2.16.840.1.113883.3.88.11.83.13) contains a CCD manufacturedProduct element (2.16.840.1.113883.10.20.1.53), then that product element may optionally contain the C83 templateId for Medication Information (2.16.840.1.113883.3.88.11.32.9).
+   </assert>
+
+ </rule>
+
+</pattern>
+
+
+
+<!-- Notes Pattern -->
+
+<pattern id='p-2.16.840.1.113883.3.88.11.83.13-note'> 
+
+ <rule context='*[ancestor::cda:section[cda:templateId/@root="2.16.840.1.113883.10.20.1.6"]
+           and self::cda:substanceAdministration[cda:templateId/@root="2.16.840.1.113883.10.20.1.24"]]'>
+
+   <assert test='cda:effectiveTime'>
+     Note: A HITSP/C83 Immunization Event Entry data element (2.16.840.1.113883.3.88.11.83.13) may contain a C83 Administered Date element.
+   </assert>
+
+   <assert test='cda:entryRelationship[@typeCode="SUBJ"]/cda:observation/cda:value'>
+     Note: A HITSP/C83 Immunization Event Entry data element (2.16.840.1.113883.3.88.11.83.13) may contain a C83 Medication Series Number element.
+   </assert>
+
+   <assert test='cda:entryRelationship[@typeCode="CAUS"]/cda:observation'>
+     Note: A HITSP/C83 Immunization Event Entry data element (2.16.840.1.113883.3.88.11.83.13) may contain a C83 Reaction element.
+   </assert>
+
+   <assert test='cda:performer/cda:assignedEntity'>
+     Note: A HITSP/C83 Immunization Event Entry data element (2.16.840.1.113883.3.88.11.83.13) may contain a C83 Performer element.
+   </assert>
+
+   <assert test='cda:consumable/cda:manufacturedProduct/cda:manufacturerOrganization'>
+     Note: A HITSP/C83 Immunization Event Entry data element (2.16.840.1.113883.3.88.11.83.13) may contain a C83 Drug Manufacturer element.
+   </assert>
+ 
+ </rule>
+
+</pattern>
+
+

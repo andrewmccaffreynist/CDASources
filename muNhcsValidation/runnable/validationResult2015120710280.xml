@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="report.xsl"?><Report><ReportHeader><ValidationStatus>Complete</ValidationStatus><ServiceName>HL7 IG for CDA Release 2: National Health Care Surveys Release 1, DSTU Release 2.1 - US Realm</ServiceName><DateOfTest>20151207</DateOfTest><TimeOfTest>102807.0760 -0500</TimeOfTest><ResultOfTest>Failed</ResultOfTest><ErrorCount>3</ErrorCount></ReportHeader><Results severity="schemaViolation" specification="cda_r2"/><Results severity="errors" specification=""><issue><message>The document must contain at least 1 of the document level templates for this schematron to be applicable.</message><context>/ClinicalDocument[1]</context><test>cda:templateId[@root='2.16.840.1.113883.10.20.22.1.1' and @extension = '2014-06-09'] or cda:templateId[@root='2.16.840.1.113883.10.20.34.1.2' and @extension = '2015-04-01'] or cda:templateId[@root='2.16.840.1.113883.10.20.34.1.3' and @extension = '2015-04-01'] or cda:templateId[@root='2.16.840.1.113883.10.20.34.1.4' and @extension = '2015-04-01'] or cda:templateId[@root='2.16.840.1.113883.10.20.34.1.1' and @extension = '2015-04-01']</test></issue><issue><message>SHALL contain exactly one [1..1] streetAddressLine (CONF:81-7291).</message><context>/ClinicalDocument[1]/recordTarget[1]/patientRole[1]/addr[1]</context><test>count(cda:streetAddressLine) &gt; 0 and count(cda:streetAddressLine) &lt; 5</test></issue><issue><message>SHALL contain exactly one [1..1] city (CONF:81-7292).</message><context>/ClinicalDocument[1]/recordTarget[1]/patientRole[1]/addr[1]</context><test>count(cda:city)=1</test></issue></Results><Results severity="warnings" specification=""><issue><message>SHOULD contain zero or one [0..1] state (ValueSet: StateValueSet 2.16.840.1.113883.3.88.12.80.1 DYNAMIC) (CONF:81-7293).</message><context>/ClinicalDocument[1]/recordTarget[1]/patientRole[1]/addr[1]</context><test>count(cda:state)=1</test></issue><issue><message>SHOULD contain zero or one [0..1] postalCode, which SHOULD be selected from ValueSet PostalCode 2.16.840.1.113883.3.88.12.80.2 DYNAMIC (CONF:81-7294).</message><context>/ClinicalDocument[1]/recordTarget[1]/patientRole[1]/addr[1]</context><test>not(.)</test></issue><issue><message>SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet PostalAddressUse 2.16.840.1.113883.1.11.10637 STATIC 2005-05-01 (CONF:81-7290).</message><context>/ClinicalDocument[1]/author[1]/assignedAuthor[1]/addr[1]</context><test>@use</test></issue><issue><message>SHOULD contain zero or one [0..1] postalCode, which SHOULD be selected from ValueSet PostalCode 2.16.840.1.113883.3.88.12.80.2 DYNAMIC (CONF:81-7294).</message><context>/ClinicalDocument[1]/author[1]/assignedAuthor[1]/addr[1]</context><test>not(.)</test></issue><issue><message>SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet PostalAddressUse 2.16.840.1.113883.1.11.10637 STATIC 2005-05-01 (CONF:81-7290).</message><context>/ClinicalDocument[1]/custodian[1]/assignedCustodian[1]/representedCustodianOrganization[1]/addr[1]</context><test>@use</test></issue><issue><message>SHOULD contain zero or one [0..1] postalCode, which SHOULD be selected from ValueSet PostalCode 2.16.840.1.113883.3.88.12.80.2 DYNAMIC (CONF:81-7294).</message><context>/ClinicalDocument[1]/custodian[1]/assignedCustodian[1]/representedCustodianOrganization[1]/addr[1]</context><test>not(.)</test></issue><issue><message>SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet PostalAddressUse 2.16.840.1.113883.1.11.10637 STATIC 2005-05-01 (CONF:81-7290).</message><context>/ClinicalDocument[1]/legalAuthenticator[1]/assignedEntity[1]/addr[1]</context><test>@use</test></issue><issue><message>SHOULD contain zero or one [0..1] postalCode, which SHOULD be selected from ValueSet PostalCode 2.16.840.1.113883.3.88.12.80.2 DYNAMIC (CONF:81-7294).</message><context>/ClinicalDocument[1]/legalAuthenticator[1]/assignedEntity[1]/addr[1]</context><test>not(.)</test></issue><issue><message>SHOULD contain zero or one [0..1] @use, which SHALL be selected from ValueSet PostalAddressUse 2.16.840.1.113883.1.11.10637 STATIC 2005-05-01 (CONF:81-7290).</message><context>/ClinicalDocument[1]/authenticator[1]/assignedEntity[1]/addr[1]</context><test>@use</test></issue><issue><message>SHOULD contain zero or one [0..1] postalCode, which SHOULD be selected from ValueSet PostalCode 2.16.840.1.113883.3.88.12.80.2 DYNAMIC (CONF:81-7294).</message><context>/ClinicalDocument[1]/authenticator[1]/assignedEntity[1]/addr[1]</context><test>not(.)</test></issue><issue><message>*SHOULD* be precise to the minute (CONF:81-10128).</message><context>/ClinicalDocument[1]/authenticator[1]/time[1]</context><test>string-length(@value)&gt;=12</test></issue></Results><TestObject><ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sdtc="urn:hl7-org:sdtc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><!--
+**************************
+CDA HEADER
+**************************
+--><realmCode code="US"/><typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/><id extension="201505141053.:" root="2.16.840.1.113883.19.5.99999.1"/><code code="11488-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History and Physical Note"/><title>Patient History &amp; Physical</title><effectiveTime value="20150514105307-0500"/><confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" codeSystemName="Confidentiality" displayName="Normal"/><languageCode code="en-US"/><setId extension="201505141053.:" root="2.16.840.1.113883.19.5.99999.19"/><versionNumber value="1"/><recordTarget><patientRole><id extension="1049" root="2.16.840.1.113883.19.5.99999.2"/><addr use="HP">
+<country>USA</country>
+</addr><patient><name>
+<given>Maria</given>
+<family>Hernandez</family>
+</name><administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1" displayName="Female"/><birthTime value="19660218"/><raceCode code="185984009" codeSystem="2.16.840.1.113883.6.238" codeSystemName="3" displayName="White"/><ethnicGroupCode code="2135-2" codeSystem="2.16.840.1.113883.6.238" codeSystemName="3" displayName="Hispanic or Latino"/></patient></patientRole></recordTarget><author><time value="20150514105307-0500"/><assignedAuthor><id extension="1111111111" root="2.16.840.1.113883.4.6"/><addr>
+<streetAddressLine>234 Main Street</streetAddressLine>
+<city>Los Angeles</city>
+<state>CA</state>
+<postalCode>90024</postalCode>
+<country>USA</country>
+</addr><telecom use="HP" value="tel:(323)238-4727"/><assignedPerson><name>
+<given>Abbey</given>
+<family>Duck</family>
+<suffix>MD</suffix>
+</name></assignedPerson></assignedAuthor></author><custodian><assignedCustodian><representedCustodianOrganization><id extension="1447263678" root="2.16.840.1.113883.4.6"/><name>
+Saint Joseph
+</name><telecom use="HP" value="tel:(310)555-2222"/><addr>
+<streetAddressLine>99 Water Street</streetAddressLine>
+<city>Los Angeles</city>
+<state>CA</state>
+<postalCode>90054-0290</postalCode>
+<country>USA</country>
+</addr></representedCustodianOrganization></assignedCustodian></custodian><legalAuthenticator><time value="20150514105307-0500"/><signatureCode code="S"/><assignedEntity><id extension="1111111111" root="2.16.840.1.113883.4.6"/><addr>
+<streetAddressLine>234 Main Street</streetAddressLine>
+<city>Los Angeles</city>
+<state>CA</state>
+<postalCode>90024</postalCode>
+<country>USA</country>
+</addr><telecom use="HP" value="tel:(323)238-4727"/><assignedPerson><name>
+<given>Abbey</given>
+<family>Duck</family>
+<suffix>MD</suffix>
+</name></assignedPerson></assignedEntity></legalAuthenticator><authenticator><time value="20150514"/><signatureCode code="S"/><assignedEntity><id extension="3333333333" root="2.16.840.1.113883.4.6"/><addr>
+<streetAddressLine>92 Water Street</streetAddressLine>
+<city>Los Angeles</city>
+<state>CA</state>
+<postalCode>90077</postalCode>
+<country>USA</country>
+</addr><telecom use="HP" value="tel:(818)267-8243"/><assignedPerson><name>
+<given>Peter</given>
+<family>Peterson</family>
+<suffix>JD</suffix>
+</name></assignedPerson></assignedEntity></authenticator><documentationOf><serviceEvent classCode="PCPR"><effectiveTime><low value="20150514"/></effectiveTime><performer typeCode="PRF"><assignedEntity><id root="2.16.840.1.113883.6.101"/><representedOrganization><id root="2.16.840.1.113883.19.5.9999.1393"/><name>
+The ABC Clinic
+</name><addr>
+<streetAddressLine>246 Winter Street</streetAddressLine>
+<city>Los Angeles</city>
+<state>CA</state>
+<postalCode>90024</postalCode>
+<country>USA</country>
+</addr></representedOrganization></assignedEntity></performer></serviceEvent></documentationOf><component><structuredBody><!--
+**************************
+ALERTS
+**************************
+--><component><section><templateId root="2.16.840.1.113883.10.20.22.2.6"/><templateId root="2.16.840.1.113883.10.20.1.2"/><code code="48765-2" codeSystem="2.16.840.1.113883.6.1"/><title>Allergies, Adverse Reactions, Alerts</title><text>
+<table border="1"><thead><tr><th>Type</th><th>Date</th><th>Substance</th><th>Reaction</th><th>Code</th><th>Status</th></tr></thead><tbody><tr><td>Allergy</td><td>05/01/2015</td><td><content ID="product1">ASPIRIN</content></td><td>hives, Shortness of Breath</td><td><content ID="code1">1191</content> (RXNORM)</td><td>Active</td></tr><tr><td>Allergy</td><td>05/01/2015</td><td><content ID="product2">CODEINE</content></td><td>hives, Shortness of Breath</td><td><content ID="code2">2670</content> (RXNORM)</td><td>Active</td></tr><tr><td>Allergy</td><td>05/01/2015</td><td><content ID="product3">PENICILLIN G BENZATHINE</content></td><td>hives, Shortness of Breath</td><td><content ID="code3">7982</content> (RXNORM)</td><td>Active</td></tr></tbody></table>
+</text></section></component><!--
+**************************
+FUNCTIONAL STATUS
+**************************
+--><component><section><templateId root="2.16.840.1.113883.10.20.22.2.14"/><code code="47420-5" codeSystem="2.16.840.1.113883.6.1"/><title>Functional Status</title><text>
+<table border="1"><thead><tr><th>Type</th><th>Date</th><th>Description</th><th>Code</th><th>Status</th></tr></thead><tbody><tr><td>
+<content ID="type5">Mental Status</content>
+</td><td>
+<content ID="date5">Onset Date: 05/11/2015</content>
+</td><td>
+<content ID="description5">
+Disability evaluation, normal, no disability, no impairment
+</content>
+</td><td><content ID="code5">66557003</content> (SNOMED)</td><td>
+Active
+</td></tr></tbody></table>
+</text></section></component><!--
+**************************
+SOCIAL HISTORY
+**************************
+--><component><section><templateId root="2.16.840.1.113883.10.20.22.2.17"/><templateId root="2.16.840.1.113883.10.20.1.15"/><code code="29762-2" codeSystem="2.16.840.1.113883.6.1"/><title>Social History</title><text>
+<table border="1"><thead><tr><th>Social History</th><th>Description</th><th>Effective Date</th><th>Code</th></tr></thead><tbody><tr><td>Smoking History</td><td>
+<content ID="soc1">Current some day smoker</content>
+</td><td>2012</td><td>428041000124106 (SNOMED)</td></tr><tr><td>Ethnicity</td><td>
+<content ID="soc2">Hispanic or Latino</content>
+</td><td/><td/></tr><tr><td>Primary Language</td><td>
+<content ID="soc3">Spanish; Castilian</content>
+</td><td/><td/></tr><tr><td>Race</td><td>
+<content ID="soc4">White</content>
+</td><td/><td/></tr></tbody></table>
+</text><!--
+**************************
+SMOKING STATUS (ENTRY)
+**************************
+--><entry><observation classCode="OBS" moodCode="EVN"><templateId root="2.16.840.1.113883.10.20.22.4.78"/><id root="2.16.840.1.113883.19"/><code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4"/><statusCode code="completed"/><effectiveTime><low value="2012"/></effectiveTime><value code="428041000124106" codeSystem="2.16.840.1.113883.6.96" displayName="Current some day smoker" xsi:type="CD"/></observation></entry></section></component><!--
+**************************
+VITALS
+**************************
+--><component><section><templateId root="2.16.840.1.113883.10.20.2.4"/><code code="8716-3" codeSystem="2.16.840.1.113883.6.1"/><title>Vital Signs</title><text>
+<table border="1"><thead><tr><th/><th>May 11,2015</th><th/><th/></tr></thead><tbody><tr><td>Weight</td><td>162 lb</td><td/><td/></tr><tr><td>Height</td><td>64 in</td><td/><td/></tr><tr><td>Blood Pressure</td><td>130/85 mmHg (Right Arm)</td><td/><td/></tr><tr><td>BMI</td><td>27.8</td><td/><td/></tr><tr><td>BSA</td><td>1.82 m^2</td><td/><td/></tr></tbody></table>
+</text></section></component><!--
+**************************
+PROBLEMS
+**************************
+--><!--
+**************************
+ENCOUNTER DIAGNOSIS (PROBLEM)
+**************************
+--><component><section><templateId root="2.16.840.1.113883.10.20.22.4.3"/><code code="11450-4" codeSystem="2.16.840.1.113883.6.1"/><title>Encounter Diagnosis</title><text>
+<table border="1"><thead><tr><th>Type</th><th>Date</th><th>Description</th><th>Code</th><th>Status</th></tr></thead><tbody><tr><td>Problem</td><td>05/11/2015</td><td><content ID="problem10">Pneumonia</content></td><td><content ID="code10">233604007  (SNOMED)</content></td><td>Active</td></tr></tbody></table>
+</text></section></component><component><section><templateId root="2.16.840.1.113883.10.20.22.4.3"/><code code="11450-4" codeSystem="2.16.840.1.113883.6.1"/><title>Problems</title><text>
+<table border="1"><thead><tr><th>Type</th><th>Date</th><th>Description</th><th>Code</th><th>Status</th></tr></thead><tbody><tr><td>Problem</td><td>05/11/2015</td><td><content ID="problem12">Pneumonia</content></td><td><content ID="code12">233604007  (SNOMED)</content></td><td>Active</td></tr><tr><td>Problem</td><td>09/25/2012</td><td><content ID="problem13">Essential hypertension</content></td><td><content ID="code13">59621000  (SNOMED)</content></td><td>Active</td></tr><tr><td>Problem</td><td>04/23/2015</td><td><content ID="problem14">Asthma</content></td><td><content ID="code14">195967001  (SNOMED)</content></td><td>Active</td></tr></tbody></table>
+</text></section></component><!--
+**************************
+MEDICATIONS
+**************************
+--><component><section><templateId root="2.16.840.1.113883.10.20.22.2.1.1"/><code code="10160-0" codeSystem="2.16.840.1.113883.6.1"/><title>Medications</title><text>
+<table border="1"><thead><tr><th>Date</th><th>Medication</th><th>Dosage</th><th>SIG</th><th>Code</th><th>Status</th></tr></thead><tbody><tr><td>04/22/2015</td><td><content ID="Med15">METOPROLOL TARTRATE</content></td><td> [25 mg] TABLET</td><td>Once daily</td><td>866924  (RXNORM)</td><td>Active</td></tr><tr><td>05/01/2015</td><td><content ID="Med16">PROVENTIL</content></td><td> [0.09 MG/ACTUAT] INHALER</td><td>2 puffs QID PRN wheezing</td><td>202908  (RXNORM)</td><td>Active</td></tr><tr><td>05/11/2015</td><td><content ID="Med17">AZITHROMYCIN</content></td><td> [500 mg] TABLET</td><td>Take 500 mg on day 1, then 250 mg tablet once daily for next 4 days</td><td>141962  (RXNORM)</td><td>Active</td></tr></tbody></table>
+</text><!--
+**************************
+MEDICATION (ENTRY)
+**************************
+--><entry typeCode="DRIV"><substanceAdministration classCode="SBADM" moodCode="EVN"><templateId root="2.16.840.1.113883.10.20.22.4.16"/><id root="42F72374-2CE2-4324-8EDB-7FEF9D09C841"/><text>
+<reference value="#Med15"/>METOPROLOL TARTRATE [25 mg] TABLET</text><statusCode code="completed"/><effectiveTime value="20150422"/><consumable><manufacturedProduct classCode="MANU"><templateId root="2.16.840.1.113883.10.20.22.4.23"/><id root="CD02E452-B717-4CE4-B307-092BFCE2E3C5"/><manufacturedMaterial><code code="00378001801" codeSystem="2.16.840.1.113883.6.88" displayName="METOPROLOL TARTRATE [25 mg] TABLET"><originalText>
+<reference value="#Med16"/>
+</originalText><translation code="866924" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RxNorm" displayName="&gt;![CDATA[METOPROLOL TARTRATE [25 mg] TABLET]]"/></code></manufacturedMaterial></manufacturedProduct></consumable></substanceAdministration></entry><!--
+**************************
+MEDICATION (ENTRY)
+**************************
+--><entry typeCode="DRIV"><substanceAdministration classCode="SBADM" moodCode="EVN"><templateId root="2.16.840.1.113883.10.20.22.4.16"/><id root="732FC464-54BD-43BA-8212-436E94141474"/><text>
+<reference value="#Med16"/>PROVENTIL [0.09 MG/ACTUAT] INHALER</text><statusCode code="completed"/><effectiveTime value="20150501"/><consumable><manufacturedProduct classCode="MANU"><templateId root="2.16.840.1.113883.10.20.22.4.23"/><id root="07898D08-598F-4F5D-9958-3B7D28B3C576"/><manufacturedMaterial><code code="52959020300" codeSystem="2.16.840.1.113883.6.88" displayName="PROVENTIL [0.09 MG/ACTUAT] INHALER"><originalText>
+<reference value="#Med17"/>
+</originalText><translation code="202908" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RxNorm" displayName="&gt;![CDATA[PROVENTIL [0.09 MG/ACTUAT] INHALER]]"/></code></manufacturedMaterial></manufacturedProduct></consumable></substanceAdministration></entry><!--
+**************************
+MEDICATION (ENTRY)
+**************************
+--><entry typeCode="DRIV"><substanceAdministration classCode="SBADM" moodCode="EVN"><templateId root="2.16.840.1.113883.10.20.22.4.16"/><id root="DC2E2F0D-64E8-457A-B12B-5FC4B34A82FB"/><text>
+<reference value="#Med17"/>AZITHROMYCIN [500 mg] TABLET</text><statusCode code="completed"/><effectiveTime value="20150511"/><consumable><manufacturedProduct classCode="MANU"><templateId root="2.16.840.1.113883.10.20.22.4.23"/><id root="108E83CD-9588-474F-A5AC-A090BAAEE1B8"/><manufacturedMaterial><code code="00093716933" codeSystem="2.16.840.1.113883.6.88" displayName="AZITHROMYCIN [500 mg] TABLET"><originalText>
+<reference value="#"/>
+</originalText><translation code="141962" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RxNorm" displayName="&gt;![CDATA[AZITHROMYCIN [500 mg] TABLET]]"/></code></manufacturedMaterial></manufacturedProduct></consumable></substanceAdministration></entry></section></component><!--
+**************************
+RESULTS
+**************************
+--><component><section><templateId root="2.16.840.1.113883.10.20.1.14"/><code code="30954-2" codeSystem="2.16.840.1.113883.6.1"/><title>Results</title><text>
+<table border="1"><thead><tr><th>Date</th><th>Description</th><th>Result</th><th>Abnormal</th><th>Normal Range</th><th>Units</th><th>Code</th></tr></thead><tbody><tr><td>05/11/2015</td><td>HCT</td><td>51%</td><td/><td/><td/><td>20570-8 (LOINC)</td></tr><tr><td>05/11/2015</td><td>HGB</td><td>15.5</td><td/><td/><td>g/dl</td><td>30313-1 (LOINC)</td></tr><tr><td>05/11/2015</td><td>WBC</td><td>6.2</td><td/><td/><td>10^3/ul</td><td>33765-9 (LOINC)</td></tr><tr><td>05/11/2015</td><td>PLT</td><td>320</td><td/><td/><td>10^3/ul</td><td>26515-7 (LOINC)</td></tr></tbody></table>
+</text></section></component><!--
+**************************
+VACCINATIONS
+**************************
+--><component><section><templateId root="2.16.840.1.113883.10.20.22.4.52"/><code code="11369-6" codeSystem="2.16.840.1.113883.6.1"/><title>Immunizations</title><text>
+<table border="1"><thead><tr><th>Date</th><th>Immunizations</th><th>Dose</th><th>Route</th><th>Site</th><th>Code</th></tr></thead><tbody><tr><td>09/25/2012</td><td>TIV</td><td>1</td><td/><td/><td>88 (CVX)</td></tr></tbody></table>
+</text></section></component><!--
+**************************
+MEDICAL PROCEDURE
+**************************
+--><component><section><templateId root="2.16.840.1.113883.10.20.22.2.7"/><code code="47519-4" codeSystem="2.16.840.1.113883.6.1"/><title>Medical Procedures</title><text>
+<table border="1"><thead><tr><th>Date</th><th>Description</th><th>Body Site</th><th>Code</th></tr></thead><tbody><tr><td>05/11/2015</td><td>Standard chest X-ray</td><td>Lower respiratory tract structure (Snomed CT 82094008)</td><td>168731009 (SNOMED)</td></tr></tbody></table>
+</text></section></component><!--
+**************************
+CARE PLAN
+**************************
+--><component><section><templateId root="2.16.840.1.113883.10.20.22.2.10"/><code code="18776-5" codeSystem="2.16.840.1.113883.6.1"/><title>Care Plans</title><text>
+<table border="1"><thead><tr><th>Date</th><th>Name</th><th>Type</th><th>Code</th></tr></thead><tbody><tr><td>04/20/2015</td><td>Smoking Cessation</td><td>Goal</td><td>22532300  (SNOMED)</td></tr><tr><td>04/20/2015</td><td>Weight Loss</td><td>Goal</td><td/></tr><tr><td>04/20/2015</td><td>Annual pap smear</td><td>Preventative Health</td><td/></tr><tr><td>04/20/2015</td><td>Biennial screening mammogram</td><td>Preventative Health</td><td/></tr><tr><td>04/20/2015</td><td>Annual clinical breast exam</td><td>Preventative Health</td><td/></tr><tr><td>05/18/2015</td><td>George Lung MD, 987 Anymed Way, Portland OR - Pulmonary function test</td><td>Referral to other provider</td><td/></tr></tbody></table>
+</text></section></component><!--
+**************************
+CARE PLAN PROVIDERS
+**************************
+--><component><section><templateId root="2.16.840.1.113883.10.20.22.2.10"/><code code="18776-5" codeSystem="2.16.840.1.113883.6.1"/><title>Care Plan Providers</title><text>
+<table border="1"><thead><tr><th>Type</th><th>Name</th><th>Address</th><th>Phone</th></tr></thead><tbody><tr><td>Attending Provider</td><td>James Getwell MD</td><td>1002 Healthcare Dr., Portland, OR  97005</td><td>(555) 555-1009</td></tr><tr><td>Rendering Provider</td><td>Patricia Primary MD</td><td>1002 Healthcare Dr., Portland, OR  97005</td><td>(555) 555-1004</td></tr></tbody></table>
+</text></section></component></structuredBody></component></ClinicalDocument></TestObject></Report>
